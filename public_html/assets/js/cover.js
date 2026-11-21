@@ -98,7 +98,7 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
   };
   for (const k of cover.stackables) {
     const f = fixes[k];
-    if (!f) { stackImg(k, 'cover-stack'); continue; }
+    if (!f || !f.front) { stackImg(k, 'cover-stack'); continue; }
     stackImg(k, 'cover-stack is-back');
     for (const [a, b] of f.front || []) stackImg(k, 'cover-stack', `inset(${a}% 0 ${100 - b}% 0)`);
   }

@@ -1,2262 +1,2220 @@
 {
- "frame": {
-  "w": 2855,
-  "h": 3305
- },
- "tones": [
-  {
-   "key": "1",
-   "label": "light",
-   "color": "#ffefe1",
-   "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70bc1f12a608b1ea0ef_Frame%20336.png"
+  "frame": {
+    "w": 2855,
+    "h": 3305
   },
-  {
-   "key": "2",
-   "label": "med",
-   "color": "#ffd4bc",
-   "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70b2475fe16ca2fce61_Frame%20335.png"
-  },
-  {
-   "key": "3",
-   "label": "tan",
-   "color": "#e8b483",
-   "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70b57459747a2245dda_Frame%20334.png"
-  },
-  {
-   "key": "4",
-   "label": "dark",
-   "color": "#8f644d",
-   "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d69168ab17c51c1c0aa6_Frame%20393.png"
-  }
- ],
- "underwear": {
-  "bottom": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b579cf2649e90b97788f6a_Frame%20394%20(1).svg",
-  "bra": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b57d22f3faf1bcad599410_Frame%20351.svg"
- },
- "categories": {
-  "face": [
-   {
-    "key": "skin_tone_1_face_1",
-    "tone": "1",
-    "shape": 1,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20b35144efa914d4e1_pose-1-skin_tone_1_face_1.svg"
-   },
-   {
-    "key": "skin_tone_1_face_2",
-    "tone": "1",
-    "shape": 2,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d205f324ac3f33ae9e2_pose-1-skin_tone_1_face_2.svg"
-   },
-   {
-    "key": "skin_tone_1_face_3",
-    "tone": "1",
-    "shape": 3,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20c6bc26fb51ec27ee_pose-1-skin_tone_1_face_3.svg"
-   },
-   {
-    "key": "skin_tone_1_face_4",
-    "tone": "1",
-    "shape": 4,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2113e3300e22088ab3_pose-1-skin_tone_1_face_4.svg"
-   },
-   {
-    "key": "skin_tone_1_face_5",
-    "tone": "1",
-    "shape": 5,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20fcf9ac0d43f0ad3f_pose-1-skin_tone_1_face_5.svg"
-   },
-   {
-    "key": "skin_tone_1_face_6",
-    "tone": "1",
-    "shape": 6,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20410550cb3c4a6a42_pose-1-skin_tone_1_face_6.svg"
-   },
-   {
-    "key": "skin_tone_1_face_7",
-    "tone": "1",
-    "shape": 7,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20d2164e10c01400d2_pose-1-skin_tone_1_face_7.svg"
-   },
-   {
-    "key": "skin_tone_2_face_1",
-    "tone": "2",
-    "shape": 1,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2087e457b5e3ba27e0_pose-1-skin_tone_2_face_1.svg"
-   },
-   {
-    "key": "skin_tone_2_face_2",
-    "tone": "2",
-    "shape": 2,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22f40bdb594e49098e_pose-1-skin_tone_2_face_2.svg"
-   },
-   {
-    "key": "skin_tone_2_face_3",
-    "tone": "2",
-    "shape": 3,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22e38646b7c7602789_pose-1-skin_tone_2_face_3.svg"
-   },
-   {
-    "key": "skin_tone_2_face_4",
-    "tone": "2",
-    "shape": 4,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22fb4f82f391fa0d64_pose-1-skin_tone_2_face_4.svg"
-   },
-   {
-    "key": "skin_tone_2_face_5",
-    "tone": "2",
-    "shape": 5,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2298721befae6b9e76_pose-1-skin_tone_2_face_5.svg"
-   },
-   {
-    "key": "skin_tone_2_face_6",
-    "tone": "2",
-    "shape": 6,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22723be6c506c2d016_pose-1-skin_tone_2_face_6.svg"
-   },
-   {
-    "key": "skin_tone_2_face_7",
-    "tone": "2",
-    "shape": 7,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d225b2139addbd641bc_pose-1-skin_tone_2_face_7.svg"
-   },
-   {
-    "key": "skin_tone_3_face_1",
-    "tone": "3",
-    "shape": 1,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d226885f975de6baf73_pose-1-skin_tone_3_face_1.svg"
-   },
-   {
-    "key": "skin_tone_3_face_2",
-    "tone": "3",
-    "shape": 2,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22aa6715bd7018e5bf_pose-1-skin_tone_3_face_2.svg"
-   },
-   {
-    "key": "skin_tone_3_face_3",
-    "tone": "3",
-    "shape": 3,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23a6816ca771610acc_pose-1-skin_tone_3_face_3.svg"
-   },
-   {
-    "key": "skin_tone_3_face_4",
-    "tone": "3",
-    "shape": 4,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23ca27902565c96eff_pose-1-skin_tone_3_face_4.svg"
-   },
-   {
-    "key": "skin_tone_3_face_5",
-    "tone": "3",
-    "shape": 5,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23b8971d1b176fd9d2_pose-1-skin_tone_3_face_5.svg"
-   },
-   {
-    "key": "skin_tone_3_face_6",
-    "tone": "3",
-    "shape": 6,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23d0f413c4b0f12fcf_pose-1-skin_tone_3_face_6.svg"
-   },
-   {
-    "key": "skin_tone_3_face_7",
-    "tone": "3",
-    "shape": 7,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2302bb7a0ccf4cb586_pose-1-skin_tone_3_face_7.svg"
-   },
-   {
-    "key": "skin_tone_4_face_1",
-    "tone": "4",
-    "shape": 1,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23d18d59f6b78fc8fe_pose-1-skin_tone_4_face_1.svg"
-   },
-   {
-    "key": "skin_tone_4_face_2",
-    "tone": "4",
-    "shape": 2,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d233e4f056279c15ca4_pose-1-skin_tone_4_face_2.svg"
-   },
-   {
-    "key": "skin_tone_4_face_3",
-    "tone": "4",
-    "shape": 3,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23715be375e5f11189_pose-1-skin_tone_4_face_3.svg"
-   },
-   {
-    "key": "skin_tone_4_face_4",
-    "tone": "4",
-    "shape": 4,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d241a0f0ede927f062c_pose-1-skin_tone_4_face_4.svg"
-   },
-   {
-    "key": "skin_tone_4_face_5",
-    "tone": "4",
-    "shape": 5,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2400634d2595b11cf3_pose-1-skin_tone_4_face_5.svg"
-   },
-   {
-    "key": "skin_tone_4_face_6",
-    "tone": "4",
-    "shape": 6,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2420764929ebc39107_pose-1-skin_tone_4_face_6.svg"
-   },
-   {
-    "key": "skin_tone_4_face_7",
-    "tone": "4",
-    "shape": 7,
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d24bfd24f1685a55171_pose-1-skin_tone_4_face_7.svg"
-   }
-  ],
-  "hair": [
-   {
-    "key": "silver-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414c750a5f674d46f8142_silver-1.svg",
-    "color": "silver",
-    "style": 1
-   },
-   {
-    "key": "light-blonde-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413ca62a8ec6d56303e1c_light-blonde-1.svg",
-    "color": "light-blonde",
-    "style": 1
-   },
-   {
-    "key": "dark-blonde-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412f00e4aed76894ef226_dark-blonde-1.svg",
-    "color": "dark-blonde",
-    "style": 1
-   },
-   {
-    "key": "ginger-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412065f324ac3f3699e34_ginger-1.svg",
-    "color": "ginger",
-    "style": 1
-   },
-   {
-    "key": "brown-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b410ea458a47d9d8184f48_brown-1.svg",
-    "color": "brown",
-    "style": 1
-   },
-   {
-    "key": "black-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295a83d9c61ae25e18241_black-1.svg",
-    "color": "black",
-    "style": 1
-   },
-   {
-    "key": "silver-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4152ba749f198992af405_silver-2.svg",
-    "color": "silver",
-    "style": 2
-   },
-   {
-    "key": "light-blonde-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413d2e37fd1de44edecd5_light-blonde-2.svg",
-    "color": "light-blonde",
-    "style": 2
-   },
-   {
-    "key": "dark-blonde-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412f764e27f40073fd746_dark-blonde-2.svg",
-    "color": "dark-blonde",
-    "style": 2
-   },
-   {
-    "key": "ginger-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4120ca4db7e870433161c_ginger-2.svg",
-    "color": "ginger",
-    "style": 2
-   },
-   {
-    "key": "brown-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b410f8eaef62eb88d2c360_brown-2.svg",
-    "color": "brown",
-    "style": 2
-   },
-   {
-    "key": "black-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295b9aa968a2d6f09a54a_black-2.svg",
-    "color": "black",
-    "style": 2
-   },
-   {
-    "key": "silver-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4153483d729459cf58037_silver-3.svg",
-    "color": "silver",
-    "style": 3
-   },
-   {
-    "key": "light-blonde-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413dc2199006db8ba4cbd_light-blonde-3.svg",
-    "color": "light-blonde",
-    "style": 3
-   },
-   {
-    "key": "dark-blonde-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41300fd3c36b68994674b_dark-blonde-3.svg",
-    "color": "dark-blonde",
-    "style": 3
-   },
-   {
-    "key": "ginger-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41215fdedba29db67c80b_ginger-3.svg",
-    "color": "ginger",
-    "style": 3
-   },
-   {
-    "key": "brown-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4110192d2b3414cd45998_brown-3.svg",
-    "color": "brown",
-    "style": 3
-   },
-   {
-    "key": "black-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295c7a6dae8bd34d52a80_black-3.svg",
-    "color": "black",
-    "style": 3
-   },
-   {
-    "key": "silver-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4153ce4876ff3e991d23b_silver-4.svg",
-    "color": "silver",
-    "style": 4
-   },
-   {
-    "key": "light-blonde-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413e63f3c2a85d802948e_light-blonde-4.svg",
-    "color": "light-blonde",
-    "style": 4
-   },
-   {
-    "key": "dark-blonde-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41309743143296767fcc8_dark-blonde-4.svg",
-    "color": "dark-blonde",
-    "style": 4
-   },
-   {
-    "key": "ginger-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4121f4770c1e3b2d89ad5_ginger-4.svg",
-    "color": "ginger",
-    "style": 4
-   },
-   {
-    "key": "brown-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4110b33caf28bf875c801_brown-4.svg",
-    "color": "brown",
-    "style": 4
-   },
-   {
-    "key": "black-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295d18dc09cab89a0c86f_black-4.svg",
-    "color": "black",
-    "style": 4
-   },
-   {
-    "key": "silver-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4154464bc19fccaa4f421_silver-5.svg",
-    "color": "silver",
-    "style": 5
-   },
-   {
-    "key": "light-blonde-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413efe6240a05b9fa45b8_light-blonde-5.svg",
-    "color": "light-blonde",
-    "style": 5
-   },
-   {
-    "key": "dark-blonde-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41310f83c98700c14658c_dark-blonde-5.svg",
-    "color": "dark-blonde",
-    "style": 5
-   },
-   {
-    "key": "ginger-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41229715be375e51f3d80_ginger-5.svg",
-    "color": "ginger",
-    "style": 5
-   },
-   {
-    "key": "brown-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41115d86d0aa403490964_brown-5.svg",
-    "color": "brown",
-    "style": 5
-   },
-   {
-    "key": "black-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295e4a30c0622e7eae8e9_black-5.svg",
-    "color": "black",
-    "style": 5
-   },
-   {
-    "key": "silver-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4154c0418f1197a5a2a3c_silver-6.svg",
-    "color": "silver",
-    "style": 6
-   },
-   {
-    "key": "light-blonde-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413fe2bb82a30cba15b78_light-blonde-6.svg",
-    "color": "light-blonde",
-    "style": 6
-   },
-   {
-    "key": "dark-blonde-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4131bb07856dcd8879937_dark-blonde-6.svg",
-    "color": "dark-blonde",
-    "style": 6
-   },
-   {
-    "key": "ginger-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4124251d51ac2a71c9b33_ginger-6.svg",
-    "color": "ginger",
-    "style": 6
-   },
-   {
-    "key": "brown-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4111d3f09d20364be144c_brown-6.svg",
-    "color": "brown",
-    "style": 6
-   },
-   {
-    "key": "black-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295ede186a04d8b04584b_black-6.svg",
-    "color": "black",
-    "style": 6
-   },
-   {
-    "key": "silver-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4155633caf28bf87646a7_silver-7.svg",
-    "color": "silver",
-    "style": 7
-   },
-   {
-    "key": "light-blonde-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41406fcced28905570d20_light-blonde-7.svg",
-    "color": "light-blonde",
-    "style": 7
-   },
-   {
-    "key": "dark-blonde-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41328de1360479bcad29b_dark-blonde-7.svg",
-    "color": "dark-blonde",
-    "style": 7
-   },
-   {
-    "key": "ginger-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4124da392231854305a27_ginger-7.svg",
-    "color": "ginger",
-    "style": 7
-   },
-   {
-    "key": "brown-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41137e4876ff3e9915f5f_brown-7.svg",
-    "color": "brown",
-    "style": 7
-   },
-   {
-    "key": "black-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295f8d67478a5e651127e_black-7.svg",
-    "color": "black",
-    "style": 7
-   },
-   {
-    "key": "silver-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41560492c916cc2c0bab3_silver-8.svg",
-    "color": "silver",
-    "style": 8
-   },
-   {
-    "key": "light-blonde-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414157f1c930462aa2e1a_light-blonde-8.svg",
-    "color": "light-blonde",
-    "style": 8
-   },
-   {
-    "key": "dark-blonde-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413310c57b5b1191bd8e9_dark-blonde-8.svg",
-    "color": "dark-blonde",
-    "style": 8
-   },
-   {
-    "key": "ginger-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4125415f5b7b61ebb4f79_ginger-8.svg",
-    "color": "ginger",
-    "style": 8
-   },
-   {
-    "key": "brown-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4113f4c03cecaabaab409_brown-8.svg",
-    "color": "brown",
-    "style": 8
-   },
-   {
-    "key": "black-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2961462bdee590444483e_black-8.svg",
-    "color": "black",
-    "style": 8
-   },
-   {
-    "key": "silver-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41567a41a17d562acd117_silver-9.svg",
-    "color": "silver",
-    "style": 9
-   },
-   {
-    "key": "light-blonde-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414202bcc1dd2b9ef476d_light-blonde-9.svg",
-    "color": "light-blonde",
-    "style": 9
-   },
-   {
-    "key": "dark-blonde-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4133ec1043de5add3fa7b_dark-blonde-9.svg",
-    "color": "dark-blonde",
-    "style": 9
-   },
-   {
-    "key": "ginger-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4125b97a47e5933c1c48d_ginger-9.svg",
-    "color": "ginger",
-    "style": 9
-   },
-   {
-    "key": "brown-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4114e00503ee3a44411eb_brown-9.svg",
-    "color": "brown",
-    "style": 9
-   },
-   {
-    "key": "black-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2961ef38b7710f7cc3d6c_black-9.svg",
-    "color": "black",
-    "style": 9
-   },
-   {
-    "key": "silver-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b415992bcc1dd2b9ef774a_silver-10.svg",
-    "color": "silver",
-    "style": 10
-   },
-   {
-    "key": "light-blonde-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41435f027bfeecdd877a8_light-blonde-10.svg",
-    "color": "light-blonde",
-    "style": 10
-   },
-   {
-    "key": "dark-blonde-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41345a4de250886e368d8_dark-blonde-10.svg",
-    "color": "dark-blonde",
-    "style": 10
-   },
-   {
-    "key": "ginger-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4126397a47e5933c1c54f_ginger-10.svg",
-    "color": "ginger",
-    "style": 10
-   },
-   {
-    "key": "brown-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41156caa178bd57a4c20a_brown-10.svg",
-    "color": "brown",
-    "style": 10
-   },
-   {
-    "key": "black-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29627921cf1180679716f_black-10.svg",
-    "color": "black",
-    "style": 10
-   },
-   {
-    "key": "silver-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b415a324af393e93d1b269_silver-11.svg",
-    "color": "silver",
-    "style": 11
-   },
-   {
-    "key": "light-blonde-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4143e5f8a5cce19dedaa7_light-blonde-11.svg",
-    "color": "light-blonde",
-    "style": 11
-   },
-   {
-    "key": "dark-blonde-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4134e42e2b142ba2715aa_dark-blonde-11.svg",
-    "color": "dark-blonde",
-    "style": 11
-   },
-   {
-    "key": "ginger-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4126b723be6c506f28b6a_ginger-11.svg",
-    "color": "ginger",
-    "style": 11
-   },
-   {
-    "key": "brown-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4115dba6b0a04e20ee221_brown-11.svg",
-    "color": "brown",
-    "style": 11
-   },
-   {
-    "key": "black-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2962e28aa2dc316ae187a_black-11.svg",
-    "color": "black",
-    "style": 11
-   }
-  ],
-  "eyes": [
-   {
-    "key": "female-eyes-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294bce98db8a097547c13_female-eyes-1.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294c500503ee3a4164db4_female-eyes-2.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294cfca27902565ca2e10_female-eyes-3.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294db43d87184ce2a3148_female-eyes-4.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294e38ac16bc353c957c6_female-eyes-5.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294f11fbe5172187e5adc_female-eyes-6.svg",
-    "gender": "female"
-   },
-   {
-    "key": "female-eyes-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294fe20764929ebc4373e_female-eyes-7.svg",
-    "gender": "female"
-   },
-   {
-    "key": "male-eyes-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2945f98721befae6c379b_male-eyes-1.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2946a579c757fed09432d_male-eyes-2.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294832a6232ea09abea3c_male-eyes-3.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2948c492c916cc2939dc5_male-eyes-4.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29495579c757fed0949ad_male-eyes-5.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294a12f364b4f2bfa50f2_male-eyes-6.svg",
-    "gender": "male"
-   },
-   {
-    "key": "male-eyes-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294a8d2164e10c014acb9_male-eyes-7.svg",
-    "gender": "male"
-   }
-  ],
-  "eyebrows": [
-   {
-    "key": "male-eyebrows-4",
-    "gender": "male",
-    "hairColor": "black",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ab4989f52413cc3f87_pose-1-male-eyebrows-4.svg"
-   },
-   {
-    "key": "male-eyebrows-2",
-    "gender": "male",
-    "hairColor": "light-blonde",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aae8f5fa3b7bddaa59_pose-1-male-eyebrows-2.svg"
-   },
-   {
-    "key": "male-eyebrows-5",
-    "gender": "male",
-    "hairColor": "silver",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ac3e4f056279c1c752_pose-1-male-eyebrows-5.svg"
-   },
-   {
-    "key": "male-eyebrows-3",
-    "gender": "male",
-    "hairColor": "dark-blonde",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ab8999d385d41ec021_pose-1-male-eyebrows-3.svg"
-   },
-   {
-    "key": "male-eyebrows-1",
-    "gender": "male",
-    "hairColor": "brown",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aa7f6d21cd2a0be2fc_pose-1-male-eyebrows-1.svg"
-   },
-   {
-    "key": "male-eyebrows-6",
-    "gender": "male",
-    "hairColor": "ginger",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aca09860001d844276_pose-1-male-eyebrows-6.svg"
-   },
-   {
-    "key": "female-eyebrows-4",
-    "gender": "female",
-    "hairColor": "black",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aac082fa02d7bd12db_pose-1-female-eyebrows-4.svg"
-   },
-   {
-    "key": "female-eyebrows-2",
-    "gender": "female",
-    "hairColor": "light-blonde",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aac082fa02d7bd12ee_pose-1-female-eyebrows-2.svg"
-   },
-   {
-    "key": "female-eyebrows-5",
-    "gender": "female",
-    "hairColor": "silver",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aad1023393013fed12_pose-1-female-eyebrows-5.svg"
-   },
-   {
-    "key": "female-eyebrows-3",
-    "gender": "female",
-    "hairColor": "dark-blonde",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aaaa0603ac47fbb6ad_pose-1-female-eyebrows-3.svg"
-   },
-   {
-    "key": "female-eyebrows-1",
-    "gender": "female",
-    "hairColor": "brown",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aaa6816ca771618e91_pose-1-female-eyebrows-1.svg"
-   },
-   {
-    "key": "female-eyebrows-6",
-    "gender": "female",
-    "hairColor": "ginger",
-    "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aacbb6689c94b6212e_pose-1-female-eyebrows-6.svg"
-   }
-  ],
-  "nose": [
-   {
-    "key": "nose-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4738ff572fb0f99caa2d7_nose-1.svg"
-   },
-   {
-    "key": "nose-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47397d038f04e5d78a639_nose-2.svg"
-   },
-   {
-    "key": "nose-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4739fd0efab7da8f02d22_nose-3.svg"
-   },
-   {
-    "key": "nose-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b473ac3f3c2a85d810cc25_nose-4.svg"
-   },
-   {
-    "key": "nose-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b473b7ed7567b1fcdba39c_nose-5.svg"
-   }
-  ],
-  "mouth": [
-   {
-    "key": "mouth-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d40625b72f629b876d5_mouth-1.svg"
-   },
-   {
-    "key": "mouth-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d50627ead40811aa106_mouth-2.svg"
-   },
-   {
-    "key": "mouth-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d654f9b0dba5310c7fa_mouth-3.svg"
-   },
-   {
-    "key": "mouth-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d8f5348acd4a6e75d9f_mouth-4.svg"
-   },
-   {
-    "key": "mouth-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225da20a075acb87547288_mouth-5.svg"
-   },
-   {
-    "key": "mouth-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225db0eeb0ae4cf8591bcb_mouth-6.svg"
-   },
-   {
-    "key": "mouth-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225dd9e087b97e5e392c67_mouth-7.svg"
-   },
-   {
-    "key": "mouth-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e145d1c2497ecc841ad_mouth-8.svg"
-   },
-   {
-    "key": "mouth-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e222bc61342425fe21e_mouth-9.svg"
-   },
-   {
-    "key": "mouth-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e34de2eaedb8b950788_mouth-10.svg"
-   },
-   {
-    "key": "mouth-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e596d6e1c2f4204b72b_mouth-11.svg"
-   },
-   {
-    "key": "mouth-12",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e66d5680f649ded09d6_mouth-12.svg"
-   },
-   {
-    "key": "mouth-13",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e78837b48405ca057ac_mouth-13.svg"
-   }
-  ],
-  "beard": [
-   {
-    "key": "beard-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2902fc943c775743ca987_beard-1.svg"
-   },
-   {
-    "key": "beard-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29037d941df6039351dd0_beard-2.svg"
-   },
-   {
-    "key": "beard-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b290400c57b5b119ec9776_beard-3.svg"
-   },
-   {
-    "key": "beard-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2904887e457b5e3ba8073_beard-4.svg"
-   },
-   {
-    "key": "beard-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29051a30c0622e7ea3cda_beard-5.svg"
-   },
-   {
-    "key": "beard-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29066ca27902565c9c4a2_beard-6.svg"
-   }
-  ],
-  "tops": [
-   {
-    "key": "top-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27ce582c328140eb36b1d_top-1.svg",
-    "gender": "any",
-    "sleeve": "short"
-   },
-   {
-    "key": "top-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27c9e579c757fed070317_top-2.svg",
-    "gender": "any",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286d2b35144efa914531a_top-3.svg",
-    "gender": "any",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286e82c4eee4a8167dd19_top-4.svg",
-    "gender": "female",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286f46d5b77a4dfad804e_top-5.svg",
-    "gender": "any",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28701162a977fcb41bd1d_top-6.svg",
-    "gender": "female",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2870ce4876ff3e9647772_top-7.svg",
-    "gender": "any",
-    "sleeve": "short"
-   },
-   {
-    "key": "top-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287180418f1197a2a1ec7_top-8.svg",
-    "gender": "any",
-    "sleeve": "short"
-   },
-   {
-    "key": "top-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2873de86b0b10ea6d474c_top-9.svg",
-    "gender": "any",
-    "sleeve": "short"
-   },
-   {
-    "key": "top-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2874f907e30f0a0be5abf_top-10.svg",
-    "gender": "female",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2876cf1de8a0e3f5c02f2_top-11.svg",
-    "gender": "any",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-12",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287ba2211f56f5c7a4ff8_top-12.svg",
-    "gender": "any",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-13",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287c62211f56f5c7a5146_top-13.svg",
-    "gender": "female",
-    "sleeve": "none"
-   },
-   {
-    "key": "top-14",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287dd8999d385d41df5bf_top-14.svg",
-    "gender": "female",
-    "sleeve": "none"
-   },
-   {
-    "key": "top-15",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895102fcc17c9a63b46f_top-15.svg",
-    "gender": "female",
-    "sleeve": "none"
-   },
-   {
-    "key": "top-16",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895e33caf28bf8460a93_top-16.svg",
-    "gender": "female",
-    "sleeve": "none"
-   },
-   {
-    "key": "top-29",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b289ba2cbb0d57006df838_top-29.svg",
-    "gender": "female",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-30",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28a15e5007ebcdfbac2aa_top-30.svg",
-    "gender": "female",
-    "sleeve": "long"
-   }
-  ],
-  "jackets": [
-   {
-    "key": "top-17",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28ae164bc19fcca7515f5_top-17.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-18",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28aec2fbb2acadd852afc_top-18.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-19",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28af4ba6b0a04e2dfed2e_top-19.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-20",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b016ac21db37bdd78b7_top-20.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-21",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b0825982ab00787b36c_top-21.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-22",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b1c55767e4fa8b951e9_top-22.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-23",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b2907cb483b7fb2113a_top-23.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-24",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b36c082fa02d7bc8b9e_top-24.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-25",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b4642513fd144e63c63_top-25.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-26",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b72fcf9ac0d43f0802a_top-26.svg",
-    "sleeve": "long"
-   }
-  ],
-  "bodice": [
-   {
-    "key": "top-27",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bb2a8d223c878223d15_top-27.svg",
-    "sleeve": "long"
-   },
-   {
-    "key": "top-28",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bbdf86be1d42495064f_top-28.svg",
-    "sleeve": "long"
-   }
-  ],
-  "pants": [
-   {
-    "key": "pants-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4755ab6e6b2f1c86f07c5_pants-1.svg"
-   },
-   {
-    "key": "pants-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4757611187a99790423dc_pants-2.svg"
-   },
-   {
-    "key": "pants-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4757f3e4f056279ff1175_pants-3.svg"
-   },
-   {
-    "key": "pants-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47589c2a79758ab214d1f_pants-4.svg"
-   },
-   {
-    "key": "pants-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47593aa0603ac47379abc_pants-5.svg"
-   },
-   {
-    "key": "pants-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4759ec0a789d917ed9cf4_pants-6.svg"
-   },
-   {
-    "key": "pants-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475a70ed7ce663fc94c5e_pants-7.svg"
-   },
-   {
-    "key": "pants-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475afe068710d86ae7b90_pants-8.svg"
-   },
-   {
-    "key": "pants-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475b8576293e25d79f56d_pants-9.svg"
-   },
-   {
-    "key": "pants-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475d11d278608328eaa1a_pants-10.svg"
-   },
-   {
-    "key": "pants-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475dadcd4bbf1b4d712b5_pants-11.svg"
-   },
-   {
-    "key": "pants-12",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475e3273f803b4d3d73b1_pants-12.svg"
-   },
-   {
-    "key": "pants-13",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475ecb2f93665e62c90b0_pants-13.svg"
-   },
-   {
-    "key": "pants-14",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475f5aa968a2d6f462db1_pants-14.svg"
-   },
-   {
-    "key": "pants-15",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475ff9d546e2e9533c72c_pants-15.svg"
-   },
-   {
-    "key": "pants-16",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b476083090cca3789719be_pants-16.svg"
-   },
-   {
-    "key": "pants-17",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4761171ee2624b1a1f28e_pants-17.svg"
-   },
-   {
-    "key": "pants-18",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4761b18815e14f876ff8a_pants-18.svg"
-   },
-   {
-    "key": "pants-19",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47624c0a789d917edba92_pants-19.svg"
-   },
-   {
-    "key": "pants-20",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4762cd724ba6daaf720ca_pants-20.svg"
-   }
-  ],
-  "shoes": [
-   {
-    "key": "shoe-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a2f5557ed96c21d00f3_shoe-1.svg"
-   },
-   {
-    "key": "shoe-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a4275b82a22bede28be_shoe-2.svg"
-   },
-   {
-    "key": "shoe-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a4bf027bfeecde77b99_shoe-3.svg"
-   },
-   {
-    "key": "shoe-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a5d33caf28bf884e189_shoe-4.svg"
-   },
-   {
-    "key": "shoe-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a6bab368cb672e57751_shoe-5.svg"
-   },
-   {
-    "key": "shoe-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a75e0ae8eda7aab32e1_shoe-6.svg"
-   },
-   {
-    "key": "shoe-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a7e2cbb0d5700ab99a3_shoe-7.svg"
-   },
-   {
-    "key": "shoe-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a89fdedba29db771986_shoe-8.svg"
-   },
-   {
-    "key": "shoe-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a932229640016ffe576_shoe-9.svg"
-   },
-   {
-    "key": "shoe-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a9d81022e43087dcaa1_shoe-10.svg"
-   },
-   {
-    "key": "shoe-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aac0f5b95bfbdb92228_shoe-11.svg"
-   },
-   {
-    "key": "shoe-12",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aca6ddf3cfecfdb9c21_shoe-12.svg"
-   },
-   {
-    "key": "shoe-13",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ad2cd7cb951eeff6bed_shoe-13.svg"
-   },
-   {
-    "key": "shoe-14",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ad9f38b7710f707f7d6_shoe-14.svg"
-   },
-   {
-    "key": "shoe-15",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ae19ed2798632a97d42_shoe-15.svg"
-   },
-   {
-    "key": "shoe-16",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aebcbebc1cd8d5ef237_shoe-16.svg"
-   },
-   {
-    "key": "shoe-17",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47af585c9b2f4b94b8b3a_shoe-17.svg"
-   },
-   {
-    "key": "shoe-18",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aff3da90fc75737a822_shoe-18.svg"
-   },
-   {
-    "key": "shoe-19",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b0bf40bdb594e865935_shoe-19.svg"
-   },
-   {
-    "key": "shoe-20",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b1406ed934b89398739_shoe-20.svg"
-   },
-   {
-    "key": "shoe-21",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b1d64a8844c964eb2bd_shoe-21.svg"
-   },
-   {
-    "key": "shoe-22",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b2e12f088e1b117b339_shoe-22.svg"
-   },
-   {
-    "key": "shoe-23",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b37fd3c36b689a283da_shoe-23.svg"
-   },
-   {
-    "key": "shoe-24",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b40265c42b087d76f06_shoe-24.svg"
-   },
-   {
-    "key": "shoe-25",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b4c71ee2624b1a2ae97_shoe-25.svg"
-   },
-   {
-    "key": "shoe-26",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b541f6e749ac3abe231_shoe-26.svg"
-   },
-   {
-    "key": "shoe-27",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b640c57b5b1192c0572_shoe-27.svg"
-   }
-  ],
-  "glasses": [
-   {
-    "key": "glasses-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416514f795bc99cc45c11_glasses-1.svg"
-   },
-   {
-    "key": "glasses-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416597e12c0d5a437209a_glasses-2.svg"
-   },
-   {
-    "key": "glasses-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41681fd3c36b68994d027_glasses-3.svg"
-   },
-   {
-    "key": "glasses-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4168a64bc19fccaa519b1_glasses-4.svg"
-   },
-   {
-    "key": "glasses-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416926e3ee6fe5449aba1_glasses-5.svg"
-   },
-   {
-    "key": "glasses-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41699b22ee95bf910238f_glasses-6.svg"
-   },
-   {
-    "key": "glasses-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416a21ad3328c920422ed_glasses-7.svg"
-   },
-   {
-    "key": "glasses-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416ab3090cca378896f65_glasses-8.svg"
-   },
-   {
-    "key": "glasses-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416b483d729459cf5b74e_glasses-9.svg"
-   },
-   {
-    "key": "glasses-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416bc993999fc872456db_glasses-10.svg"
-   },
-   {
-    "key": "glasses-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416c5e38be7701ed38eb4_glasses-11.svg"
-   }
-  ],
-  "hats": [
-   {
-    "key": "hat-1",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417cae606c1002fcf76d1_hat-1.svg"
-   },
-   {
-    "key": "hat-2",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417eddd63588729819e9c_hat-2.svg"
-   },
-   {
-    "key": "hat-3",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417f653fb5920dfdbcc33_hat-3.svg"
-   },
-   {
-    "key": "hat-4",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417fe95143c3d57619d9c_hat-4.svg"
-   },
-   {
-    "key": "hat-5",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4180756b3af73cf1acd8b_hat-5.svg"
-   },
-   {
-    "key": "hat-6",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4180ffca04397a2b18664_hat-6.svg"
-   },
-   {
-    "key": "hat-7",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41818a749f198992b49f2_hat-7.svg"
-   },
-   {
-    "key": "hat-8",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41821a6dae8bd34027460_hat-8.svg"
-   },
-   {
-    "key": "hat-9",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41831eaef62eb88d3a4ea_hat-9.svg"
-   },
-   {
-    "key": "hat-10",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4183a95d8af8b0e8b443c_hat-10.svg"
-   },
-   {
-    "key": "hat-11",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41844a30c0622e719a275_hat-11.svg"
-   },
-   {
-    "key": "hat-12",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418502fbb2acaddb3c673_hat-12.svg"
-   },
-   {
-    "key": "hat-13",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41859cbebc1cd8d50e835_hat-13.svg"
-   },
-   {
-    "key": "hat-14",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4186636b30e927333db45_hat-14.svg"
-   },
-   {
-    "key": "hat-15",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418750e4aed76894f92e8_hat-15.svg"
-   },
-   {
-    "key": "hat-16",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4187fab368cb672d77c4b_hat-16.svg"
-   },
-   {
-    "key": "hat-17",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41889265c42b087c97040_hat-17.svg"
-   },
-   {
-    "key": "hat-18",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4189756d5157f360ce27c_hat-18.svg"
-   },
-   {
-    "key": "hat-19",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4189e3090cca37889b8bf_hat-19.svg"
-   },
-   {
-    "key": "hat-20",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418a864e27f4007407bdf_hat-20.svg"
-   },
-   {
-    "key": "hat-21",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47bd3747c3f8fb1dc2ae2_hat-21.svg"
-   },
-   {
-    "key": "hat-22",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47bf5cd7cb951eeff97bc_hat-22.svg"
-   },
-   {
-    "key": "hat-23",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47c2e5557ed96c21d4ac0_hat-23.svg"
-   }
-  ]
- },
- "poses": [
-  {
-   "num": 1,
-   "name": "swimming",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6bed8528247b550eaae_swimming-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6c637cda6713023cb48_swimming-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6cf4afb299e08e3ee5a_swimming-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6d5e6056364ba60724c_swimming-dark.svg"
-   }
-  },
-  {
-   "num": 2,
-   "name": "dancing",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca39fd11fe7697143490_dancing-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca3d39d69308b39f975a_dancing-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca4315c6cf1b7aebb50b_dancing-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca44584b4013590ff2c1_dancing-dark.svg"
-   }
-  },
-  {
-   "num": 3,
-   "name": "sport",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c20115d87f025fec592bb_sport-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c2015ca0a0ddd3dee65a3_sport-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c201fc518675709dde0ec_sport-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c2023f9c74204738282b2_sport-dark.svg"
-   }
-  },
-  {
-   "num": 4,
-   "name": "thinking",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e90d3cf32b5f4bffc0d9_thinking-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e9117deda1e0da3ab67d_thinking-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e91a8dfc9625ec5d7569_thinking-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e92193a83a875fbb98de_thinking-dark.svg"
-   }
-  },
-  {
-   "num": 5,
-   "name": "diving",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb2de75d2a8b08b2fd74_diving-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb398dfc9625ec5eece8_diving-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb3d3e145ded46c56737_diving-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb41bee159001a329fc3_diving-dark.svg"
-   }
-  },
-  {
-   "num": 6,
-   "name": "hugging",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecaffd9a8501fd2c129f_hugging-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecbc3f294873e970f84f_hugging-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecbfc951bee223973e20_hugging-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecc34ef145bba3c22c09_hugging-dark.svg"
-   }
-  },
-  {
-   "num": 7,
-   "name": "hiphop",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed37faf105f060efc19f_hiphop-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed3b9f8a65125b5a5a6e_hiphop-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed3de1b10f8cbaa54d0d_hiphop-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed41167e9650bb7c9476_hiphop-dark.svg"
-   }
-  },
-  {
-   "num": 8,
-   "name": "thinking-2",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edb2ae1308df7e965d9b_thinking-2-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edb6ff82e1546b17f358_thinking-2-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edbb21fc9939b03f4ae9_thinking-2-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edbec84f5a0ff65f638a_thinking-2-dark.svg"
-   }
-  },
-  {
-   "num": 9,
-   "name": "confused",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee36429414487b692e22_confused-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee3da5cea3918a3ee6fe_confused-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee4015d2682e25c2b916_confused-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee4782d64ac008771669_confused-dark.svg"
-   }
-  },
-  {
-   "num": 10,
-   "name": "sad",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eec6f8b2da9e7161a466_sad-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eec91e34ba2b8ef6e9ec_sad-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eecf61bc84c22384e9aa_sad-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eed3066b21ce8df9a52a_sad-dark.svg"
-   }
-  },
-  {
-   "num": 11,
-   "name": "laying",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efcaac8917cb3e177740_laying-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efcd320af557f05277c3_laying-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efd10b582426aa608e7b_laying-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efd457cfb544f7ce9053_laying-dark.svg"
-   }
-  },
-  {
-   "num": 12,
-   "name": "funny-dancing",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07315d2682e25c4794a_funny-dancing-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f0773c79c4f098763d26_funny-dancing-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07b8c91c95e271e54c0_funny-dancing-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07f9bdfdf4fe9ace911_funny-dancing-dark.svg"
-   }
-  },
-  {
-   "num": 13,
-   "name": "sleeping",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f10b8a047e165105aef4_sleeping-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f10f9f8a65125b5d065e_sleeping-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f112167e9650bb7f351f_sleeping-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1163a0e32f45a41ba42_sleeping-dark.svg"
-   }
-  },
-  {
-   "num": 14,
-   "name": "jumping",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f19d1c6bfa0678bc6ec9_jumping-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a007b6c2117a63baa9_jumping-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a35c203ce825d271d7_jumping-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a7ef3762592bbe6591_jumping-dark.svg"
-   }
-  },
-  {
-   "num": 15,
-   "name": "flirting",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2002a175f91f8a7c436_flirty-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f203351738d87eb425ed_flirty-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2067d6974659cf3e504_flirty-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2093d7bcb9545508431_flirty-dark.svg"
-   }
-  },
-  {
-   "num": 16,
-   "name": "meditation",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f284e1a4db3c013f9db6_meditation-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f288977199fb0311c8e8_meditation-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f29b61bc84c22387985a_meditation-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f29786b0e587f7e4c8cc_meditation-dark.svg"
-   }
-  },
-  {
-   "num": 17,
-   "name": "sitting",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2f8b8a9c20369914746_sitting-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2fb8fb7da571cb9ec91_sitting-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2feeffff4abec36f208_sitting-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3020a9ea6cf01c673e5_sitting-dark.svg"
-   }
-  },
-  {
-   "num": 18,
-   "name": "eating",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f370b8a9c2036991a6c1_eating-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3722ce50222472358db_eating-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f37586b0e587f7e59d69_eating-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f37922a124e97fd4014d_eating-dark.svg"
-   }
-  },
-  {
-   "num": 19,
-   "name": "yoga",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3cd0efc34dfb26dc584_yoga-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d1b9af44a4d936b874_yoga-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d4e8dfaa7bfdd3f8c3_yoga-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d70b582426aa6390dc_yoga-dark.svg"
-   }
-  },
-  {
-   "num": 20,
-   "name": "hey",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f44954ed47f11e373297_hey-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f44d066b21ce8dfdbedf_hey-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f450de983d02efe8cf96_hey-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f454066b21ce8dfdc1d4_hey-dark.svg"
-   }
-  },
-  {
-   "num": 21,
-   "name": "waving",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f5044593ae57b52b4f11_waving-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f507ac8917cb3e1b5efc_waving-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f50aae1308df7e9bceff_waving-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f50e31682258e3c15a8e_waving-dark.svg"
-   }
-  },
-  {
-   "num": 22,
-   "name": "standing",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa6d3f294873e97a254a_standing-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa70294f928ab8d59b1f_standing-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa74fce80ab795231d5d_standing-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa7757cfb544f7d5c689_standing-dark.svg"
-   }
-  },
-  {
-   "num": 23,
-   "name": "chilling",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fabc96e24ffc2a39b519_chilling-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fabf4ef145bba3cb684c_chilling-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fac2294f928ab8d5cbdc_chilling-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fac682d64ac0087fc38a_chilling-dark.svg"
-   }
-  },
-  {
-   "num": 24,
-   "name": "running-away",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb03e95085a5e57de44c_running-away-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb06e3048b072e1a3eb5_running-away-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb0a294f928ab8d6045d_running-away-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb0db8a9c2036996edc2_running-away-dark.svg"
-   }
-  },
-  {
-   "num": 25,
-   "name": "running",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5931682258e3c54432_running-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5c3d7bcb9545571495_running-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5f31682258e3c5478b_running-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb665a1fac0a326340e5_running-dark.svg"
-   }
-  },
-  {
-   "num": 29,
-   "name": "shooting",
-   "bodies": {
-    "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68775166dfe4a0e17e52f2b6_shooting-light.svg",
-    "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877516a76a8c63fd1ad2995_shooting-med.svg",
-    "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877516e76a8c63fd1ad2c4e_shooting-tan.svg",
-    "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751727322a70ec5482d5f_shooting-dark.svg"
-   }
-  }
- ],
- "covers": [
-  {
-   "id": "cover-1",
-   "n": 1,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687368d172955961e101ca00_actual_cover_1.webp",
-   "occasion": "свадьба",
-   "text": "НАША ЛЮБОВНАЯ ИСТОРИЯ",
-   "color": "#FDFCF7",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-2",
-   "n": 2,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687368dc825fc4da4b9e368e_actual_cover_2.webp",
-   "occasion": "свадьба",
-   "text": "КНИГА ПОД ВИНО",
-   "color": "#D8191B",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-3",
-   "n": 3,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736927db4d07b96ba436fa_actual_cover_3.webp",
-   "occasion": "наш праздник",
-   "text": "ЛЮБЛЮ ТЕБЯ",
-   "color": "#000000",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-4",
-   "n": 4,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736934f73b6b65f78dadda_actual_cover_4.webp",
-   "occasion": "выпускной",
-   "text": "ТЫ МОЯ ЗВЕЗДОЧКА",
-   "color": "#F8F8FA",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-5",
-   "n": 5,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873694265d4ed3a72ae0079_actual_cover_5.webp",
-   "occasion": "День Рождения",
-   "text": "ТЫ САМЫЙ ЛУЧШИЙ",
-   "color": "#C2A03E",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-6",
-   "n": 6,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e7f55180fc605b27c11_actual_cover_7.webp",
-   "occasion": "День Рождения",
-   "text": "НАША ЗВЕЗДНАЯ ИСТРАИЯ",
-   "color": "#000000",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-7",
-   "n": 7,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687371ebd2c07e170428fbeb_actual_cover_6.webp",
-   "occasion": "8 марта",
-   "text": "ДЛЯ САМОЙ КРАСИВОЙ ",
-   "color": "#FFFCF5",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-8",
-   "n": 8,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e8533838b79615f28ce_actual_cover_8.webp",
-   "occasion": "8 марта",
-   "text": "ОТ СЕРДЦА И ОТ ПОЧЕК...",
-   "color": "#F8F6F9",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-9",
-   "n": 9,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e99de0e69517a5a175e_actual_cover_10.webp",
-   "occasion": "наш праздник",
-   "text": "С НОВЫМ ГОДОМ!",
-   "color": "#748F97",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-10",
-   "n": 10,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68737210b3064782ad1514cb_actual_cover_9.webp",
-   "occasion": "8 марта",
-   "text": "САМОМУ ЯРКОМУ ЦВЕТОЧКУ",
-   "color": "#FF93A9",
-   "textX": 0,
-   "textY": 160,
-   "giver": null,
-   "receiver": null,
-   "stackables": []
-  },
-  {
-   "id": "cover-11",
-   "n": 11,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f28630a6b555293c3f9_actual_cover_11.webp",
-   "occasion": "День Рождения",
-   "text": "СПАСИБО ТЕБЕ ЧТО ПОМОГАЕШЬ!",
-   "color": "#DCEEDB",
-   "textX": 0,
-   "textY": 205,
-   "giver": {
-    "pose": 10,
-    "x": 40,
-    "y": 85,
-    "size": "medium",
-    "flip": true
-   },
-   "receiver": {
-    "pose": 12,
-    "x": 33,
-    "y": -10,
-    "size": "small",
-    "flip": true
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c020866b45fde91a81_Frame%201006.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c3fabc6aaaec941aeb_Frame%201004.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c7fabc6aaaec941dc0_Frame%201003.svg"
-   ]
-  },
-  {
-   "id": "cover-12",
-   "n": 12,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f311dd2d8c3fb24fa9c_actual_cover_12.webp",
-   "occasion": "наш праздник",
-   "text": "ВМЕСТЕ МЫ ПРОЙДЁМ ВСЁ!",
-   "color": "#D7F0FA",
-   "textX": 0,
-   "textY": 200,
-   "giver": {
-    "pose": 6,
-    "x": 30,
-    "y": 45,
-    "size": "small",
-    "flip": true
-   },
-   "receiver": {
-    "pose": 22,
-    "x": 55,
-    "y": 45,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877b9d13bacb77f2dea866b_Frame%201010.svg"
-   ],
-   "hideStack": [
-    "c:cover-12:s1"
-   ],
-   "props": [
+  "tones": [
     {
-     "src": "/assets/img/props/umbrella-stick-12.svg",
-     "layer": "back"
+      "key": "1",
+      "label": "light",
+      "color": "#ffefe1",
+      "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70bc1f12a608b1ea0ef_Frame%20336.png"
     },
     {
-     "src": "/assets/img/props/umbrella-hook-12.svg",
-     "layer": "front"
-    }
-   ]
-  },
-  {
-   "id": "cover-13",
-   "n": 13,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f3bbef9bc801421bcd6_actual_cover_13.webp",
-   "occasion": "День Рождения",
-   "text": "НАША ПРЕКРАСНАЯ ИСТОРИЯ ЛЮБВИ",
-   "color": "#A1C0D9",
-   "textX": 0,
-   "textY": 200,
-   "giver": {
-    "pose": 6,
-    "x": 70,
-    "y": 85,
-    "size": "small",
-    "flip": true
-   },
-   "receiver": {
-    "pose": 6,
-    "x": 100,
-    "y": 85,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": []
-  },
-  {
-   "id": "cover-14",
-   "n": 14,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fbb1048141acaae06cb_actual_cover_14.webp",
-   "occasion": "свадьба",
-   "text": "РИСУЕМ СВОЮ КАРТИНУ",
-   "color": "#81AACE",
-   "textX": 0,
-   "textY": 40,
-   "giver": {
-    "pose": 3,
-    "x": 5,
-    "y": 85,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 3,
-    "x": 75,
-    "y": 85,
-    "size": "small",
-    "flip": true
-   },
-   "stackables": []
-  },
-  {
-   "id": "cover-15",
-   "n": 15,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fc653d9a25e35900879_actual_cover_15.webp",
-   "occasion": "свадьба",
-   "text": "ИДЕАЛЬНАЯ ПРОПОРЦИЯ",
-   "color": "#FCFBF7",
-   "textX": 0,
-   "textY": 185,
-   "giver": {
-    "pose": 21,
-    "x": -20,
-    "y": 30,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 21,
-    "x": 30,
-    "y": 30,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": []
-  },
-  {
-   "id": "cover-16",
-   "n": 16,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fcd457ec0ffaecc702e_actual_cover_16.webp",
-   "occasion": "выпускной",
-   "text": "МОЙ АНГЕЛОЧЕК!",
-   "color": "#FFFFFF",
-   "textX": 0,
-   "textY": 210,
-   "giver": {
-    "pose": 5,
-    "x": 10,
-    "y": 5,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 9,
-    "x": 40,
-    "y": 60,
-    "size": "medium",
-    "flip": false
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877d5aa86ad6a96d55011c8_Frame%201023.svg"
-   ]
-  },
-  {
-   "id": "cover-17",
-   "n": 17,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fd418b1ad3911bc50fb_actual_cover_17.webp",
-   "occasion": "свадьба",
-   "text": "ВРЕМЯ С ТОБОЙ БЕЗЦЕННО ",
-   "color": "#F1F1F1",
-   "textX": 0,
-   "textY": 185,
-   "giver": {
-    "pose": 14,
-    "x": 20,
-    "y": 63,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": null,
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e40338dc572b5cf8c8d05_Frame%20932.svg"
-   ]
-  },
-  {
-   "id": "cover-18",
-   "n": 18,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fdcce1d1e40a8a73daf_actual_cover_18.webp",
-   "occasion": "выпускной",
-   "text": "С ТОБОЙ НЕ СКУЧНО!",
-   "color": "#DCEEDB",
-   "textX": 0,
-   "textY": 210,
-   "giver": {
-    "pose": 16,
-    "x": 40,
-    "y": 85,
-    "size": "medium",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 12,
-    "x": 33,
-    "y": -10,
-    "size": "small",
-    "flip": true
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c7fabc6aaaec941dc0_Frame%201003.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c3fabc6aaaec941aeb_Frame%201004.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ddf419a25fcf866d816d_Frame%201037.svg"
-   ]
-  },
-  {
-   "id": "cover-19",
-   "n": 19,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fe51948f9efcb9731c7_actual_cover_19.webp",
-   "occasion": "8 марта",
-   "text": "ИСТОРИЯ СЧАСТЛИВОЙ ПАРЫ",
-   "color": "#D7F0FA",
-   "textX": 0,
-   "textY": 30,
-   "giver": {
-    "pose": 22,
-    "x": 40,
-    "y": 90,
-    "size": "medium",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 6,
-    "x": 0,
-    "y": 90,
-    "size": "medium",
-    "flip": true
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e1b9bca18e1d133f8fd2_Frame%201042.svg"
-   ],
-   "hideStack": [
-    "c:cover-19:s1"
-   ],
-   "props": [
-    {
-     "src": "/assets/img/props/umbrella-stick-19.svg",
-     "layer": "back"
+      "key": "2",
+      "label": "med",
+      "color": "#ffd4bc",
+      "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70b2475fe16ca2fce61_Frame%20335.png"
     },
     {
-     "src": "/assets/img/props/umbrella-hook-19.svg",
-     "layer": "front"
+      "key": "3",
+      "label": "tan",
+      "color": "#e8b483",
+      "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d70b57459747a2245dda_Frame%20334.png"
+    },
+    {
+      "key": "4",
+      "label": "dark",
+      "color": "#8f644d",
+      "body": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b6d69168ab17c51c1c0aa6_Frame%20393.png"
     }
-   ]
+  ],
+  "underwear": {
+    "bottom": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b579cf2649e90b97788f6a_Frame%20394%20(1).svg",
+    "bra": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b57d22f3faf1bcad599410_Frame%20351.svg"
   },
-  {
-   "id": "cover-20",
-   "n": 20,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736feca088848d0fe99159_actual_cover_20.webp",
-   "occasion": "День Рождения",
-   "text": "НА 7 НЕБЕ",
-   "color": "#FAEFD9",
-   "textX": 0,
-   "textY": 205,
-   "giver": {
-    "pose": 5,
-    "x": -60,
-    "y": 40,
-    "size": "medium",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 5,
-    "x": 50,
-    "y": 40,
-    "size": "medium",
-    "flip": false
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e56381fa7c88f67819d9_Frame%201034.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e34e7b8bc0f8d40abb20_Frame%201031.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e35041a4db10d842e017_Frame%201030.svg"
-   ]
-  },
-  {
-   "id": "cover-21",
-   "n": 21,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736ff8d9c584938d655bc9_actual_cover_21.webp",
-   "occasion": "выпускной",
-   "text": "ДАВАЙ НАПИШЕМ СВОЮ КНИГУ О ЛЮБВИ?",
-   "color": "#EDD95F",
-   "textX": 0,
-   "textY": 205,
-   "giver": {
-    "pose": 6,
-    "x": 85,
-    "y": 85,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 6,
-    "x": 55,
-    "y": 85,
-    "size": "small",
-    "flip": true
-   },
-   "stackables": []
-  },
-  {
-   "id": "cover-22",
-   "n": 22,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687370017195040e4d42dec9_actual_cover_22.webp",
-   "occasion": "наш праздник",
-   "text": "ТЫ + Я = ЛЮБОВЬ",
-   "color": "#FCFBF7",
-   "textX": 0,
-   "textY": 185,
-   "giver": {
-    "pose": 22,
-    "x": 30,
-    "y": 15,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": {
-    "pose": 22,
-    "x": -20,
-    "y": 15,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": []
-  },
-  {
-   "id": "cover-23",
-   "n": 23,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873700ddb4d07b96ba63a6f_actual_cover_23.webp",
-   "occasion": "8 марта",
-   "text": "СЧАСТЛИВЫЕ ВРЕМЯ НЕ СЧИТАЮТ!",
-   "color": "#828080",
-   "textX": 0,
-   "textY": 180,
-   "giver": {
-    "pose": 14,
-    "x": 18,
-    "y": 65,
-    "size": "small",
-    "flip": false
-   },
-   "receiver": null,
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e40338dc572b5cf8c8d05_Frame%20932.svg"
-   ]
-  },
-  {
-   "id": "cover-24",
-   "n": 24,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68737017e0c1702f3d2d33ef_actual_cover_24.webp",
-   "occasion": "8 марта",
-   "text": "ВЫСТРЕЛ ПРЯМО В СЕРДЦЕ",
-   "color": "#FAEDED",
-   "textX": 0,
-   "textY": 118,
-   "giver": {
-    "pose": 29,
-    "x": -10,
-    "y": 0,
-    "size": "small",
-    "flip": true
-   },
-   "receiver": {
-    "pose": 4,
-    "x": 85,
-    "y": 140,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ee851aa5ca43a9c487d3_Frame%201012.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ee88b6b1b01405be7750_Frame%201013.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg"
-   ],
-   "hideStack": [
-    "c:cover-24:s3",
-    "c:cover-24:s4"
-   ],
-   "heroProps": {
-    "giver": [
-     {
-      "src": "/assets/img/props/bow-p29.svg",
-      "box": [
-       600,
-       300,
-       800,
-       1400
-      ],
-      "z": -1
-     },
-     {
-      "src": "/assets/img/props/bowstring-p29.svg",
-      "box": [
-       600,
-       300,
-       800,
-       1400
-      ],
-      "z": 13
-     }
+  "categories": {
+    "face": [
+      {
+        "key": "skin_tone_1_face_1",
+        "tone": "1",
+        "shape": 1,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20b35144efa914d4e1_pose-1-skin_tone_1_face_1.svg"
+      },
+      {
+        "key": "skin_tone_1_face_2",
+        "tone": "1",
+        "shape": 2,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d205f324ac3f33ae9e2_pose-1-skin_tone_1_face_2.svg"
+      },
+      {
+        "key": "skin_tone_1_face_3",
+        "tone": "1",
+        "shape": 3,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20c6bc26fb51ec27ee_pose-1-skin_tone_1_face_3.svg"
+      },
+      {
+        "key": "skin_tone_1_face_4",
+        "tone": "1",
+        "shape": 4,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2113e3300e22088ab3_pose-1-skin_tone_1_face_4.svg"
+      },
+      {
+        "key": "skin_tone_1_face_5",
+        "tone": "1",
+        "shape": 5,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20fcf9ac0d43f0ad3f_pose-1-skin_tone_1_face_5.svg"
+      },
+      {
+        "key": "skin_tone_1_face_6",
+        "tone": "1",
+        "shape": 6,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20410550cb3c4a6a42_pose-1-skin_tone_1_face_6.svg"
+      },
+      {
+        "key": "skin_tone_1_face_7",
+        "tone": "1",
+        "shape": 7,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d20d2164e10c01400d2_pose-1-skin_tone_1_face_7.svg"
+      },
+      {
+        "key": "skin_tone_2_face_1",
+        "tone": "2",
+        "shape": 1,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2087e457b5e3ba27e0_pose-1-skin_tone_2_face_1.svg"
+      },
+      {
+        "key": "skin_tone_2_face_2",
+        "tone": "2",
+        "shape": 2,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22f40bdb594e49098e_pose-1-skin_tone_2_face_2.svg"
+      },
+      {
+        "key": "skin_tone_2_face_3",
+        "tone": "2",
+        "shape": 3,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22e38646b7c7602789_pose-1-skin_tone_2_face_3.svg"
+      },
+      {
+        "key": "skin_tone_2_face_4",
+        "tone": "2",
+        "shape": 4,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22fb4f82f391fa0d64_pose-1-skin_tone_2_face_4.svg"
+      },
+      {
+        "key": "skin_tone_2_face_5",
+        "tone": "2",
+        "shape": 5,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2298721befae6b9e76_pose-1-skin_tone_2_face_5.svg"
+      },
+      {
+        "key": "skin_tone_2_face_6",
+        "tone": "2",
+        "shape": 6,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22723be6c506c2d016_pose-1-skin_tone_2_face_6.svg"
+      },
+      {
+        "key": "skin_tone_2_face_7",
+        "tone": "2",
+        "shape": 7,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d225b2139addbd641bc_pose-1-skin_tone_2_face_7.svg"
+      },
+      {
+        "key": "skin_tone_3_face_1",
+        "tone": "3",
+        "shape": 1,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d226885f975de6baf73_pose-1-skin_tone_3_face_1.svg"
+      },
+      {
+        "key": "skin_tone_3_face_2",
+        "tone": "3",
+        "shape": 2,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d22aa6715bd7018e5bf_pose-1-skin_tone_3_face_2.svg"
+      },
+      {
+        "key": "skin_tone_3_face_3",
+        "tone": "3",
+        "shape": 3,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23a6816ca771610acc_pose-1-skin_tone_3_face_3.svg"
+      },
+      {
+        "key": "skin_tone_3_face_4",
+        "tone": "3",
+        "shape": 4,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23ca27902565c96eff_pose-1-skin_tone_3_face_4.svg"
+      },
+      {
+        "key": "skin_tone_3_face_5",
+        "tone": "3",
+        "shape": 5,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23b8971d1b176fd9d2_pose-1-skin_tone_3_face_5.svg"
+      },
+      {
+        "key": "skin_tone_3_face_6",
+        "tone": "3",
+        "shape": 6,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23d0f413c4b0f12fcf_pose-1-skin_tone_3_face_6.svg"
+      },
+      {
+        "key": "skin_tone_3_face_7",
+        "tone": "3",
+        "shape": 7,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2302bb7a0ccf4cb586_pose-1-skin_tone_3_face_7.svg"
+      },
+      {
+        "key": "skin_tone_4_face_1",
+        "tone": "4",
+        "shape": 1,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23d18d59f6b78fc8fe_pose-1-skin_tone_4_face_1.svg"
+      },
+      {
+        "key": "skin_tone_4_face_2",
+        "tone": "4",
+        "shape": 2,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d233e4f056279c15ca4_pose-1-skin_tone_4_face_2.svg"
+      },
+      {
+        "key": "skin_tone_4_face_3",
+        "tone": "4",
+        "shape": 3,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d23715be375e5f11189_pose-1-skin_tone_4_face_3.svg"
+      },
+      {
+        "key": "skin_tone_4_face_4",
+        "tone": "4",
+        "shape": 4,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d241a0f0ede927f062c_pose-1-skin_tone_4_face_4.svg"
+      },
+      {
+        "key": "skin_tone_4_face_5",
+        "tone": "4",
+        "shape": 5,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2400634d2595b11cf3_pose-1-skin_tone_4_face_5.svg"
+      },
+      {
+        "key": "skin_tone_4_face_6",
+        "tone": "4",
+        "shape": 6,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d2420764929ebc39107_pose-1-skin_tone_4_face_6.svg"
+      },
+      {
+        "key": "skin_tone_4_face_7",
+        "tone": "4",
+        "shape": 7,
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b28d24bfd24f1685a55171_pose-1-skin_tone_4_face_7.svg"
+      }
+    ],
+    "hair": [
+      {
+        "key": "silver-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414c750a5f674d46f8142_silver-1.svg",
+        "color": "silver",
+        "style": 1
+      },
+      {
+        "key": "light-blonde-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413ca62a8ec6d56303e1c_light-blonde-1.svg",
+        "color": "light-blonde",
+        "style": 1
+      },
+      {
+        "key": "dark-blonde-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412f00e4aed76894ef226_dark-blonde-1.svg",
+        "color": "dark-blonde",
+        "style": 1
+      },
+      {
+        "key": "ginger-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412065f324ac3f3699e34_ginger-1.svg",
+        "color": "ginger",
+        "style": 1
+      },
+      {
+        "key": "brown-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b410ea458a47d9d8184f48_brown-1.svg",
+        "color": "brown",
+        "style": 1
+      },
+      {
+        "key": "black-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295a83d9c61ae25e18241_black-1.svg",
+        "color": "black",
+        "style": 1
+      },
+      {
+        "key": "silver-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4152ba749f198992af405_silver-2.svg",
+        "color": "silver",
+        "style": 2
+      },
+      {
+        "key": "light-blonde-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413d2e37fd1de44edecd5_light-blonde-2.svg",
+        "color": "light-blonde",
+        "style": 2
+      },
+      {
+        "key": "dark-blonde-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b412f764e27f40073fd746_dark-blonde-2.svg",
+        "color": "dark-blonde",
+        "style": 2
+      },
+      {
+        "key": "ginger-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4120ca4db7e870433161c_ginger-2.svg",
+        "color": "ginger",
+        "style": 2
+      },
+      {
+        "key": "brown-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b410f8eaef62eb88d2c360_brown-2.svg",
+        "color": "brown",
+        "style": 2
+      },
+      {
+        "key": "black-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295b9aa968a2d6f09a54a_black-2.svg",
+        "color": "black",
+        "style": 2
+      },
+      {
+        "key": "silver-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4153483d729459cf58037_silver-3.svg",
+        "color": "silver",
+        "style": 3
+      },
+      {
+        "key": "light-blonde-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413dc2199006db8ba4cbd_light-blonde-3.svg",
+        "color": "light-blonde",
+        "style": 3
+      },
+      {
+        "key": "dark-blonde-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41300fd3c36b68994674b_dark-blonde-3.svg",
+        "color": "dark-blonde",
+        "style": 3
+      },
+      {
+        "key": "ginger-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41215fdedba29db67c80b_ginger-3.svg",
+        "color": "ginger",
+        "style": 3
+      },
+      {
+        "key": "brown-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4110192d2b3414cd45998_brown-3.svg",
+        "color": "brown",
+        "style": 3
+      },
+      {
+        "key": "black-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295c7a6dae8bd34d52a80_black-3.svg",
+        "color": "black",
+        "style": 3
+      },
+      {
+        "key": "silver-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4153ce4876ff3e991d23b_silver-4.svg",
+        "color": "silver",
+        "style": 4
+      },
+      {
+        "key": "light-blonde-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413e63f3c2a85d802948e_light-blonde-4.svg",
+        "color": "light-blonde",
+        "style": 4
+      },
+      {
+        "key": "dark-blonde-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41309743143296767fcc8_dark-blonde-4.svg",
+        "color": "dark-blonde",
+        "style": 4
+      },
+      {
+        "key": "ginger-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4121f4770c1e3b2d89ad5_ginger-4.svg",
+        "color": "ginger",
+        "style": 4
+      },
+      {
+        "key": "brown-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4110b33caf28bf875c801_brown-4.svg",
+        "color": "brown",
+        "style": 4
+      },
+      {
+        "key": "black-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295d18dc09cab89a0c86f_black-4.svg",
+        "color": "black",
+        "style": 4
+      },
+      {
+        "key": "silver-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4154464bc19fccaa4f421_silver-5.svg",
+        "color": "silver",
+        "style": 5
+      },
+      {
+        "key": "light-blonde-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413efe6240a05b9fa45b8_light-blonde-5.svg",
+        "color": "light-blonde",
+        "style": 5
+      },
+      {
+        "key": "dark-blonde-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41310f83c98700c14658c_dark-blonde-5.svg",
+        "color": "dark-blonde",
+        "style": 5
+      },
+      {
+        "key": "ginger-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41229715be375e51f3d80_ginger-5.svg",
+        "color": "ginger",
+        "style": 5
+      },
+      {
+        "key": "brown-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41115d86d0aa403490964_brown-5.svg",
+        "color": "brown",
+        "style": 5
+      },
+      {
+        "key": "black-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295e4a30c0622e7eae8e9_black-5.svg",
+        "color": "black",
+        "style": 5
+      },
+      {
+        "key": "silver-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4154c0418f1197a5a2a3c_silver-6.svg",
+        "color": "silver",
+        "style": 6
+      },
+      {
+        "key": "light-blonde-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413fe2bb82a30cba15b78_light-blonde-6.svg",
+        "color": "light-blonde",
+        "style": 6
+      },
+      {
+        "key": "dark-blonde-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4131bb07856dcd8879937_dark-blonde-6.svg",
+        "color": "dark-blonde",
+        "style": 6
+      },
+      {
+        "key": "ginger-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4124251d51ac2a71c9b33_ginger-6.svg",
+        "color": "ginger",
+        "style": 6
+      },
+      {
+        "key": "brown-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4111d3f09d20364be144c_brown-6.svg",
+        "color": "brown",
+        "style": 6
+      },
+      {
+        "key": "black-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295ede186a04d8b04584b_black-6.svg",
+        "color": "black",
+        "style": 6
+      },
+      {
+        "key": "silver-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4155633caf28bf87646a7_silver-7.svg",
+        "color": "silver",
+        "style": 7
+      },
+      {
+        "key": "light-blonde-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41406fcced28905570d20_light-blonde-7.svg",
+        "color": "light-blonde",
+        "style": 7
+      },
+      {
+        "key": "dark-blonde-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41328de1360479bcad29b_dark-blonde-7.svg",
+        "color": "dark-blonde",
+        "style": 7
+      },
+      {
+        "key": "ginger-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4124da392231854305a27_ginger-7.svg",
+        "color": "ginger",
+        "style": 7
+      },
+      {
+        "key": "brown-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41137e4876ff3e9915f5f_brown-7.svg",
+        "color": "brown",
+        "style": 7
+      },
+      {
+        "key": "black-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b295f8d67478a5e651127e_black-7.svg",
+        "color": "black",
+        "style": 7
+      },
+      {
+        "key": "silver-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41560492c916cc2c0bab3_silver-8.svg",
+        "color": "silver",
+        "style": 8
+      },
+      {
+        "key": "light-blonde-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414157f1c930462aa2e1a_light-blonde-8.svg",
+        "color": "light-blonde",
+        "style": 8
+      },
+      {
+        "key": "dark-blonde-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b413310c57b5b1191bd8e9_dark-blonde-8.svg",
+        "color": "dark-blonde",
+        "style": 8
+      },
+      {
+        "key": "ginger-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4125415f5b7b61ebb4f79_ginger-8.svg",
+        "color": "ginger",
+        "style": 8
+      },
+      {
+        "key": "brown-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4113f4c03cecaabaab409_brown-8.svg",
+        "color": "brown",
+        "style": 8
+      },
+      {
+        "key": "black-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2961462bdee590444483e_black-8.svg",
+        "color": "black",
+        "style": 8
+      },
+      {
+        "key": "silver-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41567a41a17d562acd117_silver-9.svg",
+        "color": "silver",
+        "style": 9
+      },
+      {
+        "key": "light-blonde-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b414202bcc1dd2b9ef476d_light-blonde-9.svg",
+        "color": "light-blonde",
+        "style": 9
+      },
+      {
+        "key": "dark-blonde-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4133ec1043de5add3fa7b_dark-blonde-9.svg",
+        "color": "dark-blonde",
+        "style": 9
+      },
+      {
+        "key": "ginger-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4125b97a47e5933c1c48d_ginger-9.svg",
+        "color": "ginger",
+        "style": 9
+      },
+      {
+        "key": "brown-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4114e00503ee3a44411eb_brown-9.svg",
+        "color": "brown",
+        "style": 9
+      },
+      {
+        "key": "black-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2961ef38b7710f7cc3d6c_black-9.svg",
+        "color": "black",
+        "style": 9
+      },
+      {
+        "key": "silver-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b415992bcc1dd2b9ef774a_silver-10.svg",
+        "color": "silver",
+        "style": 10
+      },
+      {
+        "key": "light-blonde-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41435f027bfeecdd877a8_light-blonde-10.svg",
+        "color": "light-blonde",
+        "style": 10
+      },
+      {
+        "key": "dark-blonde-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41345a4de250886e368d8_dark-blonde-10.svg",
+        "color": "dark-blonde",
+        "style": 10
+      },
+      {
+        "key": "ginger-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4126397a47e5933c1c54f_ginger-10.svg",
+        "color": "ginger",
+        "style": 10
+      },
+      {
+        "key": "brown-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41156caa178bd57a4c20a_brown-10.svg",
+        "color": "brown",
+        "style": 10
+      },
+      {
+        "key": "black-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29627921cf1180679716f_black-10.svg",
+        "color": "black",
+        "style": 10
+      },
+      {
+        "key": "silver-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b415a324af393e93d1b269_silver-11.svg",
+        "color": "silver",
+        "style": 11
+      },
+      {
+        "key": "light-blonde-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4143e5f8a5cce19dedaa7_light-blonde-11.svg",
+        "color": "light-blonde",
+        "style": 11
+      },
+      {
+        "key": "dark-blonde-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4134e42e2b142ba2715aa_dark-blonde-11.svg",
+        "color": "dark-blonde",
+        "style": 11
+      },
+      {
+        "key": "ginger-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4126b723be6c506f28b6a_ginger-11.svg",
+        "color": "ginger",
+        "style": 11
+      },
+      {
+        "key": "brown-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4115dba6b0a04e20ee221_brown-11.svg",
+        "color": "brown",
+        "style": 11
+      },
+      {
+        "key": "black-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2962e28aa2dc316ae187a_black-11.svg",
+        "color": "black",
+        "style": 11
+      }
+    ],
+    "eyes": [
+      {
+        "key": "female-eyes-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294bce98db8a097547c13_female-eyes-1.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294c500503ee3a4164db4_female-eyes-2.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294cfca27902565ca2e10_female-eyes-3.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294db43d87184ce2a3148_female-eyes-4.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294e38ac16bc353c957c6_female-eyes-5.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294f11fbe5172187e5adc_female-eyes-6.svg",
+        "gender": "female"
+      },
+      {
+        "key": "female-eyes-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294fe20764929ebc4373e_female-eyes-7.svg",
+        "gender": "female"
+      },
+      {
+        "key": "male-eyes-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2945f98721befae6c379b_male-eyes-1.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2946a579c757fed09432d_male-eyes-2.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294832a6232ea09abea3c_male-eyes-3.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2948c492c916cc2939dc5_male-eyes-4.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29495579c757fed0949ad_male-eyes-5.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294a12f364b4f2bfa50f2_male-eyes-6.svg",
+        "gender": "male"
+      },
+      {
+        "key": "male-eyes-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b294a8d2164e10c014acb9_male-eyes-7.svg",
+        "gender": "male"
+      }
+    ],
+    "eyebrows": [
+      {
+        "key": "male-eyebrows-4",
+        "gender": "male",
+        "hairColor": "black",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ab4989f52413cc3f87_pose-1-male-eyebrows-4.svg"
+      },
+      {
+        "key": "male-eyebrows-2",
+        "gender": "male",
+        "hairColor": "light-blonde",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aae8f5fa3b7bddaa59_pose-1-male-eyebrows-2.svg"
+      },
+      {
+        "key": "male-eyebrows-5",
+        "gender": "male",
+        "hairColor": "silver",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ac3e4f056279c1c752_pose-1-male-eyebrows-5.svg"
+      },
+      {
+        "key": "male-eyebrows-3",
+        "gender": "male",
+        "hairColor": "dark-blonde",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291ab8999d385d41ec021_pose-1-male-eyebrows-3.svg"
+      },
+      {
+        "key": "male-eyebrows-1",
+        "gender": "male",
+        "hairColor": "brown",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aa7f6d21cd2a0be2fc_pose-1-male-eyebrows-1.svg"
+      },
+      {
+        "key": "male-eyebrows-6",
+        "gender": "male",
+        "hairColor": "ginger",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aca09860001d844276_pose-1-male-eyebrows-6.svg"
+      },
+      {
+        "key": "female-eyebrows-4",
+        "gender": "female",
+        "hairColor": "black",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aac082fa02d7bd12db_pose-1-female-eyebrows-4.svg"
+      },
+      {
+        "key": "female-eyebrows-2",
+        "gender": "female",
+        "hairColor": "light-blonde",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aac082fa02d7bd12ee_pose-1-female-eyebrows-2.svg"
+      },
+      {
+        "key": "female-eyebrows-5",
+        "gender": "female",
+        "hairColor": "silver",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aad1023393013fed12_pose-1-female-eyebrows-5.svg"
+      },
+      {
+        "key": "female-eyebrows-3",
+        "gender": "female",
+        "hairColor": "dark-blonde",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aaaa0603ac47fbb6ad_pose-1-female-eyebrows-3.svg"
+      },
+      {
+        "key": "female-eyebrows-1",
+        "gender": "female",
+        "hairColor": "brown",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aaa6816ca771618e91_pose-1-female-eyebrows-1.svg"
+      },
+      {
+        "key": "female-eyebrows-6",
+        "gender": "female",
+        "hairColor": "ginger",
+        "src": "https://cdn.prod.website-files.com/67572b0fb2ebd22744a4bd96/68b291aacbb6689c94b6212e_pose-1-female-eyebrows-6.svg"
+      }
+    ],
+    "nose": [
+      {
+        "key": "nose-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4738ff572fb0f99caa2d7_nose-1.svg"
+      },
+      {
+        "key": "nose-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47397d038f04e5d78a639_nose-2.svg"
+      },
+      {
+        "key": "nose-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4739fd0efab7da8f02d22_nose-3.svg"
+      },
+      {
+        "key": "nose-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b473ac3f3c2a85d810cc25_nose-4.svg"
+      },
+      {
+        "key": "nose-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b473b7ed7567b1fcdba39c_nose-5.svg"
+      }
+    ],
+    "mouth": [
+      {
+        "key": "mouth-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d40625b72f629b876d5_mouth-1.svg"
+      },
+      {
+        "key": "mouth-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d50627ead40811aa106_mouth-2.svg"
+      },
+      {
+        "key": "mouth-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d654f9b0dba5310c7fa_mouth-3.svg"
+      },
+      {
+        "key": "mouth-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225d8f5348acd4a6e75d9f_mouth-4.svg"
+      },
+      {
+        "key": "mouth-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225da20a075acb87547288_mouth-5.svg"
+      },
+      {
+        "key": "mouth-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225db0eeb0ae4cf8591bcb_mouth-6.svg"
+      },
+      {
+        "key": "mouth-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225dd9e087b97e5e392c67_mouth-7.svg"
+      },
+      {
+        "key": "mouth-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e145d1c2497ecc841ad_mouth-8.svg"
+      },
+      {
+        "key": "mouth-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e222bc61342425fe21e_mouth-9.svg"
+      },
+      {
+        "key": "mouth-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e34de2eaedb8b950788_mouth-10.svg"
+      },
+      {
+        "key": "mouth-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e596d6e1c2f4204b72b_mouth-11.svg"
+      },
+      {
+        "key": "mouth-12",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e66d5680f649ded09d6_mouth-12.svg"
+      },
+      {
+        "key": "mouth-13",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68225e78837b48405ca057ac_mouth-13.svg"
+      }
+    ],
+    "beard": [
+      {
+        "key": "beard-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2902fc943c775743ca987_beard-1.svg"
+      },
+      {
+        "key": "beard-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29037d941df6039351dd0_beard-2.svg"
+      },
+      {
+        "key": "beard-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b290400c57b5b119ec9776_beard-3.svg"
+      },
+      {
+        "key": "beard-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2904887e457b5e3ba8073_beard-4.svg"
+      },
+      {
+        "key": "beard-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29051a30c0622e7ea3cda_beard-5.svg"
+      },
+      {
+        "key": "beard-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b29066ca27902565c9c4a2_beard-6.svg"
+      }
+    ],
+    "tops": [
+      {
+        "key": "top-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27ce582c328140eb36b1d_top-1.svg",
+        "gender": "any",
+        "sleeve": "short"
+      },
+      {
+        "key": "top-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27c9e579c757fed070317_top-2.svg",
+        "gender": "any",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286d2b35144efa914531a_top-3.svg",
+        "gender": "any",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286e82c4eee4a8167dd19_top-4.svg",
+        "gender": "female",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286f46d5b77a4dfad804e_top-5.svg",
+        "gender": "any",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28701162a977fcb41bd1d_top-6.svg",
+        "gender": "female",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2870ce4876ff3e9647772_top-7.svg",
+        "gender": "any",
+        "sleeve": "short"
+      },
+      {
+        "key": "top-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287180418f1197a2a1ec7_top-8.svg",
+        "gender": "any",
+        "sleeve": "short"
+      },
+      {
+        "key": "top-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2873de86b0b10ea6d474c_top-9.svg",
+        "gender": "any",
+        "sleeve": "short"
+      },
+      {
+        "key": "top-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2874f907e30f0a0be5abf_top-10.svg",
+        "gender": "female",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2876cf1de8a0e3f5c02f2_top-11.svg",
+        "gender": "any",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-12",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287ba2211f56f5c7a4ff8_top-12.svg",
+        "gender": "any",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-13",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287c62211f56f5c7a5146_top-13.svg",
+        "gender": "female",
+        "sleeve": "none"
+      },
+      {
+        "key": "top-14",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287dd8999d385d41df5bf_top-14.svg",
+        "gender": "female",
+        "sleeve": "none"
+      },
+      {
+        "key": "top-15",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895102fcc17c9a63b46f_top-15.svg",
+        "gender": "female",
+        "sleeve": "none"
+      },
+      {
+        "key": "top-16",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895e33caf28bf8460a93_top-16.svg",
+        "gender": "female",
+        "sleeve": "none"
+      },
+      {
+        "key": "top-29",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b289ba2cbb0d57006df838_top-29.svg",
+        "gender": "female",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-30",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28a15e5007ebcdfbac2aa_top-30.svg",
+        "gender": "female",
+        "sleeve": "long"
+      }
+    ],
+    "jackets": [
+      {
+        "key": "top-17",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28ae164bc19fcca7515f5_top-17.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-18",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28aec2fbb2acadd852afc_top-18.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-19",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28af4ba6b0a04e2dfed2e_top-19.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-20",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b016ac21db37bdd78b7_top-20.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-21",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b0825982ab00787b36c_top-21.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-22",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b1c55767e4fa8b951e9_top-22.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-23",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b2907cb483b7fb2113a_top-23.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-24",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b36c082fa02d7bc8b9e_top-24.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-25",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b4642513fd144e63c63_top-25.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-26",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b72fcf9ac0d43f0802a_top-26.svg",
+        "sleeve": "long"
+      }
+    ],
+    "bodice": [
+      {
+        "key": "top-27",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bb2a8d223c878223d15_top-27.svg",
+        "sleeve": "long"
+      },
+      {
+        "key": "top-28",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bbdf86be1d42495064f_top-28.svg",
+        "sleeve": "long"
+      }
+    ],
+    "pants": [
+      {
+        "key": "pants-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4755ab6e6b2f1c86f07c5_pants-1.svg"
+      },
+      {
+        "key": "pants-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4757611187a99790423dc_pants-2.svg"
+      },
+      {
+        "key": "pants-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4757f3e4f056279ff1175_pants-3.svg"
+      },
+      {
+        "key": "pants-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47589c2a79758ab214d1f_pants-4.svg"
+      },
+      {
+        "key": "pants-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47593aa0603ac47379abc_pants-5.svg"
+      },
+      {
+        "key": "pants-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4759ec0a789d917ed9cf4_pants-6.svg"
+      },
+      {
+        "key": "pants-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475a70ed7ce663fc94c5e_pants-7.svg"
+      },
+      {
+        "key": "pants-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475afe068710d86ae7b90_pants-8.svg"
+      },
+      {
+        "key": "pants-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475b8576293e25d79f56d_pants-9.svg"
+      },
+      {
+        "key": "pants-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475d11d278608328eaa1a_pants-10.svg"
+      },
+      {
+        "key": "pants-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475dadcd4bbf1b4d712b5_pants-11.svg"
+      },
+      {
+        "key": "pants-12",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475e3273f803b4d3d73b1_pants-12.svg"
+      },
+      {
+        "key": "pants-13",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475ecb2f93665e62c90b0_pants-13.svg"
+      },
+      {
+        "key": "pants-14",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475f5aa968a2d6f462db1_pants-14.svg"
+      },
+      {
+        "key": "pants-15",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b475ff9d546e2e9533c72c_pants-15.svg"
+      },
+      {
+        "key": "pants-16",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b476083090cca3789719be_pants-16.svg"
+      },
+      {
+        "key": "pants-17",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4761171ee2624b1a1f28e_pants-17.svg"
+      },
+      {
+        "key": "pants-18",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4761b18815e14f876ff8a_pants-18.svg"
+      },
+      {
+        "key": "pants-19",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47624c0a789d917edba92_pants-19.svg"
+      },
+      {
+        "key": "pants-20",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4762cd724ba6daaf720ca_pants-20.svg"
+      }
+    ],
+    "shoes": [
+      {
+        "key": "shoe-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a2f5557ed96c21d00f3_shoe-1.svg"
+      },
+      {
+        "key": "shoe-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a4275b82a22bede28be_shoe-2.svg"
+      },
+      {
+        "key": "shoe-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a4bf027bfeecde77b99_shoe-3.svg"
+      },
+      {
+        "key": "shoe-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a5d33caf28bf884e189_shoe-4.svg"
+      },
+      {
+        "key": "shoe-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a6bab368cb672e57751_shoe-5.svg"
+      },
+      {
+        "key": "shoe-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a75e0ae8eda7aab32e1_shoe-6.svg"
+      },
+      {
+        "key": "shoe-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a7e2cbb0d5700ab99a3_shoe-7.svg"
+      },
+      {
+        "key": "shoe-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a89fdedba29db771986_shoe-8.svg"
+      },
+      {
+        "key": "shoe-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a932229640016ffe576_shoe-9.svg"
+      },
+      {
+        "key": "shoe-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47a9d81022e43087dcaa1_shoe-10.svg"
+      },
+      {
+        "key": "shoe-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aac0f5b95bfbdb92228_shoe-11.svg"
+      },
+      {
+        "key": "shoe-12",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aca6ddf3cfecfdb9c21_shoe-12.svg"
+      },
+      {
+        "key": "shoe-13",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ad2cd7cb951eeff6bed_shoe-13.svg"
+      },
+      {
+        "key": "shoe-14",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ad9f38b7710f707f7d6_shoe-14.svg"
+      },
+      {
+        "key": "shoe-15",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47ae19ed2798632a97d42_shoe-15.svg"
+      },
+      {
+        "key": "shoe-16",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aebcbebc1cd8d5ef237_shoe-16.svg"
+      },
+      {
+        "key": "shoe-17",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47af585c9b2f4b94b8b3a_shoe-17.svg"
+      },
+      {
+        "key": "shoe-18",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47aff3da90fc75737a822_shoe-18.svg"
+      },
+      {
+        "key": "shoe-19",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b0bf40bdb594e865935_shoe-19.svg"
+      },
+      {
+        "key": "shoe-20",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b1406ed934b89398739_shoe-20.svg"
+      },
+      {
+        "key": "shoe-21",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b1d64a8844c964eb2bd_shoe-21.svg"
+      },
+      {
+        "key": "shoe-22",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b2e12f088e1b117b339_shoe-22.svg"
+      },
+      {
+        "key": "shoe-23",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b37fd3c36b689a283da_shoe-23.svg"
+      },
+      {
+        "key": "shoe-24",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b40265c42b087d76f06_shoe-24.svg"
+      },
+      {
+        "key": "shoe-25",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b4c71ee2624b1a2ae97_shoe-25.svg"
+      },
+      {
+        "key": "shoe-26",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b541f6e749ac3abe231_shoe-26.svg"
+      },
+      {
+        "key": "shoe-27",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47b640c57b5b1192c0572_shoe-27.svg"
+      }
+    ],
+    "glasses": [
+      {
+        "key": "glasses-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416514f795bc99cc45c11_glasses-1.svg"
+      },
+      {
+        "key": "glasses-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416597e12c0d5a437209a_glasses-2.svg"
+      },
+      {
+        "key": "glasses-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41681fd3c36b68994d027_glasses-3.svg"
+      },
+      {
+        "key": "glasses-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4168a64bc19fccaa519b1_glasses-4.svg"
+      },
+      {
+        "key": "glasses-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416926e3ee6fe5449aba1_glasses-5.svg"
+      },
+      {
+        "key": "glasses-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41699b22ee95bf910238f_glasses-6.svg"
+      },
+      {
+        "key": "glasses-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416a21ad3328c920422ed_glasses-7.svg"
+      },
+      {
+        "key": "glasses-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416ab3090cca378896f65_glasses-8.svg"
+      },
+      {
+        "key": "glasses-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416b483d729459cf5b74e_glasses-9.svg"
+      },
+      {
+        "key": "glasses-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416bc993999fc872456db_glasses-10.svg"
+      },
+      {
+        "key": "glasses-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b416c5e38be7701ed38eb4_glasses-11.svg"
+      }
+    ],
+    "hats": [
+      {
+        "key": "hat-1",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417cae606c1002fcf76d1_hat-1.svg"
+      },
+      {
+        "key": "hat-2",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417eddd63588729819e9c_hat-2.svg"
+      },
+      {
+        "key": "hat-3",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417f653fb5920dfdbcc33_hat-3.svg"
+      },
+      {
+        "key": "hat-4",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b417fe95143c3d57619d9c_hat-4.svg"
+      },
+      {
+        "key": "hat-5",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4180756b3af73cf1acd8b_hat-5.svg"
+      },
+      {
+        "key": "hat-6",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4180ffca04397a2b18664_hat-6.svg"
+      },
+      {
+        "key": "hat-7",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41818a749f198992b49f2_hat-7.svg"
+      },
+      {
+        "key": "hat-8",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41821a6dae8bd34027460_hat-8.svg"
+      },
+      {
+        "key": "hat-9",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41831eaef62eb88d3a4ea_hat-9.svg"
+      },
+      {
+        "key": "hat-10",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4183a95d8af8b0e8b443c_hat-10.svg"
+      },
+      {
+        "key": "hat-11",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41844a30c0622e719a275_hat-11.svg"
+      },
+      {
+        "key": "hat-12",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418502fbb2acaddb3c673_hat-12.svg"
+      },
+      {
+        "key": "hat-13",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41859cbebc1cd8d50e835_hat-13.svg"
+      },
+      {
+        "key": "hat-14",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4186636b30e927333db45_hat-14.svg"
+      },
+      {
+        "key": "hat-15",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418750e4aed76894f92e8_hat-15.svg"
+      },
+      {
+        "key": "hat-16",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4187fab368cb672d77c4b_hat-16.svg"
+      },
+      {
+        "key": "hat-17",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b41889265c42b087c97040_hat-17.svg"
+      },
+      {
+        "key": "hat-18",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4189756d5157f360ce27c_hat-18.svg"
+      },
+      {
+        "key": "hat-19",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b4189e3090cca37889b8bf_hat-19.svg"
+      },
+      {
+        "key": "hat-20",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b418a864e27f4007407bdf_hat-20.svg"
+      },
+      {
+        "key": "hat-21",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47bd3747c3f8fb1dc2ae2_hat-21.svg"
+      },
+      {
+        "key": "hat-22",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47bf5cd7cb951eeff97bc_hat-22.svg"
+      },
+      {
+        "key": "hat-23",
+        "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b47c2e5557ed96c21d4ac0_hat-23.svg"
+      }
     ]
-   }
   },
-  {
-   "id": "cover-25",
-   "n": 25,
-   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873701ef73b6b65f78fcc94_actual_cover_25.webp",
-   "occasion": "наш праздник",
-   "text": "ЦЕЛЮСЬ РОВНО В СЕРДЕЧКО",
-   "color": "#FAEDED",
-   "textX": 0,
-   "textY": 115,
-   "giver": {
-    "pose": 29,
-    "x": -10,
-    "y": -5,
-    "size": "small",
-    "flip": true
-   },
-   "receiver": {
-    "pose": 4,
-    "x": 85,
-    "y": 140,
-    "size": "small",
-    "flip": false
-   },
-   "stackables": [
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f0fc01a0ac58300f73_Frame%201044.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f79c41ace0952d7bae_Arrow%201.svg",
-    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99fbbbd1adf5e1d7c75b_Frame%201043.svg"
-   ],
-   "hideStack": [
-    "c:cover-25:s1"
-   ],
-   "heroProps": {
-    "giver": [
-     {
-      "src": "/assets/img/props/bow-p29-grey.svg",
-      "box": [
-       600,
-       300,
-       800,
-       1400
+  "poses": [
+    {
+      "num": 1,
+      "name": "swimming",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6bed8528247b550eaae_swimming-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6c637cda6713023cb48_swimming-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6cf4afb299e08e3ee5a_swimming-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6839a6d5e6056364ba60724c_swimming-dark.svg"
+      }
+    },
+    {
+      "num": 2,
+      "name": "dancing",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca39fd11fe7697143490_dancing-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca3d39d69308b39f975a_dancing-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca4315c6cf1b7aebb50b_dancing-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683aca44584b4013590ff2c1_dancing-dark.svg"
+      }
+    },
+    {
+      "num": 3,
+      "name": "sport",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c20115d87f025fec592bb_sport-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c2015ca0a0ddd3dee65a3_sport-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c201fc518675709dde0ec_sport-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/683c2023f9c74204738282b2_sport-dark.svg"
+      }
+    },
+    {
+      "num": 4,
+      "name": "thinking",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e90d3cf32b5f4bffc0d9_thinking-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e9117deda1e0da3ab67d_thinking-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e91a8dfc9625ec5d7569_thinking-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847e92193a83a875fbb98de_thinking-dark.svg"
+      }
+    },
+    {
+      "num": 5,
+      "name": "diving",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb2de75d2a8b08b2fd74_diving-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb398dfc9625ec5eece8_diving-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb3d3e145ded46c56737_diving-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eb41bee159001a329fc3_diving-dark.svg"
+      }
+    },
+    {
+      "num": 6,
+      "name": "hugging",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecaffd9a8501fd2c129f_hugging-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecbc3f294873e970f84f_hugging-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecbfc951bee223973e20_hugging-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ecc34ef145bba3c22c09_hugging-dark.svg"
+      }
+    },
+    {
+      "num": 7,
+      "name": "hiphop",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed37faf105f060efc19f_hiphop-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed3b9f8a65125b5a5a6e_hiphop-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed3de1b10f8cbaa54d0d_hiphop-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ed41167e9650bb7c9476_hiphop-dark.svg"
+      }
+    },
+    {
+      "num": 8,
+      "name": "thinking-2",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edb2ae1308df7e965d9b_thinking-2-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edb6ff82e1546b17f358_thinking-2-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edbb21fc9939b03f4ae9_thinking-2-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847edbec84f5a0ff65f638a_thinking-2-dark.svg"
+      }
+    },
+    {
+      "num": 9,
+      "name": "confused",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee36429414487b692e22_confused-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee3da5cea3918a3ee6fe_confused-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee4015d2682e25c2b916_confused-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847ee4782d64ac008771669_confused-dark.svg"
+      }
+    },
+    {
+      "num": 10,
+      "name": "sad",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eec6f8b2da9e7161a466_sad-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eec91e34ba2b8ef6e9ec_sad-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eecf61bc84c22384e9aa_sad-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847eed3066b21ce8df9a52a_sad-dark.svg"
+      }
+    },
+    {
+      "num": 11,
+      "name": "laying",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efcaac8917cb3e177740_laying-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efcd320af557f05277c3_laying-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efd10b582426aa608e7b_laying-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847efd457cfb544f7ce9053_laying-dark.svg"
+      }
+    },
+    {
+      "num": 12,
+      "name": "funny-dancing",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07315d2682e25c4794a_funny-dancing-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f0773c79c4f098763d26_funny-dancing-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07b8c91c95e271e54c0_funny-dancing-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f07f9bdfdf4fe9ace911_funny-dancing-dark.svg"
+      }
+    },
+    {
+      "num": 13,
+      "name": "sleeping",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f10b8a047e165105aef4_sleeping-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f10f9f8a65125b5d065e_sleeping-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f112167e9650bb7f351f_sleeping-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1163a0e32f45a41ba42_sleeping-dark.svg"
+      }
+    },
+    {
+      "num": 14,
+      "name": "jumping",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f19d1c6bfa0678bc6ec9_jumping-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a007b6c2117a63baa9_jumping-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a35c203ce825d271d7_jumping-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f1a7ef3762592bbe6591_jumping-dark.svg"
+      }
+    },
+    {
+      "num": 15,
+      "name": "flirting",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2002a175f91f8a7c436_flirty-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f203351738d87eb425ed_flirty-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2067d6974659cf3e504_flirty-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2093d7bcb9545508431_flirty-dark.svg"
+      }
+    },
+    {
+      "num": 16,
+      "name": "meditation",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f284e1a4db3c013f9db6_meditation-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f288977199fb0311c8e8_meditation-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f29b61bc84c22387985a_meditation-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f29786b0e587f7e4c8cc_meditation-dark.svg"
+      }
+    },
+    {
+      "num": 17,
+      "name": "sitting",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2f8b8a9c20369914746_sitting-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2fb8fb7da571cb9ec91_sitting-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f2feeffff4abec36f208_sitting-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3020a9ea6cf01c673e5_sitting-dark.svg"
+      }
+    },
+    {
+      "num": 18,
+      "name": "eating",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f370b8a9c2036991a6c1_eating-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3722ce50222472358db_eating-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f37586b0e587f7e59d69_eating-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f37922a124e97fd4014d_eating-dark.svg"
+      }
+    },
+    {
+      "num": 19,
+      "name": "yoga",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3cd0efc34dfb26dc584_yoga-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d1b9af44a4d936b874_yoga-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d4e8dfaa7bfdd3f8c3_yoga-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f3d70b582426aa6390dc_yoga-dark.svg"
+      }
+    },
+    {
+      "num": 20,
+      "name": "hey",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f44954ed47f11e373297_hey-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f44d066b21ce8dfdbedf_hey-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f450de983d02efe8cf96_hey-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f454066b21ce8dfdc1d4_hey-dark.svg"
+      }
+    },
+    {
+      "num": 21,
+      "name": "waving",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f5044593ae57b52b4f11_waving-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f507ac8917cb3e1b5efc_waving-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f50aae1308df7e9bceff_waving-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847f50e31682258e3c15a8e_waving-dark.svg"
+      }
+    },
+    {
+      "num": 22,
+      "name": "standing",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa6d3f294873e97a254a_standing-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa70294f928ab8d59b1f_standing-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa74fce80ab795231d5d_standing-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fa7757cfb544f7d5c689_standing-dark.svg"
+      }
+    },
+    {
+      "num": 23,
+      "name": "chilling",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fabc96e24ffc2a39b519_chilling-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fabf4ef145bba3cb684c_chilling-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fac2294f928ab8d5cbdc_chilling-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fac682d64ac0087fc38a_chilling-dark.svg"
+      }
+    },
+    {
+      "num": 24,
+      "name": "running-away",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb03e95085a5e57de44c_running-away-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb06e3048b072e1a3eb5_running-away-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb0a294f928ab8d6045d_running-away-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb0db8a9c2036996edc2_running-away-dark.svg"
+      }
+    },
+    {
+      "num": 25,
+      "name": "running",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5931682258e3c54432_running-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5c3d7bcb9545571495_running-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb5f31682258e3c5478b_running-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6847fb665a1fac0a326340e5_running-dark.svg"
+      }
+    },
+    {
+      "num": 29,
+      "name": "shooting",
+      "bodies": {
+        "1": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68775166dfe4a0e17e52f2b6_shooting-light.svg",
+        "2": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877516a76a8c63fd1ad2995_shooting-med.svg",
+        "3": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877516e76a8c63fd1ad2c4e_shooting-tan.svg",
+        "4": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751727322a70ec5482d5f_shooting-dark.svg"
+      }
+    }
+  ],
+  "covers": [
+    {
+      "id": "cover-1",
+      "n": 1,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687368d172955961e101ca00_actual_cover_1.webp",
+      "occasion": "свадьба",
+      "text": "НАША ЛЮБОВНАЯ ИСТОРИЯ",
+      "color": "#FDFCF7",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-2",
+      "n": 2,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687368dc825fc4da4b9e368e_actual_cover_2.webp",
+      "occasion": "свадьба",
+      "text": "КНИГА ПОД ВИНО",
+      "color": "#D8191B",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-3",
+      "n": 3,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736927db4d07b96ba436fa_actual_cover_3.webp",
+      "occasion": "наш праздник",
+      "text": "ЛЮБЛЮ ТЕБЯ",
+      "color": "#000000",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-4",
+      "n": 4,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736934f73b6b65f78dadda_actual_cover_4.webp",
+      "occasion": "выпускной",
+      "text": "ТЫ МОЯ ЗВЕЗДОЧКА",
+      "color": "#F8F8FA",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-5",
+      "n": 5,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873694265d4ed3a72ae0079_actual_cover_5.webp",
+      "occasion": "День Рождения",
+      "text": "ТЫ САМЫЙ ЛУЧШИЙ",
+      "color": "#C2A03E",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-6",
+      "n": 6,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e7f55180fc605b27c11_actual_cover_7.webp",
+      "occasion": "День Рождения",
+      "text": "НАША ЗВЕЗДНАЯ ИСТРАИЯ",
+      "color": "#000000",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-7",
+      "n": 7,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687371ebd2c07e170428fbeb_actual_cover_6.webp",
+      "occasion": "8 марта",
+      "text": "ДЛЯ САМОЙ КРАСИВОЙ ",
+      "color": "#FFFCF5",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-8",
+      "n": 8,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e8533838b79615f28ce_actual_cover_8.webp",
+      "occasion": "8 марта",
+      "text": "ОТ СЕРДЦА И ОТ ПОЧЕК...",
+      "color": "#F8F6F9",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-9",
+      "n": 9,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736e99de0e69517a5a175e_actual_cover_10.webp",
+      "occasion": "наш праздник",
+      "text": "С НОВЫМ ГОДОМ!",
+      "color": "#748F97",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-10",
+      "n": 10,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68737210b3064782ad1514cb_actual_cover_9.webp",
+      "occasion": "8 марта",
+      "text": "САМОМУ ЯРКОМУ ЦВЕТОЧКУ",
+      "color": "#FF93A9",
+      "textX": 0,
+      "textY": 160,
+      "giver": null,
+      "receiver": null,
+      "stackables": []
+    },
+    {
+      "id": "cover-11",
+      "n": 11,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f28630a6b555293c3f9_actual_cover_11.webp",
+      "occasion": "День Рождения",
+      "text": "СПАСИБО ТЕБЕ ЧТО ПОМОГАЕШЬ!",
+      "color": "#DCEEDB",
+      "textX": 0,
+      "textY": 205,
+      "giver": {
+        "pose": 10,
+        "x": 40,
+        "y": 85,
+        "size": "medium",
+        "flip": true
+      },
+      "receiver": {
+        "pose": 12,
+        "x": 33,
+        "y": -10,
+        "size": "small",
+        "flip": true
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c020866b45fde91a81_Frame%201006.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c3fabc6aaaec941aeb_Frame%201004.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c7fabc6aaaec941dc0_Frame%201003.svg"
+      ]
+    },
+    {
+      "id": "cover-12",
+      "n": 12,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f311dd2d8c3fb24fa9c_actual_cover_12.webp",
+      "occasion": "наш праздник",
+      "text": "ВМЕСТЕ МЫ ПРОЙДЁМ ВСЁ!",
+      "color": "#D7F0FA",
+      "textX": 0,
+      "textY": 200,
+      "giver": {
+        "pose": 6,
+        "x": 30,
+        "y": 45,
+        "size": "small",
+        "flip": true
+      },
+      "receiver": {
+        "pose": 22,
+        "x": 55,
+        "y": 45,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877b9d13bacb77f2dea866b_Frame%201010.svg"
       ],
-      "z": -1
-     },
-     {
-      "src": "/assets/img/props/bowstring-p29-grey.svg",
-      "box": [
-       600,
-       300,
-       800,
-       1400
+      "hideStack": [
+        "c:cover-12:s1"
       ],
-      "z": 13
-     }
-    ]
-   }
+      "props": [
+        {
+          "src": "/assets/img/props/umbrella-stick-12.svg",
+          "layer": "back"
+        },
+        {
+          "src": "/assets/img/props/umbrella-hook-12.svg",
+          "layer": "front"
+        }
+      ]
+    },
+    {
+      "id": "cover-13",
+      "n": 13,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736f3bbef9bc801421bcd6_actual_cover_13.webp",
+      "occasion": "День Рождения",
+      "text": "НАША ПРЕКРАСНАЯ ИСТОРИЯ ЛЮБВИ",
+      "color": "#A1C0D9",
+      "textX": 0,
+      "textY": 200,
+      "giver": {
+        "pose": 6,
+        "x": 70,
+        "y": 85,
+        "size": "small",
+        "flip": true
+      },
+      "receiver": {
+        "pose": 6,
+        "x": 100,
+        "y": 85,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": []
+    },
+    {
+      "id": "cover-14",
+      "n": 14,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fbb1048141acaae06cb_actual_cover_14.webp",
+      "occasion": "свадьба",
+      "text": "РИСУЕМ СВОЮ КАРТИНУ",
+      "color": "#81AACE",
+      "textX": 0,
+      "textY": 40,
+      "giver": {
+        "pose": 3,
+        "x": 5,
+        "y": 85,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 3,
+        "x": 75,
+        "y": 85,
+        "size": "small",
+        "flip": true
+      },
+      "stackables": []
+    },
+    {
+      "id": "cover-15",
+      "n": 15,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fc653d9a25e35900879_actual_cover_15.webp",
+      "occasion": "свадьба",
+      "text": "ИДЕАЛЬНАЯ ПРОПОРЦИЯ",
+      "color": "#FCFBF7",
+      "textX": 0,
+      "textY": 185,
+      "giver": {
+        "pose": 21,
+        "x": -20,
+        "y": 30,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 21,
+        "x": 30,
+        "y": 30,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": []
+    },
+    {
+      "id": "cover-16",
+      "n": 16,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fcd457ec0ffaecc702e_actual_cover_16.webp",
+      "occasion": "выпускной",
+      "text": "МОЙ АНГЕЛОЧЕК!",
+      "color": "#FFFFFF",
+      "textX": 0,
+      "textY": 210,
+      "giver": {
+        "pose": 5,
+        "x": 10,
+        "y": 5,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 9,
+        "x": 40,
+        "y": 60,
+        "size": "medium",
+        "flip": false
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877d5aa86ad6a96d55011c8_Frame%201023.svg"
+      ]
+    },
+    {
+      "id": "cover-17",
+      "n": 17,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fd418b1ad3911bc50fb_actual_cover_17.webp",
+      "occasion": "свадьба",
+      "text": "ВРЕМЯ С ТОБОЙ БЕЗЦЕННО ",
+      "color": "#F1F1F1",
+      "textX": 0,
+      "textY": 185,
+      "giver": {
+        "pose": 14,
+        "x": 20,
+        "y": 63,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": null,
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e40338dc572b5cf8c8d05_Frame%20932.svg"
+      ]
+    },
+    {
+      "id": "cover-18",
+      "n": 18,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fdcce1d1e40a8a73daf_actual_cover_18.webp",
+      "occasion": "выпускной",
+      "text": "С ТОБОЙ НЕ СКУЧНО!",
+      "color": "#DCEEDB",
+      "textX": 0,
+      "textY": 210,
+      "giver": {
+        "pose": 16,
+        "x": 40,
+        "y": 85,
+        "size": "medium",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 12,
+        "x": 33,
+        "y": -10,
+        "size": "small",
+        "flip": true
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c7fabc6aaaec941dc0_Frame%201003.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687751c3fabc6aaaec941aeb_Frame%201004.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ddf419a25fcf866d816d_Frame%201037.svg"
+      ]
+    },
+    {
+      "id": "cover-19",
+      "n": 19,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736fe51948f9efcb9731c7_actual_cover_19.webp",
+      "occasion": "8 марта",
+      "text": "ИСТОРИЯ СЧАСТЛИВОЙ ПАРЫ",
+      "color": "#D7F0FA",
+      "textX": 0,
+      "textY": 30,
+      "giver": {
+        "pose": 22,
+        "x": 40,
+        "y": 90,
+        "size": "medium",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 6,
+        "x": 0,
+        "y": 90,
+        "size": "medium",
+        "flip": true
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e1b9bca18e1d133f8fd2_Frame%201042.svg"
+      ],
+      "hideStack": [
+        "c:cover-19:s1"
+      ],
+      "props": [
+        {
+          "src": "/assets/img/props/umbrella-stick-19.svg",
+          "layer": "back"
+        },
+        {
+          "src": "/assets/img/props/umbrella-hook-19.svg",
+          "layer": "front"
+        }
+      ]
+    },
+    {
+      "id": "cover-20",
+      "n": 20,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736feca088848d0fe99159_actual_cover_20.webp",
+      "occasion": "День Рождения",
+      "text": "НА 7 НЕБЕ",
+      "color": "#FAEFD9",
+      "textX": 0,
+      "textY": 205,
+      "giver": {
+        "pose": 5,
+        "x": -60,
+        "y": 40,
+        "size": "medium",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 5,
+        "x": 50,
+        "y": 40,
+        "size": "medium",
+        "flip": false
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e56381fa7c88f67819d9_Frame%201034.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e34e7b8bc0f8d40abb20_Frame%201031.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e35041a4db10d842e017_Frame%201030.svg"
+      ]
+    },
+    {
+      "id": "cover-21",
+      "n": 21,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68736ff8d9c584938d655bc9_actual_cover_21.webp",
+      "occasion": "выпускной",
+      "text": "ДАВАЙ НАПИШЕМ СВОЮ КНИГУ О ЛЮБВИ?",
+      "color": "#EDD95F",
+      "textX": 0,
+      "textY": 205,
+      "giver": {
+        "pose": 6,
+        "x": 85,
+        "y": 85,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 6,
+        "x": 55,
+        "y": 85,
+        "size": "small",
+        "flip": true
+      },
+      "stackables": []
+    },
+    {
+      "id": "cover-22",
+      "n": 22,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687370017195040e4d42dec9_actual_cover_22.webp",
+      "occasion": "наш праздник",
+      "text": "ТЫ + Я = ЛЮБОВЬ",
+      "color": "#FCFBF7",
+      "textX": 0,
+      "textY": 185,
+      "giver": {
+        "pose": 22,
+        "x": 30,
+        "y": 15,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": {
+        "pose": 22,
+        "x": -20,
+        "y": 15,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": []
+    },
+    {
+      "id": "cover-23",
+      "n": 23,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873700ddb4d07b96ba63a6f_actual_cover_23.webp",
+      "occasion": "8 марта",
+      "text": "СЧАСТЛИВЫЕ ВРЕМЯ НЕ СЧИТАЮТ!",
+      "color": "#828080",
+      "textX": 0,
+      "textY": 180,
+      "giver": {
+        "pose": 14,
+        "x": 18,
+        "y": 65,
+        "size": "small",
+        "flip": false
+      },
+      "receiver": null,
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e40338dc572b5cf8c8d05_Frame%20932.svg"
+      ]
+    },
+    {
+      "id": "cover-24",
+      "n": 24,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68737017e0c1702f3d2d33ef_actual_cover_24.webp",
+      "occasion": "8 марта",
+      "text": "ВЫСТРЕЛ ПРЯМО В СЕРДЦЕ",
+      "color": "#FAEDED",
+      "textX": 0,
+      "textY": 118,
+      "giver": {
+        "pose": 29,
+        "x": -10,
+        "y": 0,
+        "size": "small",
+        "flip": true
+      },
+      "receiver": {
+        "pose": 4,
+        "x": 85,
+        "y": 140,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ee851aa5ca43a9c487d3_Frame%201012.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ee88b6b1b01405be7750_Frame%201013.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg"
+      ],
+      "hideStack": [
+        "c:cover-24:s4"
+      ]
+    },
+    {
+      "id": "cover-25",
+      "n": 25,
+      "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6873701ef73b6b65f78fcc94_actual_cover_25.webp",
+      "occasion": "наш праздник",
+      "text": "ЦЕЛЮСЬ РОВНО В СЕРДЕЧКО",
+      "color": "#FAEDED",
+      "textX": 0,
+      "textY": 115,
+      "giver": {
+        "pose": 29,
+        "x": -10,
+        "y": -5,
+        "size": "small",
+        "flip": true
+      },
+      "receiver": {
+        "pose": 4,
+        "x": 85,
+        "y": 140,
+        "size": "small",
+        "flip": false
+      },
+      "stackables": [
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f0fc01a0ac58300f73_Frame%201044.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f79c41ace0952d7bae_Arrow%201.svg",
+        "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99fbbbd1adf5e1d7c75b_Frame%201043.svg"
+      ],
+      "hideStack": []
+    }
+  ],
+  "coverRef": {
+    "w": 174.8,
+    "h": 248,
+    "sizes": {
+      "small": [
+        96.7,
+        112
+      ],
+      "medium": [
+        128.9,
+        148.2
+      ],
+      "large": [
+        168.9,
+        195.6
+      ],
+      "original": [
+        209.2,
+        242.2
+      ]
+    },
+    "font": 13
+  },
+  "airtable": {
+    "baseId": "appl4Ub1VIvck2fgt",
+    "posesTable": "tblNbUYjzEzcbjAUh",
+    "poseIdField": "Pose ID"
+  },
+  "builtinShoes": [
+    3
+  ],
+  "editorMouthFromPose": 1,
+  "stackFix": {
+    "c:cover-24:s3": {
+      "dx": 0,
+      "dy": 3.5
+    },
+    "c:cover-25:s1": {
+      "dx": 0,
+      "dy": 3.5
+    }
   }
- ],
- "coverRef": {
-  "w": 174.8,
-  "h": 248,
-  "sizes": {
-   "small": [
-    96.7,
-    112
-   ],
-   "medium": [
-    128.9,
-    148.2
-   ],
-   "large": [
-    168.9,
-    195.6
-   ],
-   "original": [
-    209.2,
-    242.2
-   ]
-  },
-  "font": 13
- },
- "airtable": {
-  "baseId": "appl4Ub1VIvck2fgt",
-  "posesTable": "tblNbUYjzEzcbjAUh",
-  "poseIdField": "Pose ID"
- },
- "builtinShoes": [
-  3
- ],
- "editorMouthFromPose": 1,
- "stackFix": {}
 }

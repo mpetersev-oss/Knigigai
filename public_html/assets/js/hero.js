@@ -93,8 +93,9 @@ export function layersFor(hero, pose = null, catalog = null) {
   // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
   const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
   if (!builtinShoes) add(hero.shoes, shoesOverPants(hero) ? Z.shoesOver : Z.shoes);
-  // Коньки вырезаны из фона обложки и прикреплены к ногам позы — поверх штанин
-  else { add('skate-raised', Z.shoesOver); add('skate-stand', Z.shoesOver); }
+  // Коньки вырезаны из фона обложки и прикреплены к ногам позы; как обувь — под штанинами,
+  // чтобы край штанины ложился на голенище конька
+  else { add('skate-raised', Z.shoes); add('skate-stand', Z.shoes); }
   add(hero.pants, Z.pants);
   add(hero.top, Z.top);
   add(hero.bodice, Z.bodice);
