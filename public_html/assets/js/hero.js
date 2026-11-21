@@ -4,8 +4,18 @@
 
 export const Z = {
   body: 0, shoes: 4, pants: 6, top: 7, bodice: 8, jacket: 8.5,
-  face: 9, mouth: 10, nose: 11, eyes: 12, eyebrows: 12.5, beard: 13, hair: 14, glasses: 15, hat: 16,
+  face: 9, mouth: 10, nose: 11, eyes: 12, eyebrows: 12.5, beard: 13, hair: 14, arms: 14.5, glasses: 15, hat: 16,
 };
+
+// Какой слой рук нужен поверх одежды в позах, где руки лежат перед телом:
+// без рукавов — руки целиком, короткий рукав — предплечья, длинный — только кисти.
+const ARMS_BY_SLEEVE = { none: 'top', short: 'shirt', long: 'jacket' };
+
+function sleeveOf(hero, catalog) {
+  if (hero.jacket || hero.bodice) return 'long';
+  const t = catalog && (catalog.items.tops || []).find((i) => i.key === hero.top);
+  return (t && t.sleeve) || 'long';
+}
 
 // Номер бровей зависит от цвета волос (так нарисованы исходники)
 export const BROW = { brown: 1, 'light-blonde': 2, 'dark-blonde': 3, black: 4, silver: 5, ginger: 6 };
@@ -46,7 +56,7 @@ export function setGender(hero, gender, catalog) {
  * Список слоёв персонажа: [{key, z}].
  * pose = номер позы (обложки, страницы) или null — стоячий персонаж из редактора.
  */
-export function layersFor(hero, pose = null) {
+export function layersFor(hero, pose = null, catalog = null) {
   const p = pose ? `p${pose}:` : 'e:';
   const L = [];
   const add = (key, z) => key && L.push({ key: p + key, z });
@@ -54,7 +64,9 @@ export function layersFor(hero, pose = null) {
 
   // Тело уже нарисовано в белье, поэтому отдельные слои белья не нужны
   add(`body-${hero.tone}`, Z.body);
-  add(hero.shoes, Z.shoes);
+  // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
+  const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
+  if (!builtinShoes) add(hero.shoes, Z.shoes);
   add(hero.pants, Z.pants);
   add(hero.top, Z.top);
   add(hero.bodice, Z.bodice);
@@ -66,6 +78,7 @@ export function layersFor(hero, pose = null) {
   add(`${hero.gender}-eyebrows-${BROW[hero.hairColor] || 4}`, Z.eyebrows);
   if (hero.gender === 'male') add(hero.beard, Z.beard);
   if (hero.hairStyle) add(`${hero.hairColor}-${hero.hairStyle}`, Z.hair);
+  if (pose) add(`top-arms-${ARMS_BY_SLEEVE[sleeveOf(hero, catalog)]}-tone-${hero.tone}`, Z.arms);
   add(hero.glasses, Z.glasses);
   add(hero.hat, Z.hat);
   return L;
@@ -87,7 +100,7 @@ export function figure(catalog, hero, opts = {}) {
   el.className = 'fig';
   el.style.aspectRatio = `${FW} / ${FH}`;
   if (!hero) return el;
-  for (const { key, z } of layersFor(hero, pose)) {
+  for (const { key, z } of layersFor(hero, pose, catalog)) {
     const a = catalog.assets[key];
     if (!a) continue;
     const [url, x, y, w, h] = a;

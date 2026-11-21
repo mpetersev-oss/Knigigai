@@ -854,144 +854,174 @@
    {
     "key": "top-1",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27ce582c328140eb36b1d_top-1.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "short"
    },
    {
     "key": "top-2",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b27c9e579c757fed070317_top-2.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "long"
    },
    {
     "key": "top-3",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286d2b35144efa914531a_top-3.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "long"
    },
    {
     "key": "top-4",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286e82c4eee4a8167dd19_top-4.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "long"
    },
    {
     "key": "top-5",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b286f46d5b77a4dfad804e_top-5.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "long"
    },
    {
     "key": "top-6",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28701162a977fcb41bd1d_top-6.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "long"
    },
    {
     "key": "top-7",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2870ce4876ff3e9647772_top-7.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "short"
    },
    {
     "key": "top-8",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287180418f1197a2a1ec7_top-8.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "short"
    },
    {
     "key": "top-9",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2873de86b0b10ea6d474c_top-9.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "short"
    },
    {
     "key": "top-10",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2874f907e30f0a0be5abf_top-10.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "long"
    },
    {
     "key": "top-11",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2876cf1de8a0e3f5c02f2_top-11.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "long"
    },
    {
     "key": "top-12",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287ba2211f56f5c7a4ff8_top-12.svg",
-    "gender": "any"
+    "gender": "any",
+    "sleeve": "long"
    },
    {
     "key": "top-13",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287c62211f56f5c7a5146_top-13.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "none"
    },
    {
     "key": "top-14",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b287dd8999d385d41df5bf_top-14.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "none"
    },
    {
     "key": "top-15",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895102fcc17c9a63b46f_top-15.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "none"
    },
    {
     "key": "top-16",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b2895e33caf28bf8460a93_top-16.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "none"
    },
    {
     "key": "top-29",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b289ba2cbb0d57006df838_top-29.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "long"
    },
    {
     "key": "top-30",
     "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28a15e5007ebcdfbac2aa_top-30.svg",
-    "gender": "female"
+    "gender": "female",
+    "sleeve": "long"
    }
   ],
   "jackets": [
    {
     "key": "top-17",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28ae164bc19fcca7515f5_top-17.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28ae164bc19fcca7515f5_top-17.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-18",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28aec2fbb2acadd852afc_top-18.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28aec2fbb2acadd852afc_top-18.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-19",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28af4ba6b0a04e2dfed2e_top-19.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28af4ba6b0a04e2dfed2e_top-19.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-20",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b016ac21db37bdd78b7_top-20.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b016ac21db37bdd78b7_top-20.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-21",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b0825982ab00787b36c_top-21.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b0825982ab00787b36c_top-21.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-22",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b1c55767e4fa8b951e9_top-22.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b1c55767e4fa8b951e9_top-22.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-23",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b2907cb483b7fb2113a_top-23.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b2907cb483b7fb2113a_top-23.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-24",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b36c082fa02d7bc8b9e_top-24.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b36c082fa02d7bc8b9e_top-24.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-25",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b4642513fd144e63c63_top-25.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b4642513fd144e63c63_top-25.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-26",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b72fcf9ac0d43f0802a_top-26.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28b72fcf9ac0d43f0802a_top-26.svg",
+    "sleeve": "long"
    }
   ],
   "bodice": [
    {
     "key": "top-27",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bb2a8d223c878223d15_top-27.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bb2a8d223c878223d15_top-27.svg",
+    "sleeve": "long"
    },
    {
     "key": "top-28",
-    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bbdf86be1d42495064f_top-28.svg"
+    "src": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b28bbdf86be1d42495064f_top-28.svg",
+    "sleeve": "long"
    }
   ],
   "pants": [
@@ -2142,5 +2172,9 @@
   "baseId": "appl4Ub1VIvck2fgt",
   "posesTable": "tblNbUYjzEzcbjAUh",
   "poseIdField": "Pose ID"
- }
+ },
+ "builtinShoes": [
+  3
+ ],
+ "editorMouthFromPose": 1
 }

@@ -53,8 +53,7 @@ final class Catalog
         $put = function (string $key, ?string $fallbackSrc, bool $isCover = false) use (&$assets, $synced, $fw, $fh): void {
             if (isset($synced[$key])) {
                 $r = $synced[$key];
-                $sx = $isCover ? 1 : $fw / max(1, (int) $r['fw']);
-                $sy = $isCover ? 1 : $fh / max(1, (int) $r['fh']);
+                [$sx, $sy] = $isCover ? [1, 1] : self::frameScale((int) $r['fw'], (int) $r['fh'], $fw, $fh);
                 $assets[$key] = [MEDIA_URL . '/' . $r['file'], round($r['x'] * $sx, 1), round($r['y'] * $sy, 1), round($r['w'] * $sx, 1), round($r['h'] * $sy, 1)];
             } elseif ($fallbackSrc) {
                 $assets[$key] = [$fallbackSrc, 0, 0, $isCover ? 1 : $fw, $isCover ? 1 : $fh];
@@ -69,7 +68,8 @@ final class Catalog
         $items = [];
         foreach ($src['categories'] as $cat => $list) {
             foreach ($list as $it) {
-                $put('e:' . $it['key'], $it['src']);
+                // Губы редактора берутся из Airtable (поза 1): старые файлы Webflow нарисованы в другом масштабе
+                $put('e:' . $it['key'], $cat === 'mouth' ? null : $it['src']);
                 $meta = $it;
                 unset($meta['src']);
                 $items[$cat][] = $meta;
@@ -129,6 +129,7 @@ final class Catalog
                 'editor' => [$editorSynced, $editorTotal],
                 'poses' => $poseLayerCount,
             ],
+            'builtinShoes' => $src['builtinShoes'] ?? [],
             'price' => (int) config('price_rub', 4900),
         ];
 
@@ -140,10 +141,37 @@ final class Catalog
         return $catalog;
     }
 
+    /**
+     * Перевод координат файла в координаты кадра.
+     * Файлы рисовались в кадре 2855×3305; если файл того же соотношения сторон, но другого размера,
+     * масштабируем его целиком. Если выгрузка чуть шире/выше кадра (лишние поля), берём пиксели 1:1 —
+     * растягивать такой файл нельзя, иначе вещь «уезжает» и искажается.
+     */
+    public static function frameScale(int $w, int $h, int $fw, int $fh): array
+    {
+        if ($w <= 0 || $h <= 0) {
+            return [1, 1];
+        }
+        if (abs($w / $h - $fw / $fh) < 0.005) {
+            return [$fw / $w, $fh / $h];
+        }
+        if (abs($h - $fh) <= 2 || abs($w - $fw) <= 2) {
+            return [1, 1];
+        }
+        $s = min($fw / $w, $fh / $h);
+        return [$s, $s];
+    }
+
     /** Все ключи вещей, которые должны быть у каждой позы (= колонки таблицы Poses в Airtable). */
     public static function poseLayerKeys(): array
     {
         $keys = [];
+        // Руки поверх одежды: для майки (top), футболки (shirt) и одежды с длинным рукавом (jacket)
+        foreach (['top', 'jacket', 'shirt'] as $kind) {
+            for ($t = 1; $t <= 4; $t++) {
+                $keys[] = "top-arms-{$kind}-tone-{$t}";
+            }
+        }
         foreach (self::source()['categories'] as $list) {
             foreach ($list as $it) {
                 $keys[] = $it['key'];

@@ -363,7 +363,7 @@ const TABS = [
   { id: 'beard', label: 'Борода', field: 'beard', cat: 'beard', region: 'head', optional: true, only: 'male' },
   { id: 'top', label: 'Верх', field: 'top', cat: 'tops', region: 'torso' },
   { id: 'jacket', label: 'Куртки', field: 'jacket', cat: 'jackets', region: 'torso', optional: true, clears: 'bodice' },
-  { id: 'bodice', label: 'Корсеты', field: 'bodice', cat: 'bodice', region: 'torso', optional: true, clears: 'jacket', only: 'female' },
+  { id: 'bodice', label: 'Жакеты', field: 'bodice', cat: 'bodice', region: 'torso', optional: true, clears: 'jacket', only: 'female' },
   { id: 'pants', label: 'Низ', field: 'pants', cat: 'pants', region: 'legs' },
   { id: 'shoes', label: 'Обувь', field: 'shoes', cat: 'shoes', region: 'feet', optional: true },
   { id: 'glasses', label: 'Очки', field: 'glasses', cat: 'glasses', region: 'head', optional: true },

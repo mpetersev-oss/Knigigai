@@ -70,7 +70,11 @@ final class Admin
         $src = Catalog::source();
         $have = [];
         if ($onlyMissing) {
-            foreach (Db::pdo()->query('SELECT akey FROM assets') as $r) {
+            foreach (Db::pdo()->query('SELECT akey, src FROM assets') as $r) {
+                // Губы редактора раньше брались из Webflow (неверный масштаб) — такие перезагружаем
+                if (str_starts_with($r['akey'], 'e:mouth-') && !str_contains((string) $r['src'], 'airtable')) {
+                    continue;
+                }
                 $have[$r['akey']] = true;
             }
         }
@@ -85,8 +89,18 @@ final class Admin
             foreach ($src['tones'] as $t) {
                 $add('e:body-' . $t['key'], $t['body']);
             }
-            foreach ($src['categories'] as $list) {
+            // Губы — из Airtable, из позы, голова которой совпадает с редактором
+            $mouths = [];
+            $mouthPose = (int) ($src['editorMouthFromPose'] ?? 1);
+            if ((string) config('airtable_token', '') !== '') {
+                $mouths = Airtable::poseRecords([$mouthPose])[$mouthPose] ?? [];
+            }
+            foreach ($src['categories'] as $cat => $list) {
                 foreach ($list as $it) {
+                    if ($cat === 'mouth') {
+                        $add('e:' . $it['key'], $mouths[$it['key']] ?? null);
+                        continue;
+                    }
                     $add('e:' . $it['key'], $it['src']);
                 }
             }
