@@ -2210,11 +2210,13 @@
   "stackFix": {
     "c:cover-24:s3": {
       "dx": 0,
-      "dy": 3.5
+      "dy": 3.5,
+      "front": []
     },
     "c:cover-25:s1": {
       "dx": 0,
-      "dy": 3.5
+      "dy": 3.5,
+      "front": []
     }
   }
 }
