@@ -2176,5 +2176,9 @@
  "builtinShoes": [
   3
  ],
- "editorMouthFromPose": 1
+ "editorMouthFromPose": 1,
+ "stackSplit": {
+  "c:cover-19:s1": 53,
+  "c:cover-12:s1": 33
+ }
 }

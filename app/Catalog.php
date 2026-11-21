@@ -133,6 +133,7 @@ final class Catalog
                 'poses' => $poseLayerCount,
             ],
             'builtinShoes' => $src['builtinShoes'] ?? [],
+            'stackSplit' => (object) ($src['stackSplit'] ?? []),
             'price' => (int) config('price_rub', 4900),
         ];
 

@@ -50,16 +50,23 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     wrap.appendChild(figure(catalog, hero, { pose: slot.pose, lazy: opts.lazy }));
     el.appendChild(wrap);
   }
-  // Декоративные слои лежат ПОВЕРХ героев: зонт, облака, стрелки часов, яблоки
-  for (const k of cover.stackables) {
+  // Декоративные слои лежат ПОВЕРХ героев: зонт, облака, стрелки часов, яблоки.
+  // Слои из stackSplit рисуются дважды: целиком позади героев и нижней частью (ручка зонта) — поверх.
+  const split = catalog.stackSplit || {};
+  const stackImg = (k, front) => {
     const a = catalog.assets[k];
-    if (!a) continue;
+    if (!a) return;
     const img = document.createElement('img');
-    img.className = 'cover-stack';
+    img.className = front ? 'cover-stack' : 'cover-stack is-back';
     img.alt = '';
     img.src = a[0];
     if (opts.lazy) img.loading = 'lazy';
+    if (front && split[k]) img.style.clipPath = `inset(${split[k]}% 0 0 0)`;
     el.appendChild(img);
+  };
+  for (const k of cover.stackables) {
+    if (split[k]) stackImg(k, false);
+    stackImg(k, true);
   }
   const text = coverText(cover, heroes, choice);
   if (text) {
