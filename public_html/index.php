@@ -105,7 +105,14 @@ if (str_starts_with($path, '/api/')) {
 
 // ---------- Страницы (одностраничное приложение) ----------
 $isAdmin = $path === '/admin';
-$ver = substr(md5((string) @filemtime(__DIR__ . '/assets/js/app.js') . (string) @filemtime(__DIR__ . '/assets/css/app.css') . (string) @filemtime(__DIR__ . '/assets/js/admin.js')), 0, 8);
+// Версия файлов = хеш их содержимого: после обновления браузер гарантированно берёт новые скрипты,
+// включая модули, которые подключаются из других модулей (через карту импортов ниже).
+$jsFiles = glob(__DIR__ . '/assets/js/*.js') ?: [];
+$ver = substr(md5(implode('|', array_map(fn ($f) => basename($f) . @filemtime($f) . @filesize($f), array_merge($jsFiles, [__DIR__ . '/assets/css/app.css'])))), 0, 10);
+$importMap = ['imports' => []];
+foreach ($jsFiles as $f) {
+    $importMap['imports']['/assets/js/' . basename($f)] = '/assets/js/' . basename($f) . '?v=' . $ver;
+}
 $price = number_format((int) config('price_rub', 4900), 0, '', ' ');
 header('Content-Type: text/html; charset=utf-8');
 ?><!doctype html>
@@ -126,6 +133,7 @@ header('Content-Type: text/html; charset=utf-8');
 <body class="<?= $isAdmin ? 'is-admin' : '' ?>">
 <div id="app" aria-live="polite"></div>
 <noscript><p style="padding:40px;text-align:center">Для работы конструктора включите JavaScript.</p></noscript>
+<script type="importmap"><?= json_encode($importMap, JSON_UNESCAPED_SLASHES) ?></script>
 <?php if ($isAdmin): ?>
 <script type="module" src="/assets/js/admin.js?v=<?= $ver ?>"></script>
 <?php else: ?>
