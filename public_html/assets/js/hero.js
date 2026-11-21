@@ -57,8 +57,10 @@ export function setGender(hero, gender, catalog) {
 // Высокая обувь (сапоги, ботинки) надевается поверх штанов — кроме широких брюк, которые её закрывают
 const BOOTS = new Set(['shoe-8', 'shoe-9', 'shoe-10', 'shoe-11', 'shoe-27']);
 const WIDE_PANTS = new Set(['pants-4', 'pants-5', 'pants-14', 'pants-15']);
-function shoesOverPants(hero) {
-  return BOOTS.has(hero.shoes) && !WIDE_PANTS.has(hero.pants);
+// Позы, где ноги скрещены (медитация): сапоги здесь нарисованы под штанинами, иначе они «вылезают» поверх колен
+const LEGS_CROSSED = new Set([16]);
+function shoesOverPants(hero, pose) {
+  return BOOTS.has(hero.shoes) && !WIDE_PANTS.has(hero.pants) && !LEGS_CROSSED.has(pose);
 }
 
 /** Одет ли герой: верх, низ и обувь (ступни нарисованы только в обуви). Без этого на обложку нельзя. */
@@ -92,7 +94,7 @@ export function layersFor(hero, pose = null, catalog = null) {
   }
   // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
   const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
-  if (!builtinShoes) add(hero.shoes, shoesOverPants(hero) ? Z.shoesOver : Z.shoes);
+  if (!builtinShoes) add(hero.shoes, shoesOverPants(hero, pose) ? Z.shoesOver : Z.shoes);
   // Коньки вырезаны из фона обложки и прикреплены к ногам позы; как обувь — под штанинами,
   // чтобы край штанины ложился на голенище конька
   else { add('skate-raised', Z.shoes); add('skate-stand', Z.shoes); }
