@@ -896,7 +896,13 @@ function pagePages(book) {
     if (it.clouds.length < 2) {
       const roles = tpl.receiver ? ['giver', 'receiver'] : [it.swap ? 'receiver' : 'giver'];
       box.append(h('div', { class: 'pg-tools' }, roles.map((r) => h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => {
-        it.clouds.push(defaultCloud(c, tpl, tpl.receiver ? r : 'giver', tpl.receiver ? it.swap : false));
+        const nc = defaultCloud(c, tpl, tpl.receiver ? r : 'giver', tpl.receiver ? it.swap : false);
+        // Второе облако не ложится на первое: отодвигаем его в сторону
+        const o = it.clouds[0];
+        if (o && Math.abs(o.x - nc.x) < o.w * 0.8 && Math.abs(o.y - nc.y) < o.w * 0.5) {
+          if (nc.x <= o.x) { nc.x = Math.max(2, o.x - nc.w - 3); nc.s = 0; } else { nc.x = Math.min(174.8 - nc.w - 2, o.x + o.w + 3); nc.s = 1; }
+        }
+        it.clouds.push(nc);
         drawSide(); changed(true);
       } }, `+ Облако: ${d.heroes[r].name}`))));
     }
