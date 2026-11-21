@@ -582,3 +582,4 @@ body.is-print { background: #e9e5e2; }
 .inside-list li { display: flex; gap: 12px; align-items: baseline; color: var(--ink-2); }
 .inside-list li::before { content: '✦'; color: var(--ink); font-size: 12px; }
 @media (max-width: 860px) { .inside { grid-template-columns: 1fr; } }
+.co-book .small { display: block; margin-top: 4px; }

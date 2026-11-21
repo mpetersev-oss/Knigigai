@@ -237,7 +237,7 @@ function pageHome() {
       ),
       h('div', null,
         h('p', { class: 'eyebrow' }, 'Внутри книги'),
-        h('h2', { class: 'h2' }, 'Каждая страница — ', h('em', null, 'про вас')),
+        h('h2', { class: 'h2' }, 'Каждая страница — ', h('em', null, 'про\u00a0вас')),
         h('ul', { class: 'inside-list' },
           h('li', null, `${availableTemplates(c).length} сцен: каток, объятия, танцы, море, ужин на двоих`),
           h('li', null, 'Свои слова на каждой странице — или наши готовые тексты'),
