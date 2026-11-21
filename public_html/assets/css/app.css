@@ -385,6 +385,7 @@ button { font: inherit; color: inherit; }
 .bp-svg .dc-ground { fill: rgba(40, 20, 10, .1); }
 .bp-svg .dc, .bp-svg .dc-solid { fill: var(--deco); }
 .bp-svg .dc-alt { fill: var(--alt); }
+.bp-svg .dc-bench { fill: var(--deco); opacity: .45; }
 .bp-svg .dc-line { stroke: var(--deco); stroke-width: 1.6; stroke-linecap: round; }
 .bp-svg .dc-stroke { fill: none; stroke: var(--deco); stroke-width: .9; }
 .bp-hero { position: absolute; z-index: 2; pointer-events: none; }

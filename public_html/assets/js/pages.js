@@ -79,7 +79,7 @@ export function renderPage(catalog, page, heroes, opts = {}) {
   const scene = document.createElement('div');
   scene.className = 'bp-scene';
   if (page.kind !== 'dedication') scene.style.height = `${(ref.scene / ref.h) * 100}%`;
-  scene.innerHTML = decorSvg(tpl.decor, page.kind === 'dedication' ? ref.h : ref.scene);
+  scene.innerHTML = decorSvg(tpl.decor, page.kind === 'dedication' ? ref.h : ref.scene, tpl);
   el.appendChild(scene);
 
   const slots = [[tpl.g, swap ? heroes.receiver : heroes.giver], [tpl.r, swap ? heroes.giver : heroes.receiver]];
@@ -137,8 +137,17 @@ function arch(h) {
   return `<path class="dc-arch" d="M24 ${h}V82a63.4 63.4 0 0 1 126.8 0V${h}Z"/>`;
 }
 
-function decorSvg(kind, h) {
-  const ground = `<ellipse class="dc-ground" cx="87.4" cy="${h - 7}" rx="66" ry="5"/>`;
+function decorSvg(kind, h, tpl = {}) {
+  let ground = `<ellipse class="dc-ground" cx="87.4" cy="${h - 7}" rx="66" ry="5"/>`;
+  // Скамейка для сидячих поз: сиденье на высоте tpl.bench (в единицах страницы)
+  if (tpl.bench) {
+    const y = tpl.bench;
+    ground += `<g class="dc-bench"><rect x="14" y="${y + 4}" width="4" height="${h - 9 - y - 4}" rx="1.5"/><rect x="156.8" y="${y + 4}" width="4" height="${h - 9 - y - 4}" rx="1.5"/><rect x="6" y="${y}" width="162.8" height="6" rx="3"/></g>`;
+  }
+  if (tpl.bed) {
+    const y = tpl.bed;
+    ground += `<g><rect x="6" y="${y}" width="162.8" height="${h - 8 - y}" rx="6" fill="#fff" opacity=".9"/><rect x="6" y="${y}" width="162.8" height="7" rx="3.5" class="dc-solid" opacity=".35"/><rect x="10" y="${y - 12}" width="34" height="14" rx="7" fill="#fff"/></g>`;
+  }
   let fg = '';
   switch (kind) {
     case 'hearts':
