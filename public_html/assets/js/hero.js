@@ -3,7 +3,7 @@
 // ставится по своим координатам внутри кадра — ничего не «прыгает».
 
 export const Z = {
-  body: 0, shoes: 4, pants: 6, top: 7, bodice: 8, jacket: 8.5,
+  body: 0, underwear: 1, shoes: 4, pants: 6, top: 7, bodice: 8, jacket: 8.5,
   face: 9, mouth: 10, nose: 11, eyes: 12, eyebrows: 12.5, beard: 13, hair: 14, arms: 14.5, glasses: 15, hat: 16,
 };
 
@@ -36,7 +36,8 @@ export function newHero(name, gender) {
     name, gender, tone: '1', face: 1,
     hairColor: d.hairColor, hairStyle: d.hairStyle,
     eyes: d.eyes, nose: d.nose, mouth: d.mouth, beard: null,
-    top: d.top, jacket: null, bodice: null, pants: d.pants, shoes: d.shoes,
+    // Новый герой — в нижнем белье: одежду пользователь выбирает сам
+    top: null, jacket: null, bodice: null, pants: null, shoes: null,
     glasses: null, hat: null,
   };
 }
@@ -47,9 +48,20 @@ export function setGender(hero, gender, catalog) {
   const d = DEFAULTS[gender];
   if (!h.eyes || !h.eyes.startsWith(gender + '-')) h.eyes = d.eyes;
   const okTop = (catalog.items.tops || []).some((t) => t.key === h.top && (t.gender === 'any' || t.gender === gender));
-  if (!okTop) h.top = d.top;
+  if (h.top && !okTop) h.top = null;
+  if (gender === 'male') h.bodice = null;
   if (gender === 'female') h.beard = null;
   return h;
+}
+
+/** Одет ли герой (есть верх и низ). Без этого персонажа нельзя поставить на обложку. */
+export function hasOutfit(hero) {
+  return !!(hero && (hero.top || hero.jacket || hero.bodice) && hero.pants);
+}
+
+function outfitFallback(hero) {
+  const d = DEFAULTS[hero.gender] || DEFAULTS.female;
+  return { top: hero.top || (hero.jacket || hero.bodice ? null : d.top), pants: hero.pants || d.pants };
 }
 
 /**
@@ -61,9 +73,16 @@ export function layersFor(hero, pose = null, catalog = null) {
   const L = [];
   const add = (key, z) => key && L.push({ key: p + key, z });
   const face = pose && Number(hero.face) === 6 ? 5 : hero.face; // в позах нет 6-й формы лица
+  const dressed = hasOutfit(hero);
+  // Белья в позах нет: если герой не одет, на обложке надеваем базовый комплект
+  if (pose && !dressed) hero = { ...hero, ...outfitFallback(hero) };
 
   // Тело уже нарисовано в белье, поэтому отдельные слои белья не нужны
   add(`body-${hero.tone}`, Z.body);
+  if (!pose) {
+    if (!hero.pants) add('underwear-bottom', Z.underwear);
+    if (hero.gender === 'female' && !hero.top && !hero.jacket && !hero.bodice) add('underwear-bra', Z.underwear);
+  }
   // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
   const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
   if (!builtinShoes) add(hero.shoes, Z.shoes);

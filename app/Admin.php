@@ -89,6 +89,9 @@ final class Admin
             foreach ($src['tones'] as $t) {
                 $add('e:body-' . $t['key'], $t['body']);
             }
+            foreach (($src['underwear'] ?? []) as $k => $u) {
+                $add('e:underwear-' . $k, $u);
+            }
             // Губы — из Airtable, из позы, голова которой совпадает с редактором
             $mouths = [];
             $mouthPose = (int) ($src['editorMouthFromPose'] ?? 1);

@@ -131,8 +131,8 @@ function syncCard(s, poseDone) {
   );
 }
 
-const FRAME_SCALE = 0.45; // доля от кадра 2855×3305 — хватает для экрана с ретиной
-const COVER_WIDTH = 900;
+const FRAME_SCALE = 0.75; // доля от кадра 2855×3305: чётко даже на больших ретина-экранах
+const COVER_WIDTH = 1600;
 
 async function convertAndUpload(job) {
   const res = await fetch('/api/admin/proxy?u=' + encodeURIComponent(job.src), { headers: { 'X-Requested-With': 'kg' } });
@@ -168,7 +168,7 @@ async function convertAndUpload(job) {
       // координаты в пикселях исходного кадра
       meta = { fw: nw, fh: nh, x: x0 / s, y: y0 / s, w: (x1 - x0) / s, h: (y1 - y0) / s };
     }
-    const webp = await new Promise((r) => out.toBlob(r, 'image/webp', 0.86));
+    const webp = await new Promise((r) => out.toBlob(r, 'image/webp', 0.92));
     if (!webp || webp.type !== 'image/webp') throw new Error('браузер не умеет WebP — используйте Chrome');
     const fd = new FormData();
     fd.append('key', job.key);

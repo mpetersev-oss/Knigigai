@@ -160,10 +160,10 @@ final class Books
         $pick('nose', 'nose', true);
         $pick('mouth', 'mouth', true);
         $pick('beard', 'beard', false);
-        $pick('top', 'tops', true, $gender);
+        $pick('top', 'tops', false, $gender);
         $pick('jacket', 'jackets', false);
         $pick('bodice', 'bodice', false);
-        $pick('pants', 'pants', true);
+        $pick('pants', 'pants', false);
         $pick('shoes', 'shoes', false);
         $pick('glasses', 'glasses', false);
         $pick('hat', 'hats', false);

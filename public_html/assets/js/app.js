@@ -1,6 +1,6 @@
 import { h, clear, toast, debounce, rub } from './dom.js';
 import { api, loadCatalog, myBooks } from './api.js';
-import { figure, cropFigure, newHero, setGender, randomize, HAIR_COLORS } from './hero.js';
+import { figure, cropFigure, newHero, setGender, randomize, hasOutfit, HAIR_COLORS } from './hero.js';
 import { renderCover } from './cover.js';
 
 const root = document.getElementById('app');
@@ -336,7 +336,7 @@ function pageHeroes(book) {
       ),
     );
   };
-  const ready = d.heroes.giver && d.heroes.receiver;
+  const ready = hasOutfit(d.heroes.giver) && hasOutfit(d.heroes.receiver);
   page(
     flowHeader(book, 'heroes'),
     h('section', { class: 'flow' },
@@ -346,7 +346,7 @@ function pageHeroes(book) {
       ),
       h('div', { class: 'hero-cards' }, card('giver'), h('div', { class: 'hero-and' }, '&'), card('receiver')),
       h('div', { class: 'flow-actions' },
-        h('a', { href: `/b/${book.token}/occasion`, 'data-link': true, class: `btn btn-dark btn-lg ${ready ? '' : 'is-disabled'}`, 'aria-disabled': ready ? null : 'true', onclick: (e) => { if (!ready) { e.preventDefault(); e.stopPropagation(); toast('Сначала создайте обоих героев'); } } }, 'Дальше: повод'),
+        h('a', { href: `/b/${book.token}/occasion`, 'data-link': true, class: `btn btn-dark btn-lg ${ready ? '' : 'is-disabled'}`, 'aria-disabled': ready ? null : 'true', onclick: (e) => { if (!ready) { e.preventDefault(); e.stopPropagation(); toast('Сначала создайте и оденьте обоих героев'); } } }, 'Дальше: повод'),
       ),
     ),
   );
@@ -361,10 +361,10 @@ const TABS = [
   { id: 'nose', label: 'Нос', field: 'nose', cat: 'nose', region: 'face' },
   { id: 'mouth', label: 'Губы', field: 'mouth', cat: 'mouth', region: 'face' },
   { id: 'beard', label: 'Борода', field: 'beard', cat: 'beard', region: 'head', optional: true, only: 'male' },
-  { id: 'top', label: 'Верх', field: 'top', cat: 'tops', region: 'torso' },
+  { id: 'top', label: 'Верх', field: 'top', cat: 'tops', region: 'torso', optional: true },
   { id: 'jacket', label: 'Куртки', field: 'jacket', cat: 'jackets', region: 'torso', optional: true, clears: 'bodice' },
   { id: 'bodice', label: 'Жакеты', field: 'bodice', cat: 'bodice', region: 'torso', optional: true, clears: 'jacket', only: 'female' },
-  { id: 'pants', label: 'Низ', field: 'pants', cat: 'pants', region: 'legs' },
+  { id: 'pants', label: 'Низ', field: 'pants', cat: 'pants', region: 'legs', optional: true },
   { id: 'shoes', label: 'Обувь', field: 'shoes', cat: 'shoes', region: 'feet', optional: true },
   { id: 'glasses', label: 'Очки', field: 'glasses', cat: 'glasses', region: 'head', optional: true },
   { id: 'hat', label: 'Шапки', field: 'hat', cat: 'hats', region: 'hair', optional: true },
@@ -469,6 +469,12 @@ function pageBuilder(book, role) {
 
   const other = role === 'giver' ? 'receiver' : 'giver';
   const done = async () => {
+    if (!hasOutfit(hero)) {
+      tab = (hero.top || hero.jacket || hero.bodice) ? 'pants' : 'top';
+      drawTabs(); drawGrid();
+      toast('Оденьте героя: выберите верх и низ — в белье он не попадёт в книгу');
+      return;
+    }
     await save.flush();
     while (saving) await new Promise((r) => setTimeout(r, 100));
     const d = state.book.data;

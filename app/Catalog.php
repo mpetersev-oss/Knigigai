@@ -64,6 +64,9 @@ final class Catalog
         foreach ($src['tones'] as $t) {
             $put('e:body-' . $t['key'], $t['body']);
         }
+        foreach (($src['underwear'] ?? []) as $k => $u) {
+            $put('e:underwear-' . $k, null); // бельё показываем только после синхронизации
+        }
 
         $items = [];
         foreach ($src['categories'] as $cat => $list) {
