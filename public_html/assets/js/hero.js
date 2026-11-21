@@ -3,7 +3,7 @@
 // ставится по своим координатам внутри кадра — ничего не «прыгает».
 
 export const Z = {
-  body: 0, underwear: 1, shoes: 4, pants: 6, top: 7, bodice: 8, jacket: 8.5,
+  body: 0, underwear: 1, shoes: 4, shoesOver: 6.5, pants: 6, top: 7, bodice: 8, jacket: 8.5,
   face: 9, mouth: 10, nose: 11, eyes: 12, eyebrows: 12.5, beard: 13, hair: 14, arms: 14.5, glasses: 15, hat: 16,
 };
 
@@ -54,6 +54,13 @@ export function setGender(hero, gender, catalog) {
   return h;
 }
 
+// Высокая обувь (сапоги, ботинки) надевается поверх штанов — кроме широких брюк, которые её закрывают
+const BOOTS = new Set(['shoe-8', 'shoe-9', 'shoe-10', 'shoe-11', 'shoe-27']);
+const WIDE_PANTS = new Set(['pants-4', 'pants-5', 'pants-14', 'pants-15']);
+function shoesOverPants(hero) {
+  return BOOTS.has(hero.shoes) && !WIDE_PANTS.has(hero.pants);
+}
+
 /** Одет ли герой: верх, низ и обувь (ступни нарисованы только в обуви). Без этого на обложку нельзя. */
 export function hasOutfit(hero) {
   return !!(hero && (hero.top || hero.jacket || hero.bodice) && hero.pants && hero.shoes);
@@ -85,17 +92,19 @@ export function layersFor(hero, pose = null, catalog = null) {
   }
   // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
   const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
-  if (!builtinShoes) add(hero.shoes, Z.shoes);
+  if (!builtinShoes) add(hero.shoes, shoesOverPants(hero) ? Z.shoesOver : Z.shoes);
   add(hero.pants, Z.pants);
   add(hero.top, Z.top);
   add(hero.bodice, Z.bodice);
   add(hero.jacket, Z.jacket);
   add(`skin_tone_${hero.tone}_face_${face}`, Z.face);
+  const faceKey = p + `skin_tone_${hero.tone}_face_${face}`;
   add(hero.mouth, Z.mouth);
   add(hero.nose, Z.nose);
   add(hero.eyes, Z.eyes);
   add(`${hero.gender}-eyebrows-${BROW[hero.hairColor] || 4}`, Z.eyebrows);
-  if (hero.gender === 'male') add(hero.beard, Z.beard);
+  // Борода нарисована под одну форму лица — обрезаем её по контуру выбранного лица, чтобы не вылезала
+  if (hero.gender === 'male' && hero.beard) L.push({ key: p + hero.beard, z: Z.beard, clipTo: faceKey });
   if (hero.hairStyle) add(`${hero.hairColor}-${hero.hairStyle}`, Z.hair);
   if (pose) add(`top-arms-${ARMS_BY_SLEEVE[sleeveOf(hero, catalog)]}-tone-${hero.tone}`, Z.arms);
   add(hero.glasses, Z.glasses);
@@ -119,17 +128,36 @@ export function figure(catalog, hero, opts = {}) {
   el.className = 'fig';
   el.style.aspectRatio = `${FW} / ${FH}`;
   if (!hero) return el;
-  for (const { key, z } of layersFor(hero, pose, catalog)) {
-    const a = catalog.assets[key];
-    if (!a) continue;
-    const [url, x, y, w, h] = a;
+  const box = (x, y, w, h) => `left:${(x / FW) * 100}%;top:${(y / FH) * 100}%;width:${(w / FW) * 100}%;height:${(h / FH) * 100}%;`;
+  const mkImg = (url) => {
     const img = document.createElement('img');
     img.alt = '';
     img.decoding = 'async';
     if (opts.lazy) img.loading = 'lazy';
     img.draggable = false;
     img.src = url;
-    img.style.cssText = `left:${(x / FW) * 100}%;top:${(y / FH) * 100}%;width:${(w / FW) * 100}%;height:${(h / FH) * 100}%;z-index:${Math.round(z * 10)}`;
+    return img;
+  };
+  for (const { key, z, clipTo } of layersFor(hero, pose, catalog)) {
+    const a = catalog.assets[key];
+    if (!a) continue;
+    const [url, x, y, w, h] = a;
+    const m = clipTo && catalog.assets[clipTo];
+    if (m && m[0].startsWith('/')) {
+      // Слой видим только внутри силуэта другого слоя (борода — внутри лица)
+      const [mu, mx, my, mw, mh] = m;
+      const wrap = document.createElement('div');
+      wrap.className = 'fig-mask';
+      wrap.style.cssText = box(mx, my, mw, mh) + `z-index:${Math.round(z * 10)};` +
+        `-webkit-mask:url("${mu}") 0 0/100% 100% no-repeat;mask:url("${mu}") 0 0/100% 100% no-repeat`;
+      const img = mkImg(url);
+      img.style.cssText = `left:${((x - mx) / mw) * 100}%;top:${((y - my) / mh) * 100}%;width:${(w / mw) * 100}%;height:${(h / mh) * 100}%`;
+      wrap.appendChild(img);
+      el.appendChild(wrap);
+      continue;
+    }
+    const img = mkImg(url);
+    img.style.cssText = box(x, y, w, h) + `z-index:${Math.round(z * 10)}`;
     el.appendChild(img);
   }
   return el;

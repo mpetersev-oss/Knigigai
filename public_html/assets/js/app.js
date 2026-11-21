@@ -417,14 +417,32 @@ function pageBuilder(book, role) {
     return TABS.filter((t) => !t.only || t.only === hero.gender);
   }
 
+  // Вкладки не пересоздаются при выборе — иначе полоса прокрутки прыгает в начало
   function drawTabs() {
+    const keep = tabsEl.scrollLeft;
     clear(tabsEl);
     for (const t of visibleTabs()) {
       tabsEl.appendChild(h('button', {
         type: 'button', role: 'tab', class: `b-tab ${t.id === tab ? 'is-on' : ''}`, 'aria-selected': t.id === tab ? 'true' : 'false',
-        onclick: () => { tab = t.id; drawTabs(); drawGrid(); grid.scrollTop = 0; },
+        'data-tab': t.id,
+        onclick: (e) => { tab = t.id; markTabs(); drawGrid(); grid.scrollTop = 0; revealTab(e.currentTarget); },
       }, t.label));
     }
+    tabsEl.scrollLeft = keep;
+    revealTab(tabsEl.querySelector('.is-on'));
+  }
+  function markTabs() {
+    for (const b of tabsEl.children) {
+      const on = b.dataset.tab === tab;
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    }
+  }
+  function revealTab(b) {
+    if (!b) return;
+    const l = b.offsetLeft, r = l + b.offsetWidth;
+    if (l < tabsEl.scrollLeft + 8) tabsEl.scrollTo({ left: Math.max(0, l - 24), behavior: 'smooth' });
+    else if (r > tabsEl.scrollLeft + tabsEl.clientWidth - 8) tabsEl.scrollTo({ left: r - tabsEl.clientWidth + 24, behavior: 'smooth' });
   }
 
   function option(selected, label, thumb, onPick) {

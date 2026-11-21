@@ -72,7 +72,7 @@ final class Catalog
         foreach ($src['categories'] as $cat => $list) {
             foreach ($list as $it) {
                 // Губы редактора берутся из Airtable (поза 1): старые файлы Webflow нарисованы в другом масштабе
-                $put('e:' . $it['key'], $cat === 'mouth' ? null : $it['src']);
+                $put('e:' . $it['key'], in_array($cat, Admin::EDITOR_FROM_POSE, true) ? null : $it['src']);
                 $meta = $it;
                 unset($meta['src']);
                 $items[$cat][] = $meta;

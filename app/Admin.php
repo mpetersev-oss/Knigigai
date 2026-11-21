@@ -11,6 +11,9 @@ declare(strict_types=1);
  */
 final class Admin
 {
+    /** Категории, которые редактор берёт не из Webflow, а из Airtable (поза 1). */
+    public const EDITOR_FROM_POSE = ['mouth', 'glasses'];
+
     private const PROXY_HOSTS = ['cdn.prod.website-files.com', 'uploads-ssl.webflow.com', 'v5.airtableusercontent.com', 'dl.airtable.com'];
 
     public static function startSession(): void
@@ -72,7 +75,7 @@ final class Admin
         if ($onlyMissing) {
             foreach (Db::pdo()->query('SELECT akey, src FROM assets') as $r) {
                 // Губы редактора раньше брались из Webflow (неверный масштаб) — такие перезагружаем
-                if (str_starts_with($r['akey'], 'e:mouth-') && !str_contains((string) $r['src'], 'airtable')) {
+                if (preg_match('/^e:(mouth|glasses)-/', $r['akey']) && !str_contains((string) $r['src'], 'airtable')) {
                     continue;
                 }
                 $have[$r['akey']] = true;
@@ -92,7 +95,8 @@ final class Admin
             foreach (($src['underwear'] ?? []) as $k => $u) {
                 $add('e:underwear-' . $k, $u);
             }
-            // Губы — из Airtable, из позы, голова которой совпадает с редактором
+            // Губы и очки — из Airtable, из позы, голова которой совпадает с редактором
+            // (в Webflow губы другого масштаба, а очки 5–10 стоят выше глаз)
             $mouths = [];
             $mouthPose = (int) ($src['editorMouthFromPose'] ?? 1);
             if ((string) config('airtable_token', '') !== '') {
@@ -100,7 +104,7 @@ final class Admin
             }
             foreach ($src['categories'] as $cat => $list) {
                 foreach ($list as $it) {
-                    if ($cat === 'mouth') {
+                    if (in_array($cat, self::EDITOR_FROM_POSE, true)) {
                         $add('e:' . $it['key'], $mouths[$it['key']] ?? null);
                         continue;
                     }

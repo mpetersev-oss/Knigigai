@@ -226,6 +226,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- персонаж ---------- */
 .fig { position: relative; width: 100%; }
+.fig-mask { position: absolute; pointer-events: none; }
 .fig img { position: absolute; max-width: none; user-select: none; -webkit-user-select: none; pointer-events: none; }
 .crop { position: relative; width: 100%; overflow: hidden; }
 
@@ -323,7 +324,7 @@ button { font: inherit; color: inherit; }
 .b-stage-fig .crop { height: 100%; width: auto; aspect-ratio: 1340 / 2760; filter: drop-shadow(0 24px 24px rgba(80, 50, 40, .16)); }
 .b-dice { position: absolute; left: 16px; bottom: 16px; height: 42px; padding: 0 18px; border-radius: 999px; border: 0; background: rgba(255, 255, 255, .75); backdrop-filter: blur(10px); cursor: pointer; font-size: 14px; box-shadow: var(--shadow-sm); }
 .b-panel { min-width: 0; display: flex; flex-direction: column; min-height: 0; background: var(--paper); border-left: 1px solid var(--line); }
-.b-tabs { flex: 0 0 auto; display: flex; gap: 6px; overflow-x: auto; padding: 14px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.b-tabs { position: relative; flex: 0 0 auto; display: flex; gap: 6px; overflow-x: auto; padding: 14px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
 .b-tabs::-webkit-scrollbar { display: none; }
 .b-tab { flex: 0 0 auto; height: 38px; padding: 0 16px; border-radius: 999px; border: 0; background: var(--tile); cursor: pointer; font-size: 14px; transition: all .2s; }
 .b-tab.is-on { background: var(--ink); color: #fff; }
