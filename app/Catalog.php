@@ -146,9 +146,17 @@ final class Catalog
                 'id' => $sc['id'], 'cat' => $sc['cat'], 'text' => $sc['text'], 'color' => $sc['color'],
                 'textX' => $sc['textX'], 'textY' => $sc['textY'], 'bg' => $bg, 'stackables' => $stack,
                 'giver' => $sc['giver'], 'receiver' => $sc['receiver'], 'props' => [], 'heroProps' => (object) [],
+                'note' => !empty($sc['note']),
             ];
         }
         $book['scenes'] = $scenes;
+        // Облака-реплики для героев
+        $cloudKeys = [];
+        foreach ($book['clouds'] ?? [] as $i => $u) {
+            $put('c:cloud-' . $i, $u, true);
+            $cloudKeys[] = 'c:cloud-' . $i;
+        }
+        $book['clouds'] = $cloudKeys;
 
         $editorTotal = count($src['tones']);
         foreach ($src['categories'] as $list) {

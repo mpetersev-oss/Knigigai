@@ -123,6 +123,9 @@ final class Admin
                 }
             }
         } elseif ($scope === 'pages') {
+            foreach (Catalog::pages()['clouds'] ?? [] as $i => $u) {
+                $add('c:cloud-' . $i, $u, true);
+            }
             foreach (Catalog::pages()['scenes'] as $sc) {
                 $add('c:pg-' . $sc['id'], $sc['image'], true);
                 foreach ($sc['stackables'] as $i => $u) {

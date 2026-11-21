@@ -219,12 +219,12 @@ final class Books
         return null;
     }
 
-    private static function cleanText($v, string $what): string
+    private static function cleanText($v, string $what, int $max = self::TEXT_MAX): string
     {
         $t = trim(preg_replace('/[ \t]+/u', ' ', str_replace("\r", '', (string) $v)));
         $t = preg_replace("/\n{3,}/u", "\n\n", $t);
-        if (mb_strlen($t) > self::TEXT_MAX) {
-            throw new HttpError(422, "$what — не длиннее " . self::TEXT_MAX . ' символов');
+        if (mb_strlen($t) > $max) {
+            throw new HttpError(422, "$what — не длиннее " . $max . ' символов');
         }
         return $t;
     }
@@ -234,13 +234,32 @@ final class Books
         if (!is_array($p)) {
             throw new HttpError(422, 'Некорректные страницы');
         }
-        $ids = array_column(Catalog::pages()['scenes'], 'id');
+        $scenes = [];
+        foreach (Catalog::pages()['scenes'] as $sc) {
+            $scenes[$sc['id']] = $sc;
+        }
+        $ids = array_keys($scenes);
+        $cloudCount = count(Catalog::pages()['clouds'] ?? []);
         $items = [];
         foreach (array_values((array) ($p['items'] ?? [])) as $i => $it) {
             if (!is_array($it) || !in_array($it['t'] ?? '', $ids, true)) {
                 throw new HttpError(422, 'Неизвестная сцена на странице ' . ($i + 1));
             }
-            $items[] = ['t' => $it['t'], 'text' => self::cleanText($it['text'] ?? '', 'Текст страницы ' . ($i + 1)), 'swap' => !empty($it['swap'])];
+            $isNote = !empty($scenes[$it['t']]['note']);
+            $clouds = [];
+            foreach (array_slice((array) ($it['clouds'] ?? []), 0, 2) as $cl) {
+                if (!is_array($cl)) {
+                    continue;
+                }
+                $clouds[] = [
+                    's' => max(0, min($cloudCount - 1, (int) ($cl['s'] ?? 0))),
+                    'text' => self::cleanText($cl['text'] ?? '', 'Текст облака', 90),
+                    'x' => round(max(-40, min(170, (float) ($cl['x'] ?? 0))), 1),
+                    'y' => round(max(-20, min(240, (float) ($cl['y'] ?? 0))), 1),
+                    'w' => round(max(30, min(150, (float) ($cl['w'] ?? 60))), 1),
+                ];
+            }
+            $items[] = ['t' => $it['t'], 'text' => self::cleanText($it['text'] ?? '', 'Текст страницы ' . ($i + 1), $isNote ? 700 : self::TEXT_MAX), 'swap' => !empty($it['swap']), 'clouds' => $clouds];
             if (count($items) > self::MAX_PAGES) {
                 break;
             }

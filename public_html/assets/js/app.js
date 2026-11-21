@@ -2,7 +2,7 @@ import { h, clear, toast, debounce, rub } from './dom.js';
 import { api, loadCatalog, myBooks } from './api.js';
 import { figure, cropFigure, newHero, setGender, randomize, hasOutfit, HAIR_COLORS } from './hero.js';
 import { renderCover } from './cover.js';
-import { renderPage, fillText, defaultPages, availableTemplates, templateById, defaultText, bookSpreads, cleanPages } from './pages.js';
+import { renderPage, fillText, defaultPages, availableTemplates, templateById, defaultText, bookSpreads, cleanPages, defaultCloud } from './pages.js';
 
 const root = document.getElementById('app');
 const state = { catalog: null, book: null };
@@ -863,15 +863,68 @@ function pagePages(book) {
   const changed = (full = false) => { drawPreview(); if (full) drawThumbs(); else refreshThumb(); save(); };
   const refreshThumb = debounce(() => drawThumbs(), 500);
 
-  function textArea(value, onInput) {
-    const ta = h('textarea', { class: 'textarea', maxlength: TEXT_MAX, rows: 4, 'aria-label': 'Текст страницы' });
+  function textArea(value, onInput, max = TEXT_MAX, rows = 4) {
+    const ta = h('textarea', { class: 'textarea', maxlength: max, rows, 'aria-label': 'Текст страницы' });
     ta.value = value;
     const cnt = h('div', { class: 'counter' });
-    const upd = () => { cnt.textContent = `${ta.value.length} / ${TEXT_MAX}`; };
+    const upd = () => { cnt.textContent = `${ta.value.length} / ${max}`; };
     ta.addEventListener('input', () => { upd(); onInput(ta.value); });
     upd();
     return [ta, cnt];
   }
+
+  /** Облака с мыслями героев: до двух на странице. */
+  function cloudEditor(it, tpl) {
+    it.clouds = it.clouds || [];
+    const box = h('div', { class: 'cloud-ed' }, h('b', null, 'Облака с мыслями'),
+      h('p', { class: 'hint' }, 'Добавьте облако над героем и впишите, о чём он думает. Облако можно перетащить прямо на странице.'));
+    it.clouds.forEach((cl, i) => {
+      const [ta, cnt] = textArea(fillText(cl.text, d.heroes), (v) => { cl.text = v; changed(); }, 90, 2);
+      ta.placeholder = 'О чём думает герой?';
+      box.append(h('div', { class: 'cloud-ed' },
+        h('div', { class: 'row' },
+          ...(c.book.clouds || []).map((k, s) => h('button', { type: 'button', class: `cloud-shape ${cl.s === s ? 'is-on' : ''}`, title: 'Форма облака', onclick: () => { cl.s = s; drawSide(); changed(true); } },
+            c.assets[k] ? h('img', { src: c.assets[k][0], alt: '' }) : String(s + 1))),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.clouds.splice(i, 1); drawSide(); changed(true); } }, 'Убрать'),
+        ),
+        ta, cnt,
+        h('div', { class: 'row' }, h('span', { class: 'small muted' }, 'Размер'),
+          h('input', { type: 'range', min: 34, max: 120, value: cl.w, oninput: (e) => { cl.w = Number(e.target.value); changed(); } })),
+        h('div', { class: 'idea-chips' }, (c.book.cloudIdeas || []).slice(0, 6).map((t) => h('button', { type: 'button', onclick: () => { cl.text = t; drawSide(); changed(); } }, t))),
+      ));
+    });
+    if (it.clouds.length < 2) {
+      const roles = tpl.receiver ? ['giver', 'receiver'] : [it.swap ? 'receiver' : 'giver'];
+      box.append(h('div', { class: 'pg-tools' }, roles.map((r) => h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => {
+        it.clouds.push(defaultCloud(c, tpl, tpl.receiver ? r : 'giver', tpl.receiver ? it.swap : false));
+        drawSide(); changed(true);
+      } }, `+ Облако: ${d.heroes[r].name}`))));
+    }
+    return box;
+  }
+
+  // Перетаскивание облаков прямо на превью страницы
+  bookEl.addEventListener('pointerdown', (e) => {
+    const el = e.target.closest('.pg-cloud');
+    const p = pageAt(cur);
+    if (!el || p.kind !== 'scene') return;
+    const cl = (p.item.clouds || [])[Number(el.dataset.i)];
+    if (!cl) return;
+    e.preventDefault();
+    el.setPointerCapture(e.pointerId);
+    el.classList.add('is-drag');
+    const unit = 174.8 / bookEl.getBoundingClientRect().width;
+    const x0 = e.clientX, y0 = e.clientY, cx = cl.x, cy = cl.y;
+    const move = (ev) => {
+      cl.x = Math.round(Math.max(-30, Math.min(160, cx + (ev.clientX - x0) * unit)) * 10) / 10;
+      cl.y = Math.round(Math.max(-10, Math.min(230, cy + (ev.clientY - y0) * unit)) * 10) / 10;
+      el.style.left = `${(cl.x / 174.8) * 100}%`;
+      el.style.top = `calc(${(cl.y / 174.8) * 100} * var(--cw))`;
+    };
+    const up = () => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerup', up); el.classList.remove('is-drag'); changed(true); };
+    el.addEventListener('pointermove', move);
+    el.addEventListener('pointerup', up);
+  });
 
   function drawSide() {
     clear(side);
@@ -881,17 +934,20 @@ function pagePages(book) {
       const it = p.item;
       const tpl = templateById(c, it.t);
       const idx = cur - 1;
-      const [ta, cnt] = textArea(fillText(it.text, d.heroes), (v) => { it.text = v; changed(); });
+      const note = !!(tpl && tpl.note);
+      const [ta, cnt] = textArea(fillText(it.text, d.heroes), (v) => { it.text = v; changed(); }, note ? 700 : TEXT_MAX, note ? 9 : 4);
       card = h('div', { class: 'pg-card' },
         h('p', { class: 'eyebrow' }, `Страница ${cur + 1}`),
         h('h2', null, tpl ? (c.book.categories[tpl.cat] || 'Сцена') : 'Сцена'),
-        tpl && !tpl.receiver ? h('p', { class: 'hint' }, 'На этой странице один герой. Кнопка «Герои местами» выбирает, кто именно.') : null,
+        note ? h('p', { class: 'hint' }, 'Страница для ваших слов: письмо, воспоминание, пожелание. Текст встанет в центр листа.') : null,
+        tpl && !note && !tpl.receiver ? h('p', { class: 'hint' }, 'На этой странице один герой. Кнопка «Герои местами» выбирает, кто именно.') : null,
         ta, cnt,
         h('div', { class: 'pg-tools' },
-          h('button', { type: 'button', class: 'btn btn-dark btn-sm', onclick: () => pickScene(idx) }, 'Сменить сцену'),
-          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.swap = !it.swap; changed(true); } }, '⇄ Герои местами'),
-          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.text = defaultText(tpl); drawSide(); changed(); } }, 'Текст по умолчанию'),
+          h('button', { type: 'button', class: 'btn btn-dark btn-sm', onclick: () => pickScene(idx) }, note ? 'Сменить рамку' : 'Сменить сцену'),
+          note ? null : h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.swap = !it.swap; changed(true); } }, '⇄ Герои местами'),
+          note ? null : h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.text = defaultText(tpl); drawSide(); changed(); } }, 'Текст по умолчанию'),
         ),
+        note ? null : cloudEditor(it, tpl),
         h('div', { class: 'pg-tools' },
           h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: idx === 0, onclick: () => move(idx, -1) }, '← Раньше'),
           h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: idx === pages.items.length - 1, onclick: () => move(idx, 1) }, 'Позже →'),
@@ -943,10 +999,11 @@ function pagePages(book) {
         const old = templateById(c, it.t);
         const untouched = !old || it.text === old.text;
         it.t = tpl.id;
-        if (untouched) it.text = defaultText(tpl);
+        if (untouched || tpl.note !== !!(old && old.note)) it.text = tpl.note ? c.book.noteText : defaultText(tpl);
+        if (tpl.note) it.clouds = [];
       } else {
         const at = Math.max(0, Math.min(pages.items.length, cur));
-        pages.items.splice(at, 0, { t: tpl.id, text: defaultText(tpl), swap: false });
+        pages.items.splice(at, 0, { t: tpl.id, text: tpl.note ? c.book.noteText : defaultText(tpl), swap: false, clouds: [] });
         cur = at + 1;
       }
       close();
@@ -961,8 +1018,8 @@ function pagePages(book) {
       clear(grid);
       for (const tpl of all.filter((t) => t.cat === cat && (!onlyDuo || t.receiver))) {
         grid.appendChild(h('button', { type: 'button', class: `scene-pick ${it && it.t === tpl.id ? 'is-on' : ''}`, onclick: () => choose(tpl) },
-          renderPage(c, { kind: 'scene', item: { t: tpl.id, text: tpl.text, swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
-          h('span', null, tpl.receiver ? 'Вдвоём' : 'Один герой')));
+          renderPage(c, { kind: 'scene', item: { t: tpl.id, text: tpl.note ? c.book.noteText : tpl.text, swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
+          h('span', null, tpl.note ? 'Письмо' : tpl.receiver ? 'Вдвоём' : 'Один герой')));
       }
     };
     const overlay = h('div', { class: 'modal-wrap', role: 'dialog', 'aria-modal': 'true', onclick: (e) => { if (e.target === overlay) close(); } },

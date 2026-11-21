@@ -52,7 +52,11 @@ export function defaultPages(catalog, data) {
   return {
     dedication: rom ? ded[0] : ded[1],
     final: rom ? b.final[0] : b.final[1],
-    items: picked.map((t) => ({ t: t.id, text: t.text, swap: false })),
+    items: [
+      ...picked.map((t) => ({ t: t.id, text: t.text, swap: false, clouds: [] })),
+      // Последней — страница-письмо со своими словами
+      ...(b.scenes.some((t) => t.id === 'frame-1') ? [{ t: 'frame-1', text: b.noteText, swap: false, clouds: [] }] : []),
+    ],
   };
 }
 
@@ -83,8 +87,21 @@ export function renderPage(catalog, page, heroes, opts = {}) {
   if (page.kind === 'scene') {
     // Сюжетная страница: фон, предметы, герои в позах и текст — как у обложки
     const sc = templateById(catalog, page.item.t) || b.scenes[0];
-    const el = renderCover(catalog, sc, heroes, { text: fillText(page.item.text, heroes) || sc.text, swap: !!page.item.swap, solo: page.item.swap ? 'receiver' : 'giver' }, { lazy: opts.lazy });
+    const body = fillText(page.item.text, heroes);
+    const el = renderCover(catalog, sc.note ? { ...sc, text: '' } : sc, heroes, { text: sc.note ? '' : (body || sc.text), swap: !!page.item.swap, solo: page.item.swap ? 'receiver' : 'giver' }, { lazy: opts.lazy });
     el.classList.add('is-page');
+    if (sc.note) {
+      // Страница-письмо: текст на «листе» в центре рамки
+      el.classList.add('is-note');
+      const t = document.createElement('div');
+      t.className = 'note-text';
+      const p = document.createElement('p');
+      p.textContent = body;
+      if (body.length > 260) p.classList.add('is-long');
+      t.appendChild(p);
+      el.appendChild(t);
+    }
+    (page.item.clouds || []).forEach((cl, i) => el.appendChild(cloudEl(catalog, cl, i, heroes)));
     if (opts.number) {
       const n = document.createElement('span');
       n.className = 'bp-num';
@@ -149,6 +166,43 @@ export function renderPage(catalog, page, heroes, opts = {}) {
     el.appendChild(n);
   }
   return el;
+}
+
+/** Облако-реплика героя: картинка облака и текст внутри. Координаты — в единицах страницы. */
+export function cloudEl(catalog, cl, i, heroes) {
+  const keys = catalog.book.clouds || [];
+  const a = catalog.assets[keys[cl.s] || keys[0]];
+  const d = document.createElement('div');
+  d.className = 'pg-cloud';
+  d.dataset.i = String(i);
+  d.style.left = `${(cl.x / W) * 100}%`;
+  d.style.top = `calc(${(cl.y / W) * 100} * var(--cw))`;
+  d.style.width = `${(cl.w / W) * 100}%`;
+  d.style.setProperty('--fs', `calc(${(cl.w * 0.105 / W) * 100} * var(--cw))`);
+  if (a) {
+    const img = document.createElement('img');
+    img.src = a[0];
+    img.alt = '';
+    img.draggable = false;
+    d.appendChild(img);
+  }
+  const t = document.createElement('span');
+  t.textContent = fillText(cl.text, heroes || {});
+  d.appendChild(t);
+  return d;
+}
+
+/** Облако по умолчанию — над головой героя на этой странице. */
+export function defaultCloud(catalog, scene, role, swap) {
+  const slotRole = swap ? (role === 'giver' ? 'receiver' : 'giver') : role;
+  const slot = scene[slotRole] || scene.giver;
+  const [sw, sh] = (slot && catalog.coverRef.sizes[slot.size]) || catalog.coverRef.sizes.medium;
+  const cx = slot ? slot.x + sw * 0.5 : 87;
+  const top = slot ? slot.y + sh * 0.06 : 40;
+  const w = 62;
+  // Хвостик облака смотрит к голове героя: у первого облака он справа, у второго — слева
+  const right = cx > 87;
+  return { s: right ? 0 : 1, text: '', w, x: Math.max(2, Math.min(W - w - 2, cx - (right ? w * 0.8 : w * 0.2))), y: Math.max(4, top - w * 0.66) };
 }
 
 // ---------- Декор сцен (простые векторные элементы в цветах темы) ----------
