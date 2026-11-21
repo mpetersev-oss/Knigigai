@@ -1842,7 +1842,7 @@
    "textY": 40,
    "giver": {
     "pose": 3,
-    "x": 5,
+    "x": 7.5,
     "y": 85,
     "size": "small",
     "flip": false
@@ -2179,21 +2179,17 @@
  "editorMouthFromPose": 1,
  "stackFix": {
   "c:cover-19:s1": {
-   "dx": 2.9,
-   "dy": 5.2,
    "front": [
     [
-     64,
+     60,
      100
     ]
    ]
   },
   "c:cover-12:s1": {
-   "dx": 0,
-   "dy": 0,
    "front": [
     [
-     43,
+     40,
      100
     ]
    ]
