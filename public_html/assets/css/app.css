@@ -415,7 +415,7 @@ button { font: inherit; color: inherit; }
 /* ---------- редактор страниц ---------- */
 .pg { max-width: 1280px; margin: 0 auto; padding: 28px 20px 140px; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: clamp(24px, 4vw, 56px); align-items: start; }
 .pg-stage { position: sticky; top: 96px; display: grid; justify-items: center; gap: 16px; }
-.pg-book { width: min(100%, 440px, calc((100svh - 250px) * 0.651)); min-width: 260px; }
+.pg-book { width: min(100%, 440px, calc((100svh - 300px) * 0.651)); min-width: 250px; }
 .pg-book .bpage { border-radius: 4px 10px 10px 4px; box-shadow: -10px 0 0 -4px #efe7e1 inset, var(--shadow); }
 .pg-nav { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
 .pg-nav .icon-btn { width: 42px; height: 42px; }
@@ -571,3 +571,14 @@ body.is-print { background: #e9e5e2; }
 .terms-sec { background: var(--paper); border-radius: var(--r); padding: 24px 26px; margin-bottom: 14px; }
 .terms-sec h2 { margin: 0 0 8px; }
 .terms-sec p { margin: 0; color: var(--ink-2); line-height: 1.6; }
+
+/* ---------- главная: разворот книги ---------- */
+.inside { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(30px, 6vw, 90px); align-items: center; }
+.inside-spread { display: flex; box-shadow: var(--shadow); border-radius: 6px; overflow: hidden; transform: perspective(1600px) rotateX(6deg); }
+.inside-spread > div { flex: 1 1 0; min-width: 0; }
+.inside-spread > div:first-child .bpage { box-shadow: -18px 0 30px -24px rgba(0, 0, 0, .45) inset; }
+.inside-spread > div:last-child .bpage { box-shadow: 18px 0 30px -24px rgba(0, 0, 0, .45) inset; }
+.inside-list { list-style: none; padding: 0; margin: 18px 0 26px; display: grid; gap: 12px; }
+.inside-list li { display: flex; gap: 12px; align-items: baseline; color: var(--ink-2); }
+.inside-list li::before { content: '✦'; color: var(--ink); font-size: 12px; }
+@media (max-width: 860px) { .inside { grid-template-columns: 1fr; } }

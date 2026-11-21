@@ -1,7 +1,7 @@
 // Страницы книги: сцена с героями в позах + текст.
 // Координаты героев — в тех же единицах, что и на обложках (ширина страницы 174.8),
 // поэтому страница одинаково выглядит в миниатюре, в просмотре и в макете для печати.
-import { figure, poseReady } from './hero.js';
+import { figure } from './hero.js';
 
 const W = 174.8;
 
@@ -16,7 +16,9 @@ export function fillText(text, heroes) {
 
 /** Шаблоны, для которых уже есть картинки поз. */
 export function availableTemplates(catalog) {
-  return catalog.book.templates.filter((t) => [t.g, t.r].every((s) => !s || poseReady(catalog, s.pose)));
+  // Сцена доступна, когда поза синхронизирована полностью (~250 слоёв: вся одежда и причёски)
+  const full = (n) => ((catalog.sync && catalog.sync.poses && catalog.sync.poses[n]) || 0) >= 200;
+  return catalog.book.templates.filter((t) => [t.g, t.r].every((s) => !s || full(s.pose)));
 }
 
 export function templateById(catalog, id) {

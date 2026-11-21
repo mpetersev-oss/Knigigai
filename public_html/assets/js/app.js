@@ -114,7 +114,7 @@ function logo() {
 
 function nav(opts = {}) {
   const links = opts.home ? [
-    ['#how', 'Как это работает'], ['#covers', 'Обложки'], ['#book', 'Книга'], ['#faq', 'Вопросы'],
+    ['#how', 'Как это работает'], ['#covers', 'Обложки'], ['#inside', 'Внутри'], ['#book', 'Книга'], ['#faq', 'Вопросы'],
   ] : [];
   return h('header', { class: 'nav' },
     h('div', { class: 'nav-pill' },
@@ -210,7 +210,7 @@ function pageHome() {
     h('div', { class: 'cards3' },
       howCard('01', 'Создайте героев', 'Цвет кожи, причёска, глаза, одежда, очки — соберите персонажей, в которых узнают вас обоих.', cropFigure(c, DEMO.giver, 'head')),
       howCard('02', 'Выберите повод и обложку', 'День рождения, годовщина, свадьба — ваши герои сразу появляются на обложках.', demoCovers[1] ? renderCover(c, demoCovers[1], DEMO, {}, { lazy: true }) : null),
-      howCard('03', 'Получите книгу', 'Мы печатаем на плотной мелованной бумаге в твёрдом переплёте и бесплатно доставляем.', h('div', { class: 'how-book' }, h('span', null, '215'), h('i', null, '×'), h('span', null, '140'))),
+      howCard('03', 'Напишите страницы и получите книгу', 'Выберите сцены, добавьте свои слова — мы напечатаем книгу в твёрдом переплёте и бесплатно доставим.', h('div', { class: 'how-book' }, h('span', null, '215'), h('i', null, '×'), h('span', null, '140'))),
     ),
   );
 
@@ -226,6 +226,27 @@ function pageHome() {
     ))),
     h('div', { class: 'center' }, h('a', { href: '/create', 'data-link': true, class: 'btn btn-dark' }, 'Собрать свою обложку')),
   );
+
+  const tplA = c.book && availableTemplates(c).find((t) => t.id === 'skate') || (c.book && availableTemplates(c)[0]);
+  const tplB = c.book && availableTemplates(c).find((t) => t.id === 'hug');
+  const inside = tplA && tplB ? h('section', { class: 'section', id: 'inside' },
+    h('div', { class: 'inside' },
+      h('div', { class: 'inside-spread reveal' },
+        h('div', null, renderPage(c, { kind: 'scene', item: { t: tplA.id, text: tplA.text } }, DEMO, { lazy: true, number: 4 })),
+        h('div', null, renderPage(c, { kind: 'scene', item: { t: tplB.id, text: tplB.text } }, DEMO, { lazy: true, number: 5 })),
+      ),
+      h('div', null,
+        h('p', { class: 'eyebrow' }, 'Внутри книги'),
+        h('h2', { class: 'h2' }, 'Каждая страница — ', h('em', null, 'про вас')),
+        h('ul', { class: 'inside-list' },
+          h('li', null, `${availableTemplates(c).length} сцен: каток, объятия, танцы, море, ужин на двоих`),
+          h('li', null, 'Свои слова на каждой странице — или наши готовые тексты'),
+          h('li', null, `От ${c.pageLimits[0] + 2} до ${c.pageLimits[1] + 2} страниц, посвящение и финал`),
+        ),
+        h('a', { href: '/create', 'data-link': true, class: 'btn btn-dark' }, 'Собрать свою книгу'),
+      ),
+    ),
+  ) : null;
 
   const reasons = [
     ['Это про вас двоих', 'Не открытка «для всех», а история с вашими лицами, именами и шутками.'],
@@ -260,6 +281,8 @@ function pageHome() {
       ['Сколько идёт доставка?', 'Около 5 рабочих дней после оформления заказа. Доставка бесплатная.'],
       ['Доставляете за границу?', 'Да, по запросу — напишите нам, и мы рассчитаем стоимость.'],
       ['Можно поменять героев после выбора обложки?', 'Да, в любой момент до заказа. Изменения сразу появятся на обложке.'],
+      ['Можно написать свои тексты?', 'Да. На каждой странице есть готовый текст — его можно оставить, поправить или написать полностью свой.'],
+      ['Как оплатить?', 'Онлайн: картой, через СБП, SberPay или ЮMoney на защищённой странице ЮKassa. Чек придёт на почту.'],
     ].map(([q, a]) => h('details', { class: 'faq-item' }, h('summary', null, q, h('i', null)), h('p', null, a)))),
   );
 
@@ -276,7 +299,7 @@ function pageHome() {
 
   const sticky = h('a', { href: '/create', 'data-link': true, class: 'sticky-cta' }, 'Создать книгу', h('span', null, rub(c.price)));
 
-  page(nav({ home: true }), hero, marquee, how, coversSection, why, faq, footer, sticky);
+  page(nav({ home: true }), hero, marquee, how, coversSection, inside, why, faq, footer, sticky);
   root.querySelector('.page').classList.add('page-home');
   wireWhyList();
   wireReveal();
