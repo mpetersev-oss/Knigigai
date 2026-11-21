@@ -38,16 +38,6 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     if (opts.lazy) img.loading = 'lazy';
     el.appendChild(img);
   }
-  for (const k of cover.stackables) {
-    const a = catalog.assets[k];
-    if (!a) continue;
-    const img = document.createElement('img');
-    img.className = 'cover-stack';
-    img.alt = '';
-    img.src = a[0];
-    if (opts.lazy) img.loading = 'lazy';
-    el.appendChild(img);
-  }
   for (const { slot, hero } of slotsFor(cover, heroes, choice)) {
     if (!slot || !hero) continue;
     const [sw] = ref.sizes[slot.size] || ref.sizes.original;
@@ -59,6 +49,17 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     if (slot.flip) wrap.style.transform = 'scaleX(-1)';
     wrap.appendChild(figure(catalog, hero, { pose: slot.pose, lazy: opts.lazy }));
     el.appendChild(wrap);
+  }
+  // Декоративные слои лежат ПОВЕРХ героев: зонт, облака, стрелки часов, яблоки
+  for (const k of cover.stackables) {
+    const a = catalog.assets[k];
+    if (!a) continue;
+    const img = document.createElement('img');
+    img.className = 'cover-stack';
+    img.alt = '';
+    img.src = a[0];
+    if (opts.lazy) img.loading = 'lazy';
+    el.appendChild(img);
   }
   const text = coverText(cover, heroes, choice);
   if (text) {

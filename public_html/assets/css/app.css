@@ -233,7 +233,7 @@ button { font: inherit; color: inherit; }
 .cover { position: relative; width: 100%; overflow: hidden; container-type: inline-size; --cw: 1cqw; background: #e9e1db; }
 @supports not (container-type: inline-size) { .cover { --cw: 2px; } }
 .cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.cover .cover-stack { z-index: 1; }
+.cover .cover-stack { z-index: 3; }
 .cover-hero { position: absolute; z-index: 2; pointer-events: none; }
 .cover-title {
   position: absolute; left: 0; right: 0; z-index: 3; padding: 0 6%; text-align: center;
