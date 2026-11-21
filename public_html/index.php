@@ -58,6 +58,33 @@ if (str_starts_with($path, '/api/')) {
         }
     }
 
+    // ----- заказы и оплата -----
+    if (preg_match('#^/books/([a-zA-Z0-9]+)/order$#', $route, $m) && $method === 'POST') {
+        json_out(Orders::create($m[1], json_in()), 201);
+        exit;
+    }
+    if (preg_match('#^/orders/([a-zA-Z0-9]+)$#', $route, $m) && $method === 'GET') {
+        json_out(Orders::find($m[1]));
+        exit;
+    }
+    if (preg_match('#^/orders/([a-zA-Z0-9]+)/pay$#', $route, $m) && $method === 'POST') {
+        json_out(['payUrl' => Orders::startPayment($m[1])]);
+        exit;
+    }
+    if (preg_match('#^/orders/([a-zA-Z0-9]+)/print$#', $route, $m) && $method === 'GET') {
+        json_out(Orders::snapshot($m[1]));
+        exit;
+    }
+    if ($route === '/payments/webhook' && $method === 'POST') {
+        // Тело уведомления не принимаем на веру: берём id и спрашиваем статус у самой ЮKassa
+        $id = (string) (json_in()['object']['id'] ?? '');
+        if ($id !== '' && Payments::enabled()) {
+            Orders::applyPayment(Payments::fetch($id));
+        }
+        json_out(['ok' => true]);
+        exit;
+    }
+
     // ----- админка -----
     if ($route === '/admin/login' && $method === 'POST') {
         $ok = Admin::login((string) (json_in()['password'] ?? ''));
@@ -94,6 +121,14 @@ if (str_starts_with($path, '/api/')) {
                 $c = Catalog::rebuild();
                 json_out(['ok' => true, 'v' => $c['v'], 'removed' => Admin::cleanupMedia()]);
                 exit;
+            case '/admin/orders':
+                json_out(['orders' => Orders::latest(), 'statuses' => Orders::STATUSES, 'payOnline' => Payments::enabled()]);
+                exit;
+            case '/admin/order-status':
+                $in = json_in();
+                Orders::setStatus((string) ($in['token'] ?? ''), (string) ($in['status'] ?? ''));
+                json_out(['ok' => true]);
+                exit;
             case '/admin/books':
                 json_out(['books' => Books::latest(100)]);
                 exit;
@@ -121,9 +156,11 @@ header('Content-Type: text/html; charset=utf-8');
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title><?= $isAdmin ? 'Админка — Книгигай' : 'Книгигай — книга, где главные герои вы' ?></title>
+<meta property="og:title" content="Книгигай — книга, где главные герои вы">
+<meta property="og:description" content="Персональная книга-подарок с вашими героями. Твёрдый переплёт, доставка по России.">
 <meta name="description" content="Персональная книга-подарок: создайте героев, похожих на вас и близкого человека, выберите обложку — и мы напечатаем книгу о вашей истории. <?= $price ?> ₽, твёрдый переплёт.">
 <meta name="theme-color" content="#f7efe9">
-<?php if ($isAdmin): ?><meta name="robots" content="noindex"><?php endif; ?>
+<?php if ($isAdmin || preg_match('#^/(b|order)/#', $path)): ?><meta name="robots" content="noindex"><?php endif; ?>
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

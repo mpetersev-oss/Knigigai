@@ -29,6 +29,10 @@ export const api = {
   createBook: () => request('POST', '/api/books'),
   getBook: (token) => request('GET', `/api/books/${encodeURIComponent(token)}`),
   patchBook: (token, patch) => request('PATCH', `/api/books/${encodeURIComponent(token)}`, patch),
+  createOrder: (token, form) => request('POST', `/api/books/${encodeURIComponent(token)}/order`, form),
+  getOrder: (token) => request('GET', `/api/orders/${encodeURIComponent(token)}`),
+  payOrder: (token) => request('POST', `/api/orders/${encodeURIComponent(token)}/pay`, {}),
+  orderSnapshot: (token) => request('GET', `/api/orders/${encodeURIComponent(token)}/print`),
 };
 
 // «Мои книги» — список токенов на этом устройстве

@@ -23,9 +23,22 @@ final class Catalog
     }
 
     /** Готовый каталог для фронтенда (с кешем на диске). */
+    /** Шаблоны страниц книги: data/pages.json */
+    public static function pages(): array
+    {
+        static $p = null;
+        if ($p === null) {
+            $p = json_decode((string) file_get_contents(APP_ROOT . '/data/pages.json'), true, 512, JSON_THROW_ON_ERROR);
+            unset($p['note']);
+        }
+        return $p;
+    }
+
     public static function get(): array
     {
-        if (is_file(self::CACHE)) {
+        // Кеш устаревает, если после него менялись описания в data/ (новые шаблоны страниц, обложки)
+        $fresh = is_file(self::CACHE) && filemtime(self::CACHE) >= max(filemtime(APP_ROOT . '/data/source.json'), (int) @filemtime(APP_ROOT . '/data/pages.json'), (int) @filemtime(__DIR__ . '/config.php'));
+        if ($fresh) {
             $data = json_decode((string) file_get_contents(self::CACHE), true);
             if (is_array($data)) {
                 return $data;
@@ -124,7 +137,7 @@ final class Catalog
         $editorSynced = count(array_filter(array_keys($synced), fn ($k) => str_starts_with($k, 'e:')));
 
         $catalog = [
-            'v' => substr(sha1((string) json_encode([$assets, $covers])), 0, 10),
+            'v' => substr(sha1((string) json_encode([$assets, $covers, self::pages(), config('price_rub', 4900)])), 0, 10),
             'frame' => $src['frame'],
             'tones' => array_map(fn ($t) => ['key' => $t['key'], 'label' => $t['label'], 'color' => $t['color']], $src['tones']),
             'items' => $items,
@@ -139,6 +152,10 @@ final class Catalog
             'builtinShoes' => $src['builtinShoes'] ?? [],
             'stackFix' => (object) ($src['stackFix'] ?? []),
             'price' => (int) config('price_rub', 4900),
+            'book' => self::pages(),
+            'pageLimits' => [Books::MIN_PAGES, Books::MAX_PAGES],
+            'payOnline' => Payments::enabled(),
+            'contactEmail' => (string) config('contact_email', ''),
         ];
 
         if (!is_dir(STORAGE_DIR)) {

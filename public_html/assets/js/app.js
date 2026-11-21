@@ -2,6 +2,7 @@ import { h, clear, toast, debounce, rub } from './dom.js';
 import { api, loadCatalog, myBooks } from './api.js';
 import { figure, cropFigure, newHero, setGender, randomize, hasOutfit, HAIR_COLORS } from './hero.js';
 import { renderCover } from './cover.js';
+import { renderPage, fillText, defaultPages, availableTemplates, templateById, defaultText, bookSpreads } from './pages.js';
 
 const root = document.getElementById('app');
 const state = { catalog: null, book: null };
@@ -65,6 +66,12 @@ async function render() {
     if (path === '/') return pageHome();
     if (path === '/create') return createBook();
     if (path === '/books') return pageMyBooks();
+    if (path === '/terms') return pageTerms();
+    if ((m = path.match(/^\/order\/([a-zA-Z0-9]+)$/))) return pageOrder(m[1]);
+    if ((m = path.match(/^\/print\/order\/([a-zA-Z0-9]+)\/(block|cover)$/))) {
+      const snap = await api.orderSnapshot(m[1]);
+      return pagePrint({ token: snap.order.book, data: snap.data }, m[2], `Заказ №${snap.order.number}`);
+    }
     if ((m = path.match(/^\/b\/([a-zA-Z0-9]+)(?:\/(.*))?$/))) {
       const book = await loadBook(m[1]);
       const sub = m[2] || '';
@@ -73,6 +80,9 @@ async function render() {
       if (sub === 'hero/giver' || sub === 'hero/receiver') return pageBuilder(book, sub.split('/')[1]);
       if (sub === 'occasion') return pageOccasion(book);
       if (sub === 'cover') return pageCovers(book);
+      if (sub === 'pages') return pagePages(book);
+      if (sub === 'order') return pageCheckout(book);
+      if (sub === 'print/block' || sub === 'print/cover') return pagePrint(book, sub.split('/')[1], 'Черновик');
     }
     pageNotFound();
   } catch (err) {
@@ -121,7 +131,8 @@ function stepper(book, active) {
     ['heroes', 'Герои', !!(d.heroes.giver && d.heroes.receiver)],
     ['occasion', 'Повод', !!d.occasion],
     ['cover', 'Обложка', !!d.cover],
-    ['', 'Книга', false],
+    ['pages', 'Страницы', !!(d.pages && d.pages.items.length)],
+    ['order', 'Заказ', !!book.order && book.order.status !== 'new' && book.order.status !== 'pending' && book.order.status !== 'canceled'],
   ];
   return h('ol', { class: 'stepper' }, steps.map(([s, t, done], i) => {
     const cls = `step ${s === active ? 'is-active' : ''} ${done ? 'is-done' : ''}`;
@@ -256,7 +267,7 @@ function pageHome() {
     h('div', { class: 'footer-in' },
       h('div', null, logo(), h('p', { class: 'muted' }, 'Персональные книги-подарки')),
       h('div', { class: 'footer-cols' },
-        h('div', null, h('b', null, 'Помощь'), h('a', { href: 'mailto:ship@knigagai.ru' }, 'ship@knigagai.ru')),
+        h('div', null, h('b', null, 'Помощь'), c.contactEmail ? h('a', { href: `mailto:${c.contactEmail}` }, c.contactEmail) : null, h('a', { href: '/terms', 'data-link': true }, 'Условия заказа')),
         h('div', null, h('b', null, 'Книга'), h('a', { href: '/create', 'data-link': true }, 'Создать книгу'), h('a', { href: '/books', 'data-link': true }, 'Мои книги')),
       ),
     ),
@@ -714,9 +725,12 @@ function pageSummary(book) {
   const c = state.catalog;
   const d = book.data;
   const cv = d.cover && c.covers.find((x) => x.id === d.cover.id);
-  const nextStep = !(d.heroes.giver && d.heroes.receiver) ? 'heroes' : !d.occasion ? 'occasion' : !d.cover ? 'cover' : null;
+  const hasPages = !!(d.pages && d.pages.items.length);
+  const nextStep = !(d.heroes.giver && d.heroes.receiver) ? 'heroes' : !d.occasion ? 'occasion' : !d.cover ? 'cover' : !hasPages ? 'pages' : 'order';
+  const ordered = book.status !== 'draft';
   const link = `${location.origin}/b/${book.token}`;
   const email = h('input', { class: 'input', type: 'email', placeholder: 'почта@пример.ru', value: book.email || '', 'aria-label': 'Почта' });
+  const label = { heroes: 'Продолжить: герои', occasion: 'Продолжить: повод', cover: 'Выбрать обложку', pages: 'Собрать страницы', order: `Оформить заказ · ${rub(c.price)}` }[nextStep];
 
   page(
     flowHeader(book, ''),
@@ -724,24 +738,29 @@ function pageSummary(book) {
       h('div', { class: 'summary' },
         h('div', { class: 'summary-cover' }, cv ? renderCover(c, cv, d.heroes, d.cover) : h('div', { class: 'cover cover-empty', style: { aspectRatio: `${c.coverRef.w} / ${c.coverRef.h}` } }, h('span', null, 'Здесь будет обложка'))),
         h('div', { class: 'summary-side' },
-          h('p', { class: 'eyebrow' }, 'Ваша книга'),
+          h('p', { class: 'eyebrow' }, ordered ? 'Книга заказана' : 'Ваша книга'),
           h('h1', { class: 'h1' }, d.heroes.giver && d.heroes.receiver ? [d.heroes.giver.name, h('em', null, ' & '), d.heroes.receiver.name] : 'Черновик книги'),
           h('ul', { class: 'checklist' },
             checkItem(!!(d.heroes.giver && d.heroes.receiver), 'Герои', `/b/${book.token}/heroes`),
             checkItem(!!d.occasion, d.occasion ? `Повод: ${occasionLabel(d.occasion)}` : 'Повод', `/b/${book.token}/occasion`),
             checkItem(!!d.cover, 'Обложка', `/b/${book.token}/cover`),
-            h('li', { class: 'is-soon' }, h('span', { class: 'ck' }), h('span', null, 'Страницы книги и заказ'), h('small', null, 'скоро')),
+            checkItem(hasPages, hasPages ? `Страницы: ${d.pages.items.length + 2}` : 'Страницы книги', `/b/${book.token}/pages`),
+            book.order ? checkItem(ordered, `Заказ: ${orderStatusText(book.order.status)}`, `/order/${book.order.token}`) : null,
           ),
-          nextStep
-            ? h('a', { href: `/b/${book.token}/${nextStep}`, 'data-link': true, class: 'btn btn-dark btn-lg' }, 'Продолжить')
-            : h('div', { class: 'note' }, h('b', null, 'Обложка готова!'), ' Следующий шаг — страницы книги и оформление заказа. Мы откроем его совсем скоро, а ваша книга уже сохранена.'),
+          ordered
+            ? h('div', { class: 'btn-row' },
+              h('a', { href: `/order/${book.order.token}`, 'data-link': true, class: 'btn btn-dark btn-lg' }, 'Статус заказа'),
+              hasPages ? h('button', { type: 'button', class: 'btn btn-soft btn-lg', onclick: () => openViewer(book) }, 'Листать книгу') : null)
+            : h('div', { class: 'btn-row' },
+              h('a', { href: `/b/${book.token}/${nextStep}`, 'data-link': true, class: 'btn btn-dark btn-lg' }, label),
+              hasPages ? h('button', { type: 'button', class: 'btn btn-soft btn-lg', onclick: () => openViewer(book) }, 'Листать книгу') : null),
           h('div', { class: 'save-link' },
             h('p', { class: 'small' }, 'Ссылка на вашу книгу — по ней можно вернуться с любого устройства:'),
             h('div', { class: 'copy-row' },
               h('input', { class: 'input input-sm', readonly: true, value: link, 'aria-label': 'Ссылка на книгу', onfocus: (e) => e.target.select() }),
               h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: async () => { try { await navigator.clipboard.writeText(link); toast('Ссылка скопирована'); } catch { toast('Выделите ссылку и скопируйте вручную'); } } }, 'Копировать'),
             ),
-            h('form', { class: 'copy-row', onsubmit: async (e) => { e.preventDefault(); try { await saveBook({ email: email.value }); toast('Почта сохранена'); } catch (ex) { toast(ex.message, 'error'); } } },
+            ordered ? null : h('form', { class: 'copy-row', onsubmit: async (e) => { e.preventDefault(); try { await saveBook({ email: email.value }); toast('Почта сохранена'); } catch (ex) { toast(ex.message, 'error'); } } },
               email, h('button', { type: 'submit', class: 'btn btn-soft btn-sm' }, 'Сохранить'),
             ),
           ),
@@ -751,8 +770,456 @@ function pageSummary(book) {
   );
 }
 
-function checkItem(done, label, href) {
-  return h('li', { class: done ? 'is-done' : '' }, h('span', { class: 'ck' }, done ? '✓' : ''), h('a', { href, 'data-link': true }, label));
+function orderStatusText(st) {
+  return { new: 'принят', pending: 'ждёт оплаты', paid: 'оплачен', canceled: 'оплата отменена', printing: 'в печати', shipped: 'отправлен', done: 'доставлен' }[st] || st;
+}
+
+// ---------------- Страницы книги ----------------
+function pagePages(book) {
+  const c = state.catalog;
+  const d = book.data;
+  if (!d.heroes.giver || !d.heroes.receiver) return go(`/b/${book.token}/heroes`, true);
+  if (!d.cover) return go(`/b/${book.token}/cover`, true);
+  if (book.status !== 'draft') return go(`/b/${book.token}`, true);
+  const [MIN, MAX] = c.pageLimits;
+  const TEXT_MAX = 220;
+  let pages = d.pages ? JSON.parse(JSON.stringify(d.pages)) : defaultPages(c, d);
+  let cur = 0; // 0 — посвящение, 1..n — сцены, n+1 — финал
+  const status = h('span', { class: 'small muted' }, 'Сохранено');
+
+  const save = debounce(async () => {
+    status.textContent = 'Сохраняем…';
+    try { await saveBook({ pages }); status.textContent = 'Сохранено'; } catch (e) { status.textContent = 'Не сохранено'; toast(e.message, 'error'); }
+  }, 700);
+  onLeave(() => save.flush());
+  if (!d.pages) save();
+
+  const total = () => pages.items.length + 2;
+  const pageAt = (i) => (i === 0 ? { kind: 'dedication', text: pages.dedication } : i === total() - 1 ? { kind: 'final', text: pages.final } : { kind: 'scene', item: pages.items[i - 1] });
+
+  const bookEl = h('div', { class: 'pg-book' });
+  const counter = h('span');
+  const prev = h('button', { type: 'button', class: 'icon-btn', 'aria-label': 'Предыдущая страница', onclick: () => select(cur - 1) }, '←');
+  const next = h('button', { type: 'button', class: 'icon-btn', 'aria-label': 'Следующая страница', onclick: () => select(cur + 1) }, '→');
+  const side = h('div', { class: 'pg-side' });
+  const thumbs = h('div', { class: 'thumbs' });
+
+  function drawPreview() {
+    clear(bookEl).appendChild(renderPage(c, pageAt(cur), d.heroes, { number: cur + 1 }));
+    counter.textContent = `Страница ${cur + 1} из ${total()}`;
+    prev.disabled = cur === 0;
+    next.disabled = cur === total() - 1;
+  }
+
+  function drawThumbs() {
+    clear(thumbs);
+    for (let i = 0; i < total(); i++) {
+      thumbs.appendChild(h('button', { type: 'button', class: `thumb ${i === cur ? 'is-on' : ''}`, 'aria-label': `Страница ${i + 1}`, onclick: () => select(i) },
+        renderPage(c, pageAt(i), d.heroes, { lazy: true }), h('i', null, String(i + 1))));
+      if (i === total() - 2 && pages.items.length < MAX) {
+        thumbs.appendChild(h('button', { type: 'button', class: 'thumb-add', 'aria-label': 'Добавить страницу', title: 'Добавить страницу', onclick: () => pickScene(null) }, '+'));
+      }
+    }
+  }
+
+  function select(i) {
+    cur = Math.max(0, Math.min(total() - 1, i));
+    drawPreview();
+    drawSide();
+    [...thumbs.children].forEach((t) => t.classList && t.classList.toggle('is-on', t.getAttribute('aria-label') === `Страница ${cur + 1}`));
+    thumbs.querySelector('.is-on')?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  const changed = (full = false) => { drawPreview(); if (full) drawThumbs(); else refreshThumb(); save(); };
+  const refreshThumb = debounce(() => drawThumbs(), 500);
+
+  function textArea(value, onInput) {
+    const ta = h('textarea', { class: 'textarea', maxlength: TEXT_MAX, rows: 4, 'aria-label': 'Текст страницы' });
+    ta.value = value;
+    const cnt = h('div', { class: 'counter' });
+    const upd = () => { cnt.textContent = `${ta.value.length} / ${TEXT_MAX}`; };
+    ta.addEventListener('input', () => { upd(); onInput(ta.value); });
+    upd();
+    return [ta, cnt];
+  }
+
+  function drawSide() {
+    clear(side);
+    const p = pageAt(cur);
+    let card;
+    if (p.kind === 'scene') {
+      const it = p.item;
+      const tpl = templateById(c, it.t);
+      const idx = cur - 1;
+      const [ta, cnt] = textArea(fillText(it.text, d.heroes), (v) => { it.text = v; changed(); });
+      card = h('div', { class: 'pg-card' },
+        h('p', { class: 'eyebrow' }, `Страница ${cur + 1}`),
+        h('h2', null, tpl ? tpl.title : 'Сцена'),
+        ta, cnt,
+        h('div', { class: 'pg-tools' },
+          h('button', { type: 'button', class: 'btn btn-dark btn-sm', onclick: () => pickScene(idx) }, 'Сменить сцену'),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.swap = !it.swap; changed(true); } }, '⇄ Герои местами'),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.text = defaultText(tpl, d.relation); drawSide(); changed(); } }, 'Текст по умолчанию'),
+        ),
+        h('div', { class: 'pg-tools' },
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: idx === 0, onclick: () => move(idx, -1) }, '← Раньше'),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: idx === pages.items.length - 1, onclick: () => move(idx, 1) }, 'Позже →'),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: pages.items.length <= MIN, title: pages.items.length <= MIN ? `В книге должно быть не меньше ${MIN} страниц с героями` : '', onclick: () => remove(idx) }, 'Удалить'),
+        ),
+      );
+    } else {
+      const ded = p.kind === 'dedication';
+      const [ta, cnt] = textArea(fillText(ded ? pages.dedication : pages.final, d.heroes), (v) => { if (ded) pages.dedication = v; else pages.final = v; changed(); });
+      card = h('div', { class: 'pg-card' },
+        h('p', { class: 'eyebrow' }, `Страница ${cur + 1}`),
+        h('h2', null, ded ? 'Посвящение' : 'Последняя страница'),
+        h('p', { class: 'hint' }, ded ? `Первая страница книги. Имя «${d.heroes.receiver.name}» уже стоит сверху, подпись — ваше имя.` : 'Тёплые слова на прощание — ими книга закончится.'),
+        ta, cnt,
+      );
+    }
+    side.append(card,
+      h('div', { class: 'pg-card' },
+        h('p', { class: 'hint' }, `Нажимайте на страницы внизу, чтобы их редактировать. Сцены можно менять, переставлять и добавлять — от ${MIN + 2} до ${MAX + 2} страниц.`),
+        h('button', { type: 'button', class: 'btn btn-soft btn-block', onclick: async () => { await save.flush(); openViewer(state.book); } }, '📖 Листать книгу целиком'),
+        status,
+      ));
+  }
+
+  function move(idx, dir) {
+    const [it] = pages.items.splice(idx, 1);
+    pages.items.splice(idx + dir, 0, it);
+    cur = idx + dir + 1;
+    drawSide(); changed(true);
+  }
+  function remove(idx) {
+    if (pages.items.length <= MIN) return;
+    pages.items.splice(idx, 1);
+    cur = Math.min(cur, total() - 2);
+    drawSide(); changed(true);
+  }
+
+  /** Выбор сцены: для страницы idx или новой (idx = null — добавить после текущей). */
+  function pickScene(idx) {
+    const it = idx === null ? null : pages.items[idx];
+    const grid = h('div', { class: 'scene-grid' });
+    for (const tpl of availableTemplates(c)) {
+      grid.appendChild(h('button', { type: 'button', class: `scene-pick ${it && it.t === tpl.id ? 'is-on' : ''}`, onclick: () => {
+        if (it) {
+          const old = templateById(c, it.t);
+          const untouched = !old || it.text === old.text || it.text === old.alt || fillText(it.text, d.heroes) === fillText(defaultText(old, d.relation), d.heroes);
+          it.t = tpl.id;
+          if (untouched) it.text = defaultText(tpl, d.relation);
+        } else {
+          const at = Math.max(0, Math.min(pages.items.length, cur));
+          pages.items.splice(at, 0, { t: tpl.id, text: defaultText(tpl, d.relation), swap: false });
+          cur = at + 1;
+        }
+        close();
+        drawSide(); changed(true); select(cur);
+      } },
+      renderPage(c, { kind: 'scene', item: { t: tpl.id, text: defaultText(tpl, d.relation), swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
+      h('span', null, tpl.title)));
+    }
+    const overlay = h('div', { class: 'modal-wrap', role: 'dialog', 'aria-modal': 'true', onclick: (e) => { if (e.target === overlay) close(); } },
+      h('div', { class: 'modal modal-scenes' },
+        h('button', { type: 'button', class: 'modal-x', 'aria-label': 'Закрыть', onclick: () => close() }, '×'),
+        h('h2', { class: 'h3' }, it ? 'Выберите сцену' : 'Новая страница'),
+        h('p', { class: 'muted' }, 'Ваши герои уже в кадре. Текст можно будет поменять.'),
+        grid));
+    const close = () => { overlay.remove(); document.body.classList.remove('no-scroll'); document.removeEventListener('keydown', onKey); };
+    const onKey = (e) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    document.body.classList.add('no-scroll');
+    document.body.appendChild(overlay);
+    onLeave(close);
+  }
+
+  const toOrder = h('a', { href: `/b/${book.token}/order`, 'data-link': true, class: 'btn btn-dark', onclick: () => save.flush() }, `Оформить заказ · ${rub(c.price)}`);
+  page(
+    flowHeader(book, 'pages'),
+    h('div', { class: 'pg' },
+      h('div', { class: 'pg-stage' }, bookEl, h('div', { class: 'pg-nav' }, prev, counter, next)),
+      side,
+    ),
+    h('div', { class: 'strip' }, h('div', { class: 'strip-in' }, thumbs, h('div', { class: 'strip-cta' }, toOrder))),
+  );
+  const onKey = (e) => {
+    if (e.target.closest('textarea, input') || document.querySelector('.modal-wrap, .viewer')) return;
+    if (e.key === 'ArrowLeft') select(cur - 1);
+    if (e.key === 'ArrowRight') select(cur + 1);
+  };
+  document.addEventListener('keydown', onKey);
+  onLeave(() => document.removeEventListener('keydown', onKey));
+  drawPreview(); drawSide(); drawThumbs();
+}
+
+// ---------------- Просмотр книги ----------------
+function openViewer(book) {
+  const c = state.catalog;
+  const d = book.data;
+  const cv = d.cover && c.covers.find((x) => x.id === d.cover.id);
+  const pages = bookSpreads(c, d);
+  const narrow = matchMedia('(max-width: 700px)').matches;
+  // Развороты: обложка отдельно, дальше страницы по две (первая страница — справа, как в настоящей книге)
+  const views = [];
+  if (cv) views.push([{ cover: true }]);
+  if (narrow) pages.forEach((p, i) => views.push([{ p, n: i + 1 }]));
+  else {
+    const seq = [null, ...pages.map((p, i) => ({ p, n: i + 1 }))];
+    if (seq.length % 2) seq.push(null);
+    for (let i = 0; i < seq.length; i += 2) views.push([seq[i], seq[i + 1]]);
+  }
+  let at = 0;
+  const stage = h('div', { class: 'viewer-stage' });
+  const info = h('span');
+  const prev = h('button', { type: 'button', class: 'viewer-arrow prev', 'aria-label': 'Назад', onclick: () => show(at - 1) }, '←');
+  const next = h('button', { type: 'button', class: 'viewer-arrow next', 'aria-label': 'Вперёд', onclick: () => show(at + 1) }, '→');
+  const part = (x) => {
+    if (!x) return h('div', { class: 'spread-blank' });
+    if (x.cover) return h('div', null, renderCover(c, cv, d.heroes, d.cover));
+    return h('div', null, renderPage(c, x.p, d.heroes, { number: x.n }));
+  };
+  function show(i) {
+    at = Math.max(0, Math.min(views.length - 1, i));
+    const v = views[at];
+    clear(stage).appendChild(h('div', { class: `spread ${v.length === 1 ? 'is-single' : ''}` }, v.map(part)));
+    prev.disabled = at === 0;
+    next.disabled = at === views.length - 1;
+    info.textContent = at === 0 && cv ? 'Обложка' : `${at + (cv ? 0 : 1)} / ${views.length - (cv ? 1 : 0)}`;
+  }
+  const overlay = h('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true' },
+    h('div', { class: 'viewer-top' }, info, h('button', { type: 'button', class: 'btn btn-sm', onclick: () => close() }, 'Закрыть')),
+    stage, prev, next,
+    h('div', { class: 'viewer-bottom' }));
+  let x0 = null;
+  overlay.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  overlay.addEventListener('touchend', (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1)); x0 = null; });
+  const onKey = (e) => { if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') show(at + 1); if (e.key === 'ArrowLeft') show(at - 1); };
+  const close = () => { overlay.remove(); document.body.classList.remove('no-scroll'); document.removeEventListener('keydown', onKey); };
+  document.addEventListener('keydown', onKey);
+  document.body.classList.add('no-scroll');
+  document.body.appendChild(overlay);
+  onLeave(close);
+  show(0);
+}
+
+// ---------------- Оформление заказа ----------------
+const ORDER_FORM_KEY = 'kg_order_form';
+function pageCheckout(book) {
+  const c = state.catalog;
+  const d = book.data;
+  if (book.status !== 'draft' && book.order) return go(`/order/${book.order.token}`, true);
+  if (!d.pages || !d.pages.items.length) return go(`/b/${book.token}/pages`, true);
+  const cv = d.cover && c.covers.find((x) => x.id === d.cover.id);
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(ORDER_FORM_KEY) || '{}'); } catch { /* */ }
+  const form = { name: '', phone: '', email: book.email || '', city: '', address: '', zip: '', comment: '', delivery: 'courier', ...saved, qty: 1 };
+  const err = h('p', { class: 'form-err', role: 'alert' });
+  const field = (key, label, attrs = {}, wide = false) => {
+    const input = h(attrs.multiline ? 'textarea' : 'input', { class: attrs.multiline ? 'textarea' : 'input', name: key, value: attrs.multiline ? null : form[key], ...attrs, multiline: null, oninput: (e) => { form[key] = e.target.value; } });
+    if (attrs.multiline) input.value = form[key];
+    return h('label', { class: `field ${wide ? 'wide' : ''}` }, h('span', null, label), input);
+  };
+  const qtyEl = h('span', null, '1');
+  const totalEl = h('b');
+  const lineEl = h('span');
+  const updTotal = () => { qtyEl.textContent = String(form.qty); lineEl.textContent = rub(c.price * form.qty); totalEl.textContent = rub(c.price * form.qty); };
+  const segBtn = (key, title, sub) => h('button', { type: 'button', class: `seg-opt ${form.delivery === key ? 'is-on' : ''}`, 'data-d': key, onclick: (e) => {
+    form.delivery = key;
+    e.currentTarget.parentElement.querySelectorAll('.seg-opt').forEach((b) => b.classList.toggle('is-on', b.dataset.d === key));
+    addrLabel.textContent = key === 'pickup' ? 'Адрес пункта выдачи (СДЭК, Boxberry, Почта)' : 'Улица, дом, квартира';
+  } }, h('b', null, title), h('span', null, sub));
+  const addrField = field('address', '', { autocomplete: 'street-address', required: true }, true);
+  const addrLabel = addrField.querySelector('span');
+  addrLabel.textContent = form.delivery === 'pickup' ? 'Адрес пункта выдачи (СДЭК, Boxberry, Почта)' : 'Улица, дом, квартира';
+  const agree = h('input', { type: 'checkbox', checked: true });
+  const payBtn = h('button', { type: 'submit', class: 'btn btn-dark btn-lg btn-block' }, c.payOnline ? 'Перейти к оплате' : 'Оформить заказ');
+
+  const submit = async (e) => {
+    e.preventDefault();
+    err.textContent = '';
+    if (!agree.checked) { err.textContent = 'Подтвердите согласие с условиями заказа'; return; }
+    payBtn.disabled = true;
+    payBtn.textContent = c.payOnline ? 'Готовим оплату…' : 'Оформляем…';
+    try {
+      const { qty, ...remember } = form;
+      try { localStorage.setItem(ORDER_FORM_KEY, JSON.stringify({ ...remember, comment: '' })); } catch { /* */ }
+      const res = await api.createOrder(book.token, form);
+      try { localStorage.setItem('kg_last_order', res.order.token); } catch { /* */ }
+      state.book = null;
+      if (res.payUrl) { location.href = res.payUrl; return; }
+      go(`/order/${res.order.token}`);
+    } catch (ex) {
+      err.textContent = ex.message;
+      payBtn.disabled = false;
+      payBtn.textContent = c.payOnline ? 'Перейти к оплате' : 'Оформить заказ';
+    }
+  };
+
+  page(
+    flowHeader(book, 'order'),
+    h('section', { class: 'flow-title', style: { paddingTop: '36px' } },
+      h('h1', { class: 'h1' }, 'Оформление ', h('em', null, 'заказа')),
+      h('p', { class: 'muted' }, 'Напечатаем книгу в твёрдом переплёте и бесплатно доставим.')),
+    h('form', { class: 'checkout', onsubmit: submit, novalidate: true },
+      h('div', { class: 'co-form' },
+        h('div', { class: 'co-block' },
+          h('h2', null, 'Получатель'),
+          h('div', { class: 'fields' },
+            field('name', 'Имя и фамилия', { autocomplete: 'name', required: true }, true),
+            field('phone', 'Телефон', { type: 'tel', autocomplete: 'tel', placeholder: '+7', required: true }),
+            field('email', 'Почта — пришлём чек и статус', { type: 'email', autocomplete: 'email', required: true }),
+          ),
+        ),
+        h('div', { class: 'co-block' },
+          h('h2', null, 'Доставка'),
+          h('div', { class: 'seg' }, segBtn('courier', 'Курьером', 'До двери, бесплатно'), segBtn('pickup', 'Пункт выдачи', 'Рядом с домом, бесплатно')),
+          h('div', { class: 'fields' },
+            field('city', 'Город', { autocomplete: 'address-level2', required: true }),
+            field('zip', 'Индекс', { autocomplete: 'postal-code', inputmode: 'numeric' }),
+            addrField,
+            field('comment', 'Комментарий к заказу (необязательно)', { multiline: true, maxlength: 500 }, true),
+          ),
+        ),
+      ),
+      h('aside', { class: 'co-sum' },
+        h('div', { class: 'co-book' },
+          cv ? renderCover(c, cv, d.heroes, d.cover) : h('div'),
+          h('div', null, h('b', null, `${d.heroes.giver.name} & ${d.heroes.receiver.name}`), h('span', { class: 'small muted' }, `${d.pages.items.length + 2} страниц · твёрдый переплёт`),
+            h('button', { type: 'button', class: 'link-btn left', onclick: () => openViewer(book) }, 'Листать книгу')),
+        ),
+        h('div', { class: 'co-lines' },
+          h('div', null, h('span', null, 'Количество'), h('div', { class: 'qty' },
+            h('button', { type: 'button', 'aria-label': 'Меньше', onclick: () => { form.qty = Math.max(1, form.qty - 1); updTotal(); } }, '−'), qtyEl,
+            h('button', { type: 'button', 'aria-label': 'Больше', onclick: () => { form.qty = Math.min(10, form.qty + 1); updTotal(); } }, '+'))),
+          h('div', null, h('span', null, 'Книга'), lineEl),
+          h('div', null, h('span', null, 'Доставка'), h('span', null, 'Бесплатно')),
+        ),
+        h('div', { class: 'co-lines co-total' }, h('div', null, h('span', null, 'Итого'), totalEl)),
+        h('label', { class: 'small', style: { display: 'flex', gap: '8px', alignItems: 'flex-start' } }, agree, h('span', null, 'Соглашаюсь с ', h('a', { href: '/terms', target: '_blank' }, 'условиями заказа и обработкой данных'))),
+        err, payBtn,
+        c.payOnline
+          ? h('div', { class: 'pay-badges' }, ['Карты', 'СБП', 'SberPay', 'ЮMoney', 'T-Pay'].map((t) => h('span', null, t)))
+          : h('p', { class: 'small-print' }, 'После оформления мы свяжемся с вами, чтобы подтвердить заказ и отправить ссылку на оплату.'),
+        h('p', { class: 'small-print' }, 'Оплата через ЮKassa. После оплаты книгу нельзя будет изменить — проверьте имена и тексты.'),
+      ),
+    ),
+  );
+  updTotal();
+}
+
+// ---------------- Статус заказа ----------------
+async function pageOrder(token) {
+  showLoading();
+  let o = await api.getOrder(token);
+  let tries = 0;
+  // Возврат с оплаты: платёж может подтвердиться не мгновенно — подождём немного
+  while (o.status === 'pending' && tries < 6 && new URLSearchParams(location.search).get('wait') !== '0') {
+    await new Promise((r) => setTimeout(r, 2500));
+    o = await api.getOrder(token);
+    tries++;
+  }
+  const c = state.catalog;
+  let book = null;
+  try { book = await api.getBook(o.book); myBooks.add(o.book); } catch { /* */ }
+  const d = book && book.data;
+  const cv = d && d.cover && c.covers.find((x) => x.id === d.cover.id);
+  const paid = ['paid', 'printing', 'shipped', 'done'].includes(o.status);
+  const steps = [['Заказ оформлен', true], ['Оплачен', paid], ['В печати', ['printing', 'shipped', 'done'].includes(o.status)], ['Отправлен', ['shipped', 'done'].includes(o.status)], ['Доставлен', o.status === 'done']];
+  let ico, title, text, action = null;
+  if (paid) { ico = ['ok', '✓']; title = 'Спасибо! Заказ оплачен'; text = `Заказ №${o.number} уже у нас. Проверим макет и передадим в печать — книга приедет примерно через 5 рабочих дней. Чек и статус отправили на ${o.email}.`; }
+  else if (o.status === 'new') { ico = ['ok', '✓']; title = 'Заказ принят'; text = `Заказ №${o.number} на ${rub(o.amount)} оформлен. Мы свяжемся с вами в ближайшее время, чтобы подтвердить его и договориться об оплате.`; }
+  else if (o.status === 'canceled') { ico = ['bad', '!']; title = 'Оплата не прошла'; text = 'Деньги не списаны. Можно попробовать ещё раз — другой картой или через СБП.'; }
+  else { ico = ['wait', '…']; title = 'Ждём оплату'; text = 'Если вы уже оплатили, статус обновится через минуту. Если нет — нажмите кнопку ниже.'; }
+  if ((o.status === 'pending' || o.status === 'canceled') && o.payOnline) {
+    const btn = h('button', { type: 'button', class: 'btn btn-dark btn-lg' }, `Оплатить ${rub(o.amount)}`);
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      try { const r = await api.payOrder(token); location.href = r.payUrl; } catch (e) { toast(e.message, 'error'); btn.disabled = false; }
+    });
+    action = btn;
+  }
+  page(nav({ cta: false }), h('section', { class: 'flow' },
+    h('div', { class: 'status-card' },
+      h('div', { class: `status-ico ${ico[0]}` }, ico[1]),
+      h('p', { class: 'eyebrow' }, `Заказ №${o.number}`),
+      h('h1', { class: 'h2' }, title),
+      h('p', { class: 'muted' }, text),
+      action,
+      cv ? h('div', { style: { width: '160px' } }, renderCover(c, cv, d.heroes, d.cover)) : null,
+      h('ul', { class: 'timeline' }, steps.map(([t, done]) => h('li', { class: done ? 'is-done' : '' }, h('i', null, done ? '✓' : ''), t))),
+      h('div', { class: 'btn-row center' },
+        book ? h('button', { type: 'button', class: 'btn btn-soft', onclick: () => openViewer(book) }, 'Листать книгу') : null,
+        h('a', { href: '/', 'data-link': true, class: 'btn btn-soft' }, 'На главную')),
+      c.contactEmail ? h('p', { class: 'small muted' }, 'Вопросы по заказу: ', h('a', { href: `mailto:${c.contactEmail}` }, c.contactEmail)) : null,
+    )));
+}
+
+// ---------------- Макет для печати ----------------
+// Блок 140×215 мм, обложка 145×220 мм. Сохраняется через «Печать → Сохранить как PDF» в Chrome.
+function pagePrint(book, part, label) {
+  const c = state.catalog;
+  const d = book.data;
+  const params = new URLSearchParams(location.search);
+  const bleed = Math.max(0, Math.min(5, Number(params.get('bleed') || 0)));
+  const [tw, th] = part === 'cover' ? [145, 220] : [140, 215];
+  const W = tw + bleed * 2, H = th + bleed * 2;
+  document.body.classList.add('is-print');
+  let style = document.getElementById('print-page-size');
+  if (!style) { style = document.createElement('style'); style.id = 'print-page-size'; document.head.appendChild(style); }
+  style.textContent = `@page { size: ${W}mm ${H}mm; margin: 0; } body.is-print { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .sheet { width: ${W}mm; height: ${H}mm; }`;
+  onLeave(() => { style.remove(); document.body.classList.remove('is-print'); });
+
+  // Картинка вписывается «под обрез»: заполняет лист с вылетами, лишнее уходит за край
+  const fit = (el, ratio) => {
+    let w = W, hh = W / ratio;
+    if (hh < H) { hh = H; w = H * ratio; }
+    el.style.width = `${w}mm`; el.style.height = `${hh}mm`;
+    el.style.left = `${(W - w) / 2}mm`; el.style.top = `${(H - hh) / 2}mm`;
+    return el;
+  };
+  const sheets = h('div', { class: 'print-sheets' });
+  if (part === 'cover') {
+    const cv = c.covers.find((x) => x.id === d.cover.id);
+    sheets.appendChild(h('div', { class: 'sheet' }, fit(renderCover(c, cv, d.heroes, d.cover), c.coverRef.w / c.coverRef.h)));
+  } else {
+    const list = bookSpreads(c, d);
+    list.forEach((p, i) => sheets.appendChild(h('div', { class: 'sheet' }, fit(renderPage(c, p, d.heroes, { number: i + 1 }), c.book.ref.w / c.book.ref.h))));
+    if (list.length % 2) sheets.appendChild(h('div', { class: 'sheet' }));
+  }
+  const ready = h('span', null, 'Загружаем картинки…');
+  const printBtn = h('button', { type: 'button', class: 'btn btn-sm', disabled: true, onclick: () => window.print() }, 'Сохранить PDF');
+  const bleedSel = h('select', { class: 'input input-sm', style: { width: 'auto', height: '34px' }, onchange: (e) => { params.set('bleed', e.target.value); go(`${location.pathname}?${params}`, true); } },
+    [0, 3, 5].map((v) => h('option', { value: v, selected: v === bleed }, v ? `вылеты ${v} мм` : 'без вылетов')));
+  clear(root).append(
+    h('div', { class: 'print-bar' },
+      h('b', null, `${label} · ${part === 'cover' ? `обложка ${tw}×${th} мм` : `блок ${tw}×${th} мм, ${sheets.children.length} стр.`}`),
+      bleedSel, ready, printBtn,
+      h('span', { class: 'small', style: { opacity: '.7' } }, 'В окне печати: «Сохранить как PDF», поля — «Нет», включите «Фоновая графика».'),
+    ),
+    sheets,
+  );
+  const imgs = [...sheets.querySelectorAll('img')];
+  imgs.forEach((i) => i.removeAttribute('loading'));
+  Promise.all(imgs.map((i) => (i.complete ? null : new Promise((r) => { i.onload = r; i.onerror = r; })))).then(() => document.fonts.ready).then(() => {
+    ready.textContent = `Готово: ${imgs.length} слоёв загружено`;
+    printBtn.disabled = false;
+  });
+}
+
+// ---------------- Условия ----------------
+function pageTerms() {
+  const c = state.catalog;
+  const sec = (t, ...p) => h('div', { class: 'terms-sec' }, h('h2', { class: 'h3' }, t), p.map((x) => h('p', null, x)));
+  page(nav({}), h('section', { class: 'flow terms' },
+    h('div', { class: 'flow-title' }, h('h1', { class: 'h1' }, 'Условия ', h('em', null, 'заказа'))),
+    sec('Что вы покупаете', `Персональную книгу в твёрдом переплёте: блок 215 × 140 мм, обложка 220 × 145 мм, мелованная бумага. Книга печатается по макету, который вы собрали на сайте. Стоимость — ${rub(c.price)} за экземпляр, доставка по России бесплатная.`),
+    sec('Оплата', 'Оплата принимается онлайн через сервис ЮKassa: банковские карты, СБП, SberPay, ЮMoney. Данные карты вводятся на защищённой странице ЮKassa и нам не передаются. Электронный чек приходит на почту, указанную при заказе.'),
+    sec('Изготовление и доставка', 'После оплаты мы проверяем макет и передаём книгу в печать. Обычно доставка занимает около 5 рабочих дней. Доставка курьером или в пункт выдачи — бесплатно. Статус заказа можно посмотреть по ссылке из письма.'),
+    sec('Изменения и возврат', 'До оплаты книгу можно менять сколько угодно. После оплаты макет уходит в печать, поэтому изменить его нельзя. Книга изготавливается по индивидуальному заказу, поэтому книга надлежащего качества возврату не подлежит. Если книга пришла с браком печати или повреждённой — мы бесплатно напечатаем и пришлём новую или вернём деньги.'),
+    sec('Персональные данные', 'Мы используем имя, телефон, почту и адрес только для изготовления и доставки заказа и не передаём их третьим лицам, кроме службы доставки и платёжного сервиса.'),
+    c.contactEmail ? sec('Контакты', h('span', null, 'Почта: ', h('a', { href: `mailto:${c.contactEmail}` }, c.contactEmail))) : null,
+  ));
 }
 
 // ---------------- Мои книги ----------------

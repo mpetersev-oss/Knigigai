@@ -62,6 +62,7 @@ async function dashboard() {
         stat(s.books, 'книг создано'),
       ),
     ),
+    await ordersCard(),
     syncCard(s, poseDone),
     await booksCard(),
   );
@@ -205,6 +206,38 @@ function bbox(ctx, W, H) {
     }
   }
   return x1 < 0 ? null : [x0, y0, x1 + 1, y1 + 1];
+}
+
+async function ordersCard() {
+  let res = { orders: [], statuses: {}, payOnline: false };
+  try { res = await call('GET', '/api/admin/orders'); } catch { /* */ }
+  const { orders, statuses } = res;
+  const money = (n) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₽`;
+  return h('div', { class: 'adm-card' },
+    h('h2', null, `Заказы${orders.length ? ` · ${orders.length}` : ''}`),
+    res.payOnline ? null : h('p', { class: 'small' }, 'Онлайн-оплата не подключена: заказы приходят со статусом «Новый». Чтобы включить ЮKassa, добавьте shop_id и secret_key в app/config.php.'),
+    orders.length ? h('div', { style: { overflowX: 'auto' } }, h('table', null,
+      h('tr', null, ['№', 'Дата', 'Покупатель', 'Доставка', 'Сумма', 'Статус', 'Макет'].map((t) => h('th', null, t))),
+      orders.map((o) => {
+        const c = o.customer || {};
+        const sel = h('select', { class: 'input input-sm', style: { height: '34px', width: 'auto' }, onchange: async (e) => {
+          try { await call('POST', '/api/admin/order-status', { token: o.token, status: e.target.value }); e.target.style.outline = '2px solid #2f8f5b'; } catch (ex) { alert(ex.message); }
+        } }, Object.entries(statuses).map(([k, v]) => h('option', { value: k, selected: k === o.status }, v)));
+        return h('tr', null,
+          h('td', null, h('a', { href: `/order/${o.token}?wait=0`, target: '_blank' }, String(o.number))),
+          h('td', null, o.createdAt.slice(0, 16)),
+          h('td', null, c.name, h('br'), h('span', { class: 'small' }, `${c.phone} · ${c.email}`)),
+          h('td', { class: 'small' }, `${o.delivery}: ${c.zip ? c.zip + ', ' : ''}${c.city}, ${c.address}`, c.comment ? [h('br'), `💬 ${c.comment}`] : null),
+          h('td', null, money(o.amount), o.qty > 1 ? h('span', { class: 'small' }, ` (${o.qty} шт.)`) : null),
+          h('td', null, sel),
+          h('td', null,
+            h('a', { href: `/print/order/${o.token}/block`, target: '_blank' }, 'Блок'), ' · ',
+            h('a', { href: `/print/order/${o.token}/cover`, target: '_blank' }, 'Обложка'), ' · ',
+            h('a', { href: `/b/${o.book}`, target: '_blank' }, 'Книга')),
+        );
+      }),
+    )) : h('p', { class: 'small' }, 'Заказов пока нет.'),
+  );
 }
 
 async function booksCard() {

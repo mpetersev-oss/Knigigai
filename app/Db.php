@@ -53,6 +53,24 @@ final class Db
                 updated_at DATETIME NOT NULL
             )$tail");
             self::setMeta($pdo, 'schema', '1');
+            $ver = 1;
+        }
+        if ($ver < 2) {
+            $pdo->exec("CREATE TABLE IF NOT EXISTS orders (
+                id $id,
+                token VARCHAR(40) NOT NULL UNIQUE,
+                book_token VARCHAR(40) NOT NULL,
+                status VARCHAR(32) NOT NULL DEFAULT 'new',
+                qty INT NOT NULL DEFAULT 1,
+                amount INT NOT NULL,
+                customer $text NOT NULL,
+                snapshot $text NOT NULL,
+                payment_id VARCHAR(64) NULL,
+                created_at DATETIME NOT NULL,
+                updated_at DATETIME NOT NULL,
+                paid_at DATETIME NULL
+            )$tail");
+            self::setMeta($pdo, 'schema', '2');
         }
     }
 
