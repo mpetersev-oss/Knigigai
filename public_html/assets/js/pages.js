@@ -146,7 +146,7 @@ function decorSvg(kind, h, tpl = {}) {
   }
   if (tpl.bed) {
     const y = tpl.bed;
-    ground += `<g><rect x="6" y="${y}" width="162.8" height="${h - 8 - y}" rx="6" fill="#fff" opacity=".9"/><rect x="6" y="${y}" width="162.8" height="7" rx="3.5" class="dc-solid" opacity=".35"/><rect x="10" y="${y - 12}" width="34" height="14" rx="7" fill="#fff"/></g>`;
+    ground += `<g><rect x="6" y="${y}" width="162.8" height="${h - 8 - y}" rx="6" fill="#fff" opacity=".9"/><rect x="6" y="${y}" width="162.8" height="7" rx="3.5" class="dc-solid" opacity=".35"/><rect x="62" y="${y - 10}" width="50" height="12" rx="6" fill="#fff"/></g>`;
   }
   let fg = '';
   switch (kind) {
