@@ -54,14 +54,14 @@ export function setGender(hero, gender, catalog) {
   return h;
 }
 
-/** Одет ли герой (есть верх и низ). Без этого персонажа нельзя поставить на обложку. */
+/** Одет ли герой: верх, низ и обувь (ступни нарисованы только в обуви). Без этого на обложку нельзя. */
 export function hasOutfit(hero) {
-  return !!(hero && (hero.top || hero.jacket || hero.bodice) && hero.pants);
+  return !!(hero && (hero.top || hero.jacket || hero.bodice) && hero.pants && hero.shoes);
 }
 
 function outfitFallback(hero) {
   const d = DEFAULTS[hero.gender] || DEFAULTS.female;
-  return { top: hero.top || (hero.jacket || hero.bodice ? null : d.top), pants: hero.pants || d.pants };
+  return { top: hero.top || (hero.jacket || hero.bodice ? null : d.top), pants: hero.pants || d.pants, shoes: hero.shoes || d.shoes };
 }
 
 /**
@@ -77,7 +77,7 @@ export function layersFor(hero, pose = null, catalog = null) {
   // Белья в позах нет: если герой не одет, на обложке надеваем базовый комплект
   if (pose && !dressed) hero = { ...hero, ...outfitFallback(hero) };
 
-  // Тело уже нарисовано в белье, поэтому отдельные слои белья не нужны
+  // Тело нарисовано без одежды; в редакторе, пока вещь не выбрана, показываем бельё
   add(`body-${hero.tone}`, Z.body);
   if (!pose) {
     if (!hero.pants) add('underwear-bottom', Z.underwear);

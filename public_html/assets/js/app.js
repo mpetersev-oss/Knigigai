@@ -365,7 +365,7 @@ const TABS = [
   { id: 'jacket', label: 'Куртки', field: 'jacket', cat: 'jackets', region: 'torso', optional: true, clears: 'bodice' },
   { id: 'bodice', label: 'Жакеты', field: 'bodice', cat: 'bodice', region: 'torso', optional: true, clears: 'jacket', only: 'female' },
   { id: 'pants', label: 'Низ', field: 'pants', cat: 'pants', region: 'legs', optional: true },
-  { id: 'shoes', label: 'Обувь', field: 'shoes', cat: 'shoes', region: 'feet', optional: true },
+  { id: 'shoes', label: 'Обувь', field: 'shoes', cat: 'shoes', region: 'feet' },
   { id: 'glasses', label: 'Очки', field: 'glasses', cat: 'glasses', region: 'head', optional: true },
   { id: 'hat', label: 'Шапки', field: 'hat', cat: 'hats', region: 'hair', optional: true },
 ];
@@ -470,9 +470,9 @@ function pageBuilder(book, role) {
   const other = role === 'giver' ? 'receiver' : 'giver';
   const done = async () => {
     if (!hasOutfit(hero)) {
-      tab = (hero.top || hero.jacket || hero.bodice) ? 'pants' : 'top';
+      tab = !(hero.top || hero.jacket || hero.bodice) ? 'top' : !hero.pants ? 'pants' : 'shoes';
       drawTabs(); drawGrid();
-      toast('Оденьте героя: выберите верх и низ — в белье он не попадёт в книгу');
+      toast('Оденьте героя: выберите верх, низ и обувь — в белье он не попадёт в книгу');
       return;
     }
     await save.flush();
