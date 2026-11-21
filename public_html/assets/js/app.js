@@ -793,6 +793,10 @@ function pageSummary(book) {
   );
 }
 
+function checkItem(done, label, href) {
+  return h('li', { class: done ? 'is-done' : '' }, h('span', { class: 'ck' }, done ? '✓' : ''), h('a', { href, 'data-link': true }, label));
+}
+
 function orderStatusText(st) {
   return { new: 'принят', pending: 'ждёт оплаты', paid: 'оплачен', canceled: 'оплата отменена', printing: 'в печати', shipped: 'отправлен', done: 'доставлен' }[st] || st;
 }
