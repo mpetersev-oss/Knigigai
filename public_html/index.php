@@ -92,7 +92,7 @@ if (str_starts_with($path, '/api/')) {
                 exit;
             case '/admin/rebuild':
                 $c = Catalog::rebuild();
-                json_out(['ok' => true, 'v' => $c['v']]);
+                json_out(['ok' => true, 'v' => $c['v'], 'removed' => Admin::cleanupMedia()]);
                 exit;
             case '/admin/books':
                 json_out(['books' => Books::latest(100)]);

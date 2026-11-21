@@ -197,10 +197,33 @@ final class Admin
         $pdo->prepare('DELETE FROM assets WHERE akey = ?')->execute([$key]);
         $pdo->prepare('INSERT INTO assets (akey, file, fw, fh, x, y, w, h, src, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)')
             ->execute([$key, $name, $nums['fw'], $nums['fh'], $nums['x'], $nums['y'], $nums['w'], $nums['h'], substr((string) ($post['src'] ?? ''), 0, 190), Db::now()]);
-        if ($oldFile && $oldFile !== $name && is_file(MEDIA_DIR . '/' . $oldFile)) {
-            @unlink(MEDIA_DIR . '/' . $oldFile);
-        }
+        // Старый файл не удаляем сразу: пока идёт синхронизация, сайт ещё показывает его.
+        // Лишние файлы убирает cleanupMedia() после пересборки каталога.
         return ['key' => $key, 'file' => $name, 'bytes' => strlen($bytes)];
+    }
+
+    /** Удаляет из медиатеки файлы, на которые больше не ссылается ни одна запись. */
+    public static function cleanupMedia(): int
+    {
+        if (!is_dir(MEDIA_DIR)) {
+            return 0;
+        }
+        $used = [];
+        foreach (Db::pdo()->query('SELECT file FROM assets') as $r) {
+            $used[$r['file']] = true;
+        }
+        $removed = 0;
+        $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(MEDIA_DIR, FilesystemIterator::SKIP_DOTS));
+        foreach ($it as $f) {
+            if (!$f->isFile() || $f->getExtension() !== 'webp') {
+                continue;
+            }
+            $rel = substr($f->getPathname(), strlen(MEDIA_DIR) + 1);
+            if (!isset($used[$rel]) && @unlink($f->getPathname())) {
+                $removed++;
+            }
+        }
+        return $removed;
     }
 
     public static function stats(): array
