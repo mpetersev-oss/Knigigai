@@ -389,15 +389,15 @@ button { font: inherit; color: inherit; }
 .bp-svg .dc-stroke { fill: none; stroke: var(--deco); stroke-width: .9; }
 .bp-hero { position: absolute; z-index: 2; pointer-events: none; }
 .bp-text { position: absolute; left: 9%; right: 9%; top: calc(186 / 174.8 * 100 * var(--cw)); bottom: 7%; display: flex; flex-direction: column; justify-content: center; text-align: center; }
-.bp-body { margin: 0; font: 400 calc(5.6 * var(--cw))/1.32 var(--serif); white-space: pre-line; overflow-wrap: anywhere; text-wrap: balance; }
+.bp-body { margin: 0; font: 400 calc(6 * var(--cw))/1.32 var(--serif); white-space: pre-line; overflow-wrap: anywhere; text-wrap: balance; }
 .bp-num { position: absolute; bottom: 3.2%; left: 0; right: 0; text-align: center; font: 500 calc(2.6 * var(--cw)) var(--sans); letter-spacing: .12em; color: #b3a79f; }
-.bp-dedication .bp-scene { height: 100%; background: #fffdf9; }
-.bp-dedication .bp-text { top: 12%; bottom: auto; }
+.bpage.is-dedication .bp-scene { height: 100%; background: #fffdf9; }
+.bpage.is-dedication .bp-text { top: 12%; bottom: auto; }
 .bp-kicker { margin: 0; font: 500 calc(2.8 * var(--cw)) var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--deco); }
 .bp-name { margin: .1em 0 .35em; font: italic 400 calc(13 * var(--cw))/1 var(--serif); }
-.bp-dedication .bp-body { font-size: calc(5 * var(--cw)); color: #4b4542; }
+.bpage.is-dedication .bp-body { font-size: calc(5 * var(--cw)); color: #4b4542; }
 .bp-sign { margin: .8em 0 0; font: italic 400 calc(5 * var(--cw)) var(--serif); color: var(--deco); }
-.bp-final .bp-body { font-style: italic; font-size: calc(6.4 * var(--cw)); }
+.bpage.is-final .bp-body { font-style: italic; font-size: calc(6.4 * var(--cw)); }
 .th-paper { --bg: #fffdf9; --arch: #f6ece6; --deco: #c98f86; }
 .th-blush { --bg: #f6dcd3; --arch: #fbebe5; --deco: #e2817f; --alt: #f3b9a5; }
 .th-sky { --bg: #d4e5f5; --arch: #eaf3fb; --deco: #6f9fd3; --alt: #b9d3ee; }
@@ -415,7 +415,7 @@ button { font: inherit; color: inherit; }
 /* ---------- редактор страниц ---------- */
 .pg { max-width: 1280px; margin: 0 auto; padding: 28px 20px 140px; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: clamp(24px, 4vw, 56px); align-items: start; }
 .pg-stage { position: sticky; top: 96px; display: grid; justify-items: center; gap: 16px; }
-.pg-book { width: min(100%, 440px); }
+.pg-book { width: min(100%, 440px, calc((100svh - 250px) * 0.651)); min-width: 260px; }
 .pg-book .bpage { border-radius: 4px 10px 10px 4px; box-shadow: -10px 0 0 -4px #efe7e1 inset, var(--shadow); }
 .pg-nav { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
 .pg-nav .icon-btn { width: 42px; height: 42px; }

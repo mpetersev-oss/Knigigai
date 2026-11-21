@@ -71,7 +71,7 @@ export function renderPage(catalog, page, heroes, opts = {}) {
     text = page.text;
   }
   const el = document.createElement('div');
-  el.className = `bpage th-${tpl.theme} bp-${page.kind}`;
+  el.className = `bpage th-${tpl.theme} is-${page.kind}`;
   el.style.aspectRatio = `${ref.w} / ${ref.h}`;
 
   const scene = document.createElement('div');
@@ -189,7 +189,7 @@ function decorSvg(kind, h) {
     case 'frame':
       return `<svg class="bp-svg" viewBox="0 0 174.8 ${h}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">` +
         `<rect x="8" y="8" width="158.8" height="${h - 16}" rx="4" fill="none" class="dc-stroke"/>` +
-        `<ellipse class="dc-ground" cx="87.4" cy="${h - 52}" rx="44" ry="3.6"/>` + heart(87.4, 22, .8) + '</svg>';
+        `<ellipse class="dc-ground" cx="87.4" cy="${h - 52}" rx="44" ry="3.6"/><g class="dc">${heart(87.4, 22, .8)}</g></svg>`;
     case 'sparkles':
     default:
       fg = spark(24, 34, 1) + spark(150, 30, 1.2) + spark(140, 76, .6, .7) + spark(30, 84, .7, .7) + dot(96, 20, 1.2, .6);
