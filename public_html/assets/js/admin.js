@@ -121,6 +121,7 @@ function syncCard(s, poseDone) {
     h('div', { class: 'adm-row' },
       h('button', { class: 'btn btn-dark btn-sm sync-btn', onclick: () => run('editor') }, '1. Редактор персонажей'),
       h('button', { class: 'btn btn-dark btn-sm sync-btn', onclick: () => run('covers') }, '2. Обложки'),
+      h('button', { class: 'btn btn-dark btn-sm sync-btn', onclick: () => run('pages') }, '2б. Страницы книги'),
     ),
     h('div', { class: 'adm-row' },
       poseInput,

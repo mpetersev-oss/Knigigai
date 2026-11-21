@@ -1,578 +1,4572 @@
 {
-  "ref": {
-    "w": 174.8,
-    "h": 268.5,
-    "scene": 186
-  },
-  "note": "Координаты героев — в тех же единицах, что и на обложках (ширина страницы 174.8). Размер medium = 128.9 по ширине кадра. В текстах: {g} — имя автора, {r} — имя получателя, {g?м|ж} / {r?м|ж} — форма слова по полу героя. text — для любимого человека, alt — для мамы, друга и всех остальных.",
-  "dedication": {
-    "День Рождения": [
-      "{r}, с днём рождения! Эта книга — о тебе, о нас и обо всём, что делает тебя особенн{r?ым|ой}.",
-      "{r}, с днём рождения! Эта книга — о тебе и о том, почему ты так важ{r?ен|на} для меня."
-    ],
-    "наш праздник": [
-      "{r}, это наша история. Спасибо, что она у меня есть.",
-      "{r}, это книга о нас. Спасибо, что ты есть в моей жизни."
-    ],
-    "свадьба": [
-      "{r}, впереди целая жизнь — и я хочу прожить её только с тобой.",
-      "{r}, с днём свадьбы! Пусть эта книга напоминает, как сильно тебя любят."
-    ],
-    "8 марта": [
-      "{r}, с 8 Марта! Ты делаешь мой мир ярче каждый день.",
-      "{r}, с 8 Марта! Спасибо, что делаешь мир вокруг теплее."
-    ],
-    "выпускной": [
-      "{r}, поздравляю! Начинается новая глава — и я рядом.",
-      "{r}, поздравляю с выпускным! Впереди всё самое интересное."
-    ]
-  },
-  "final": [
-    "И это только начало нашей истории…",
-    "Спасибо, что ты есть. С любовью, {g}."
+ "ref": {
+  "w": 174.8,
+  "h": 248,
+  "scene": 180
+ },
+ "note": "Страницы книги — выгрузка коллекции «Book Covers» из Webflow (210 сцен): фон, предметы, текст, позы и места героев в тех же единицах, что и обложки. dedication/final — первая и последняя страницы, оформляются сайтом.",
+ "dedication": {
+  "День Рождения": [
+   "{r}, с днём рождения! Эта книга — о тебе, о нас и обо всём, что делает тебя особенн{r?ым|ой}.",
+   "{r}, с днём рождения! Эта книга — о тебе и о том, почему ты так важ{r?ен|на} для меня."
   ],
-  "templates": [
-    {
-      "id": "hug",
-      "title": "Объятия",
-      "theme": "blush",
-      "decor": "hearts",
-      "g": {
-        "pose": 6,
-        "x": 3,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "r": {
-        "pose": 6,
-        "x": 43,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "text": "{r}, рядом с тобой я дома — где бы мы ни были.",
-      "alt": "{r}, обнимаю тебя крепко-крепко. Рядом с тобой всегда тепло."
-    },
-    {
-      "id": "hello",
-      "title": "Привет!",
-      "theme": "sky",
-      "decor": "clouds",
-      "g": {
-        "pose": 21,
-        "x": -22,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 21,
-        "x": 46,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Помнишь, как всё начиналось? Одно «привет» — и жизнь заиграла новыми красками.",
-      "alt": "Помнишь, как мы познакомились? С тех пор всё стало намного веселее."
-    },
-    {
-      "id": "team",
-      "title": "Команда",
-      "theme": "butter",
-      "decor": "sun",
-      "g": {
-        "pose": 22,
-        "x": -14,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 22,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Ты + я — лучшая команда. Вместе нам по плечу что угодно.",
-      "alt": "Мы — отличная команда. С тобой любое дело получается."
-    },
-    {
-      "id": "skate",
-      "title": "Каток",
-      "theme": "ice",
-      "decor": "ice",
-      "g": {
-        "pose": 3,
-        "x": -6,
-        "y": 40,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 3,
-        "x": 50,
-        "y": 40,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "С тобой даже на тонком льду я чувствую себя уверенно.",
-      "alt": "С тобой не страшно даже на скользком льду."
-    },
-    {
-      "id": "dive",
-      "title": "Прыжок в море",
-      "theme": "sea",
-      "decor": "bubbles",
-      "g": {
-        "pose": 5,
-        "x": -16,
-        "y": 8,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 5,
-        "x": 50,
-        "y": 36,
-        "size": "medium",
-        "flip": false
-      },
-      "text": "Ради тебя я готов{g?|а} нырнуть в любое приключение с головой.",
-      "alt": "С тобой хочется нырять с головой в любые приключения."
-    },
-    {
-      "id": "jump",
-      "title": "От счастья",
-      "theme": "lilac",
-      "decor": "confetti",
-      "g": {
-        "pose": 14,
-        "x": -14,
-        "y": 36,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 14,
-        "x": 52,
-        "y": 36,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "{r}, рядом с тобой хочется прыгать от счастья!",
-      "alt": "{r}, с тобой каждый день — повод прыгать от радости!"
-    },
-    {
-      "id": "funny",
-      "title": "Танцы",
-      "theme": "coral",
-      "decor": "notes",
-      "g": {
-        "pose": 12,
-        "x": -16,
-        "y": 40,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 12,
-        "x": 54,
-        "y": 40,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Наш секрет: танцевать, даже когда музыка играет только у нас в голове.",
-      "alt": "С тобой можно дурачиться и танцевать без всякого повода."
-    },
-    {
-      "id": "zen",
-      "title": "Спокойствие",
-      "theme": "sage",
-      "decor": "leaves",
-      "g": {
-        "pose": 16,
-        "x": -16,
-        "y": 60,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 16,
-        "x": 54,
-        "y": 60,
-        "size": "medium",
-        "flip": false
-      },
-      "text": "С тобой спокойно. Даже в самый суматошный день.",
-      "alt": "С тобой спокойно и легко — даже когда всё вокруг бурлит."
-    },
-    {
-      "id": "lucky",
-      "title": "Как повезло",
-      "theme": "peach",
-      "decor": "sparkles",
-      "g": {
-        "pose": 4,
-        "x": -14,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 22,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Я до сих пор иногда думаю: как же мне с тобой повезло?",
-      "alt": "Иногда думаю: как же мне повезло, что ты у меня есть."
-    },
-    {
-      "id": "puzzle",
-      "title": "Вместе разберёмся",
-      "theme": "mint",
-      "decor": "question",
-      "g": {
-        "pose": 9,
-        "x": -14,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 9,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Мы не всегда знаем ответы — но всегда ищем их вместе.",
-      "alt": "Даже если непонятно, что делать, — вместе мы обязательно разберёмся."
-    },
-    {
-      "id": "cheer",
-      "title": "Поддержка",
-      "theme": "sky",
-      "decor": "rain",
-      "g": {
-        "pose": 10,
-        "x": -12,
-        "y": 48,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 12,
-        "x": 54,
-        "y": 40,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Когда мне грустно, ты всегда знаешь, как меня рассмешить.",
-      "alt": "Когда грустно, ты точно знаешь, как поднять мне настроение."
-    },
-    {
-      "id": "side",
-      "title": "На твоей стороне",
-      "theme": "blush",
-      "decor": "sparkles",
-      "g": {
-        "pose": 22,
-        "x": 44,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 6,
-        "x": -8,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Спасибо, что ты всегда на моей стороне.",
-      "alt": "Спасибо, что ты всегда на моей стороне."
-    },
-    {
-      "id": "hey",
-      "title": "Доброе утро",
-      "theme": "butter",
-      "decor": "sun",
-      "g": {
-        "pose": 20,
-        "x": -16,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 21,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Каждое утро начинается с тебя — и это лучшее утро.",
-      "alt": "Любой день становится лучше, если он начинается с тебя."
-    },
-    {
-      "id": "sleep",
-      "title": "Спокойной ночи",
-      "theme": "night",
-      "decor": "moon",
-      "g": {
-        "pose": 13,
-        "x": -8,
-        "y": 95,
-        "size": "small",
-        "flip": true
-      },
-      "r": {
-        "pose": 13,
-        "x": 79,
-        "y": 95,
-        "size": "small",
-        "flip": false
-      },
-      "text": "«Спокойной ночи» звучит теплее всего, когда это говоришь ты.",
-      "alt": "Даже засыпать спокойнее, когда знаешь, что ты рядом.",
-      "bed": 150
-    },
-    {
-      "id": "dinner",
-      "title": "Ужин на двоих",
-      "theme": "peach",
-      "decor": "hearts",
-      "g": {
-        "pose": 18,
-        "x": -12,
-        "y": 58,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 18,
-        "x": 56,
-        "y": 58,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Самые вкусные ужины — те, что мы делим на двоих.",
-      "alt": "Самое вкусное — то, что мы едим вместе и со смехом.",
-      "bench": 158
-    },
-    {
-      "id": "yoga",
-      "title": "Баланс",
-      "theme": "sage",
-      "decor": "leaves",
-      "g": {
-        "pose": 19,
-        "x": -8,
-        "y": 88,
-        "size": "small",
-        "flip": true
-      },
-      "r": {
-        "pose": 19,
-        "x": 79,
-        "y": 88,
-        "size": "small",
-        "flip": false
-      },
-      "text": "Ты помогаешь мне находить баланс — во всём.",
-      "alt": "Ты помогаешь мне сохранять равновесие."
-    },
-    {
-      "id": "run",
-      "title": "За мечтой",
-      "theme": "mint",
-      "decor": "sparkles",
-      "g": {
-        "pose": 25,
-        "x": -16,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 25,
-        "x": 46,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "text": "Мы бежим к мечте — и обязательно её догоним.",
-      "alt": "Вместе мы догоним любую мечту."
-    },
-    {
-      "id": "swim",
-      "title": "Море",
-      "theme": "sea",
-      "decor": "bubbles",
-      "g": {
-        "pose": 1,
-        "x": -16,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 1,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "С тобой и море по колено.",
-      "alt": "С тобой и море по колено."
-    },
-    {
-      "id": "talk",
-      "title": "Разговоры",
-      "theme": "lilac",
-      "decor": "stars",
-      "g": {
-        "pose": 17,
-        "x": -12,
-        "y": 58,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 17,
-        "x": 56,
-        "y": 58,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Обожаю наши разговоры обо всём и ни о чём.",
-      "alt": "Люблю наши разговоры обо всём на свете.",
-      "bench": 160
-    },
-    {
-      "id": "flirt",
-      "title": "Сердце бьётся",
-      "theme": "coral",
-      "decor": "hearts",
-      "g": {
-        "pose": 15,
-        "x": 4,
-        "y": 80,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 22,
-        "x": 56,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Ты до сих пор заставляешь моё сердце биться чаще.",
-      "alt": "Ты умеешь удивлять — каждый раз как в первый."
-    },
-    {
-      "id": "chill",
-      "title": "Отдых",
-      "theme": "butter",
-      "decor": "sun",
-      "g": {
-        "pose": 23,
-        "x": -16,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 23,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Лучший отдых — просто быть рядом с тобой.",
-      "alt": "Лучший отдых — проводить время с тобой.",
-      "bench": 150
-    },
-    {
-      "id": "rhythm",
-      "title": "В одном ритме",
-      "theme": "lilac",
-      "decor": "notes",
-      "g": {
-        "pose": 2,
-        "x": -16,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      },
-      "r": {
-        "pose": 2,
-        "x": 52,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "text": "Под любую музыку мы в одном ритме.",
-      "alt": "Под любую музыку мы на одной волне."
-    }
+  "наш праздник": [
+   "{r}, это наша история. Спасибо, что она у меня есть.",
+   "{r}, это книга о нас. Спасибо, что ты есть в моей жизни."
   ],
-  "special": {
-    "dedication": {
-      "theme": "paper",
-      "decor": "frame",
-      "g": {
-        "pose": 6,
-        "x": 13,
-        "y": 104,
-        "size": "small",
-        "flip": true
-      },
-      "r": {
-        "pose": 6,
-        "x": 43,
-        "y": 104,
-        "size": "small",
-        "flip": false
-      }
-    },
-    "final": {
-      "theme": "night",
-      "decor": "moon",
-      "g": {
-        "pose": 6,
-        "x": 3,
-        "y": 46,
-        "size": "medium",
-        "flip": true
-      },
-      "r": {
-        "pose": 6,
-        "x": 43,
-        "y": 46,
-        "size": "medium",
-        "flip": false
-      }
-    }
-  },
-  "defaultOrder": [
-    "hello",
-    "hug",
-    "team",
-    "lucky",
-    "jump",
-    "dinner",
-    "cheer",
-    "skate",
-    "talk",
-    "dive",
-    "funny",
-    "zen",
-    "sleep",
-    "side"
+  "свадьба": [
+   "{r}, впереди целая жизнь — и я хочу прожить её только с тобой.",
+   "{r}, с днём свадьбы! Пусть эта книга напоминает, как сильно тебя любят."
+  ],
+  "8 марта": [
+   "{r}, с 8 Марта! Ты делаешь мой мир ярче каждый день.",
+   "{r}, с 8 Марта! Спасибо, что делаешь мир вокруг теплее."
+  ],
+  "выпускной": [
+   "{r}, поздравляю! Начинается новая глава — и я рядом.",
+   "{r}, поздравляю с выпускным! Впереди всё самое интересное."
   ]
+ },
+ "final": [
+  "И это только начало нашей истории…",
+  "Спасибо, что ты есть. С любовью, {g}."
+ ],
+ "special": {
+  "dedication": {
+   "theme": "paper",
+   "decor": "frame",
+   "g": {
+    "pose": 6,
+    "x": 13,
+    "y": 96,
+    "size": "small",
+    "flip": true
+   },
+   "r": {
+    "pose": 6,
+    "x": 43,
+    "y": 96,
+    "size": "small",
+    "flip": false
+   }
+  },
+  "final": {
+   "theme": "night",
+   "decor": "moon",
+   "g": {
+    "pose": 6,
+    "x": 3,
+    "y": 40,
+    "size": "medium",
+    "flip": true
+   },
+   "r": {
+    "pose": 6,
+    "x": 43,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  }
+ },
+ "categories": {
+  "home": "Дом",
+  "travel": "Путешествия",
+  "outside": "Прогулки",
+  "work": "Работа",
+  "hobby": "Хобби",
+  "restaurants": "Кафе и рестораны",
+  "sport": "Спорт",
+  "celebration": "Праздники",
+  "museum": "Музеи",
+  "transport": "В пути",
+  "spa": "СПА",
+  "stage": "Сцена",
+  "school": "Учёба",
+  "shop": "Шопинг"
+ },
+ "scenes": [
+  {
+   "id": "celebration-1",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518bc676f11ba6b5351baf_celebration-1.webp",
+   "stackables": [],
+   "text": "12/03/2024 эта дату я буду помнить всегда!",
+   "color": "#F7EAE6",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": -10,
+    "y": 40,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 50,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-2",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518c1f0f52b251bf3d2deb_celebration-2.webp",
+   "stackables": [],
+   "text": "Красим яйца к Пасхе у бабушки!",
+   "color": "#FDD4D2",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 20,
+    "y": 25,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 70,
+    "y": 25,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-3",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518c2bb88692bb96913f79_celebration-3.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a197c571fa1ad775724916_Frame%20940.svg"
+   ],
+   "text": "Масленица это наш любимый праздник, возможно блины в этом виноваты...",
+   "color": "#364751",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 14,
+    "x": -40,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": 50,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-4",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518c34e2f00b6a628c9cd2_celebration-4.webp",
+   "stackables": [],
+   "text": "2024 - наш первый Новый Год",
+   "color": "#504116",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": 60,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 8,
+    "x": -20,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-5",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518c3fcc6e8ad9a08bd9b5_celebration-5.webp",
+   "stackables": [],
+   "text": "Всегда считала дни до нашей встречи",
+   "color": "#5A3E17",
+   "textX": 0,
+   "textY": 200,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "celebration-6",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518c9f3b6d81a4070dbbea_celebration-6.webp",
+   "stackables": [],
+   "text": "Спасибо за свежие цветы каждую неделю!",
+   "color": "#1D557A",
+   "textX": 0,
+   "textY": 10,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "celebration-7",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518ca83a07af0d29af9de3_celebration-7.webp",
+   "stackables": [],
+   "text": "Спасибо что даже когда в другом городе, заказываешь мне цветы",
+   "color": "#DCF0F4",
+   "textX": 0,
+   "textY": 10,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "celebration-8",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518cc78a46a0bd1608bde9_celebration-8.webp",
+   "stackables": [],
+   "text": "Хлопья летят наверх....",
+   "color": "#674526",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": 55,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 30,
+    "y": 60,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "celebration-9",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518cd055088f53ffccfc42_celebration-9.webp",
+   "stackables": [],
+   "text": "Всегда думаю о тебе!",
+   "color": "#3F3F3F",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -40,
+    "y": 40,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "celebration-10",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518cef3f94e6299964670f_celebration-10.webp",
+   "stackables": [],
+   "text": "Мне нравиться наши общие традиции",
+   "color": "#FEECE6",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": -50,
+    "y": 15,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 60,
+    "y": 15,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-11",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d1bd3b297f978c3c4e7_celebration-11.webp",
+   "stackables": [],
+   "text": "Помню твои сборы на свадьбу, ты была такой счастливой",
+   "color": "#FED1E0",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 3,
+    "x": -20,
+    "y": 25,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "celebration-12",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d252e4818b52d9a6437_celebration-12.webp",
+   "stackables": [],
+   "text": "Приехали к маме на Пасху, красить яйца",
+   "color": "#E2FFF8",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": -20,
+    "y": 140,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 60,
+    "y": 130,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "celebration-13",
+   "cat": "celebration",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d3285db429a6354ec7d_celebration-13.webp",
+   "stackables": [],
+   "text": "С праздником тебя!",
+   "color": "#635028",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": -40,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 2,
+    "x": 40,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-1",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685168825220369beac0e9bf_hobby-1.webp",
+   "stackables": [],
+   "text": "Мне кажется это всё таки не наша тема...",
+   "color": "#4F3B11",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 4,
+    "x": -10,
+    "y": 50,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-2",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685168a252e79afb65c42825_hobby-2.webp",
+   "stackables": [],
+   "text": "Сейчас посмотрим кто лучше!",
+   "color": "#E2DCFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": 55,
+    "y": 15,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -55,
+    "y": 15,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "hobby-3",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685168aa25fa803500886ce2_hobby-3.webp",
+   "stackables": [],
+   "text": "Мы умеем находить самые лучшие места!",
+   "color": "#FAE0F1",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": -35,
+    "y": 10,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 23,
+    "x": 55,
+    "y": 10,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-4",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685168b22794e79b23ead67c_hobby-4.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a196849b3744cdf3b22d5f_Frame%20955.svg"
+   ],
+   "text": "Ты настоящий мужчина!",
+   "color": "#FFD4E3",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 85,
+    "y": 80,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 40,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-5",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685168ca214fa59fee1635ed_hobby-5.webp",
+   "stackables": [],
+   "text": "Мне кажется мы лучшая команда)",
+   "color": "#FFE5DE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 4,
+    "x": 50,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 0,
+    "y": 35,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-6",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851697153e45f4a79003867_hobby-6.webp",
+   "stackables": [],
+   "text": "С тобой как в цирке...",
+   "color": "#FFF0E8",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": -30,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-7",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516979a68f9d125f1835d8_hobby-7.webp",
+   "stackables": [],
+   "text": "Ну только раз в Сочи!",
+   "color": "#D7EDFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": 30,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-8",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685169de425c97f62c0f84ff_hobby-8.webp",
+   "stackables": [],
+   "text": "Благодаря тебе я полюбила шампанское в антракт",
+   "color": "#5A3C13",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 9,
+    "x": -80,
+    "y": 130,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 9,
+    "x": 60,
+    "y": 130,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-9",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685169faf948b56c3b4e802e_hobby-9.webp",
+   "stackables": [],
+   "text": "Ты просто лучший в квестах!",
+   "color": "#3F3656",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 12,
+    "x": -30,
+    "y": 150,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": 80,
+    "y": 90,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-10",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a03f8b01b46b416e453_hobby-10.webp",
+   "stackables": [],
+   "text": "Помнишь как ты боялась рыб в детстве?",
+   "color": "#25485E",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -40,
+    "y": -30,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-11",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a418b96ef6cfd2565ba_hobby-11.webp",
+   "stackables": [],
+   "text": "Ну ты и шалун!",
+   "color": "#E8F0FE",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 18,
+    "x": 65,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 9,
+    "x": -30,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-12",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a49c5f48c804eb35c67_hobby-12.webp",
+   "stackables": [],
+   "text": "Помнишь как мы сбегали от мамы в клуб? Вот время было!",
+   "color": "#E5D6FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 12,
+    "x": -20,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 7,
+    "x": 10,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-13",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a52afcb33cd36db4e1f_hobby-13.webp",
+   "stackables": [],
+   "text": "Спасибо что учишь меня играть на гитаре!",
+   "color": "#38364E",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 2,
+    "x": -60,
+    "y": -20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-14",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a5c9e227e272b491b49_hobby-14.webp",
+   "stackables": [],
+   "text": "Скоро запишу самый лучший трек для тебя!",
+   "color": "#1A4A5E",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 50,
+    "y": 5,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": -50,
+    "y": 10,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-15",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a6548475812037c37de_hobby-15.webp",
+   "stackables": [],
+   "text": "Ты такой творческий!",
+   "color": "#F1EBFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 4,
+    "x": 40,
+    "y": 100,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-16",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a6fd94b356af825026b_hobby-16.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a196b44ec6ceb822736ed8_Frame%20948.svg"
+   ],
+   "text": "Спасибо что пробуешь новые хобби со мной",
+   "color": "#3D2C0B",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 6,
+    "x": 10,
+    "y": 40,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-17",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a783bbb4402241db47b_hobby-17.webp",
+   "stackables": [],
+   "text": "Ты так красиво рисуешь - прям Пикассо!",
+   "color": "#D7CDFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 22,
+    "x": -50,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 70,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "hobby-18",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a82402fabb43ed0a6eb_hobby-18.webp",
+   "stackables": [],
+   "text": "Вот так мы и подружились!",
+   "color": "#3E3510",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 16,
+    "x": -40,
+    "y": 25,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "hobby-19",
+   "cat": "hobby",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516a8cb42692e273b20665_hobby-19.webp",
+   "stackables": [],
+   "text": "Вот ты и попался!",
+   "color": "#DBFCFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 7,
+    "x": -50,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 9,
+    "x": 40,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-1",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685307aee3243fd588dce398_home-1.webp",
+   "stackables": [],
+   "text": "Вот мы и нашли свой уютный уголок!",
+   "color": "#FFFFFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -20,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 70,
+    "y": 10,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-2",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685307f9e0e4f7e2814936da_home-2.webp",
+   "stackables": [],
+   "text": "Уборка это видимо не для нас...",
+   "color": "#FDE1DD",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 24,
+    "x": -35,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 24,
+    "x": 30,
+    "y": 110,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-3",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68530802ffb14d8edf0da8e7_home-3.webp",
+   "stackables": [],
+   "text": "Ровно в 00:00 стучи!!!!",
+   "color": "#FEE1E0",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": 40,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 80,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-4",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853080b8bcf177d432b9673_home-4.webp",
+   "stackables": [],
+   "text": "Ролевые игры иногда выходят из под контроля",
+   "color": "#FFF2E8",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": 30,
+    "y": 15,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 6,
+    "x": -40,
+    "y": 55,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "home-5",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68530812ca27ae30a92d5e5c_home-5.webp",
+   "stackables": [],
+   "text": "Играть в пиратов была твоя самая любимая игра в детстве",
+   "color": "#FFE5D9",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": -30,
+    "y": 25,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 75,
+    "y": 22,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-6",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853d7f9f883a2f7ac1bb9e6_home-6.webp",
+   "stackables": [],
+   "text": "Спасибо мама, что всегда переживаешь за меня! Я это очень ценю",
+   "color": "#FFDFDC",
+   "textX": 0,
+   "textY": 190,
+   "giver": {
+    "pose": 22,
+    "x": 30,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-7",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853d80674186764580c45c2_home-7.webp",
+   "stackables": [],
+   "text": "Спасибо что поддерживаешь меня когда мне сложно!",
+   "color": "#4C3A0E",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 4,
+    "x": 30,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 10,
+    "x": -45,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-8",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853d94182a1776f024b4a72_home-8.webp",
+   "stackables": [],
+   "text": "Так грустно с тобой всегда прощаться...",
+   "color": "#684724",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 40,
+    "y": 110,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 80,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-9",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853d9ec024b37eb8a2e72f0_home-9.webp",
+   "stackables": [],
+   "text": "Главное домой вернуться не поздно - уроки делать",
+   "color": "#F0CECE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": 20,
+    "y": 10,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 60,
+    "y": 10,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-10",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853da4724da33cf8769f779_home-10.webp",
+   "stackables": [],
+   "text": "Спасибо Мам, за то что всегда помогала!",
+   "color": "#704420",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 23,
+    "x": 25,
+    "y": 35,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": -50,
+    "y": 20,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "home-11",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853da58651add6a63ed38a4_home-11.webp",
+   "stackables": [],
+   "text": "Спасибо что помогаешь с домашкой!",
+   "color": "#443F45",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": -40,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 10,
+    "x": 50,
+    "y": 30,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "home-12",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853da606b98331da4cfdfcb_home-12.webp",
+   "stackables": [],
+   "text": "Люблю смотреть как ты играешь, но не всегда!",
+   "color": "#EEE7FF",
+   "textX": 0,
+   "textY": 0,
+   "giver": {
+    "pose": 2,
+    "x": -45,
+    "y": 65,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 50,
+    "y": 85,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-13",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853da95651add6a63ed5bee_home-13.webp",
+   "stackables": [],
+   "text": "Спасибо тебе огромное за сына!",
+   "color": "#44210D",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 6,
+    "x": -60,
+    "y": 60,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-14",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853da9f5180ab023d27dc1f_home-14.webp",
+   "stackables": [],
+   "text": "Как же я люблю наши посиделки у тебя дома!",
+   "color": "#FFF3F5",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": -20,
+    "y": 25,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 50,
+    "y": 30,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-15",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db35948b183a5301768b_home-15.webp",
+   "stackables": [],
+   "text": "Ты всегда выбираешь лучшие фильмы",
+   "color": "#BFD1FF",
+   "textX": 0,
+   "textY": 0,
+   "giver": {
+    "pose": 13,
+    "x": 70,
+    "y": 90,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 75,
+    "y": 50,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-16",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db4674186764580e4107_home-16.webp",
+   "stackables": [],
+   "text": "Люблю создавать с тобой новые воспоминания",
+   "color": "#F6ECFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": 70,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 5,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-17",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db4eece6b002c748c325_home-17.webp",
+   "stackables": [],
+   "text": "Мне все таки приятно что дома всегда меня ждёт чистота и порядок",
+   "color": "#FBF7F4",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 19,
+    "x": 10,
+    "y": -10,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-18",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db56c2f6ba8d591cb5ef_home-18.webp",
+   "stackables": [],
+   "text": "Ты заслуживаешь всех звёзд Мишлен!",
+   "color": "#4E2B16",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-19",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db6c948b183a5301a1cc_home-19.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a64b5b66f744445d25eb_Frame%20978%20(1).svg"
+   ],
+   "text": "Спасибо что всегда готовишь нам очень вкусный завтрак по утрам!",
+   "color": "#FFBBBB",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -20,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 60,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-20",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db75ad310b26e39b0e18_home-20.webp",
+   "stackables": [],
+   "text": "Люблю пробовать с тобой новую еду",
+   "color": "#FFE7E0",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": -70,
+    "y": 80,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 50,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-21",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db8b74186764580e744d_home-21.webp",
+   "stackables": [],
+   "text": "Я так люблю к тебе приезжать, Бабуль!",
+   "color": "#F4D5C9",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 24,
+    "x": -30,
+    "y": -15,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-22",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853db94a86fb18f73ac45c5_home-22.webp",
+   "stackables": [],
+   "text": "Приехали к бабушке - уехали колобками...",
+   "color": "#FFE4E4",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": 80,
+    "y": 30,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 30,
+    "y": 30,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-23",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dbb961279a1425d0d847_home-23.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a19a84d57a91ab2e2fd8bc_Frame%20944.svg"
+   ],
+   "text": "Тааааак... А теперь пришло время принять витаминки",
+   "color": "#744933",
+   "textX": 10,
+   "textY": 0,
+   "giver": {
+    "pose": 9,
+    "x": -50,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 40,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-24",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dbc36ad371dd27aaba12_home-24.webp",
+   "stackables": [],
+   "text": "Без тебя мне не спится...",
+   "color": "#CFF4FE",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 13,
+    "x": 20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 13,
+    "x": 20,
+    "y": 100,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-25",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dbdea86fb18f73ac6b6f_home-25.webp",
+   "stackables": [],
+   "text": "Ты всегда такой ... когда выходишь из душа)",
+   "color": "#D4CFFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 15,
+    "x": 60,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "home-26",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dc36c8d7761cbc20ac84_home-26.webp",
+   "stackables": [],
+   "text": "Мне так нравилось с тобой играть в детсве!",
+   "color": "#BBB8E8",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 23,
+    "x": 15,
+    "y": 92,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 60,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-27",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dc42c8d7761cbc20b65f_home-27.webp",
+   "stackables": [],
+   "text": "Люблю засыпать с тобой",
+   "color": "#503114",
+   "textX": 0,
+   "textY": 30,
+   "giver": {
+    "pose": 6,
+    "x": 50,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 10,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "home-28",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dc5a08e66097615af34d_home-28.webp",
+   "stackables": [],
+   "text": "Я ценю, что ты всегда мне помогаешь когда я чувствую себя плохо!",
+   "color": "#D6D2ED",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 13,
+    "x": 50,
+    "y": 100,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 6,
+    "x": -20,
+    "y": 70,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "home-29",
+   "cat": "home",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6853dcaf056eaf78bbea9d92_home-29.webp",
+   "stackables": [],
+   "text": "Спасибо, что согреваешь меня!",
+   "color": "#DDBFE6",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": 30,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-1",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515b8be929280893385f2f_museum-1.webp",
+   "stackables": [],
+   "text": "Я так рад что ты это понимаешь, а тоя . вообще не понимаю это картины...",
+   "color": "#411223",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 70,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 20,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "museum-2",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515b94bb2b75ff56ba81bf_museum-2.webp",
+   "stackables": [],
+   "text": "Летать и узнавать мир с тобой!",
+   "color": "#452013",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": -25,
+    "y": 50,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-3",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515ba0d5e146ac9fb8ff00_museum-3.webp",
+   "stackables": [],
+   "text": "Спасибо, что показала мне мир!",
+   "color": "#533415",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 22,
+    "x": -50,
+    "y": 80,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 20,
+    "y": 80,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "museum-4",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bab28ec98b7efd90e1d_museum-4.webp",
+   "stackables": [],
+   "text": "Мне нравится говорить с тобой об истории!",
+   "color": "#552626",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": 55,
+    "y": 45,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -15,
+    "y": 45,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "museum-5",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bb4a93a48fca66a3ba2_museum-5.webp",
+   "stackables": [],
+   "text": "Готов ждать тебя всегда!",
+   "color": "#783737",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 30,
+    "y": 115,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-6",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bbcdacae8a7e71a7f01_museum-6.webp",
+   "stackables": [],
+   "text": "Как то это всегда сложно нам даётся...",
+   "color": "#532C20",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": 10,
+    "y": 20,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 9,
+    "x": 50,
+    "y": 30,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "museum-7",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bc3c59e496eb8cd8c95_museum-7.webp",
+   "stackables": [],
+   "text": "А сфоткай ещё здесь",
+   "color": "#FEEEE2",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": -20,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-8",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bcb6ed65be4c840332d_museum-8.webp",
+   "stackables": [],
+   "text": "Я бы тебя тоже так всегда охранял",
+   "color": "#E1FAFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 75,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-9",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bd3d14f17c8477c3b4d_museum-9.webp",
+   "stackables": [],
+   "text": "Вот бы их вернули на нашу планету...",
+   "color": "#FCF2E7",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 4,
+    "x": 40,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "museum-10",
+   "cat": "museum",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68515bdc41901c068f03edd3_museum-10.webp",
+   "stackables": [],
+   "text": "Давай откроем свой музей - совместных воспоминаний?",
+   "color": "#F1EFFC",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": 10,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 50,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-1",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851700ff1b3f8d0ccdfa820_outside-1.webp",
+   "stackables": [],
+   "text": "Не умеем мы ухаживать за растениями, и что?",
+   "color": "#D6CEFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 2,
+    "x": -20,
+    "y": -10,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "outside-2",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170179176ce6f92a97f5b_outside-2.webp",
+   "stackables": [],
+   "text": "Бывало и такое... Последний автобус не дождался нас",
+   "color": "#DFEDFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 10,
+    "x": -40,
+    "y": 100,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 10,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-3",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68517021147c4622c3a05062_outside-3.webp",
+   "stackables": [],
+   "text": "Вечерние прогулки тайком от мамы были самыми лучшими!",
+   "color": "#EEF6FD",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 24,
+    "x": -20,
+    "y": -10,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "outside-4",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851702911286bd977c7cf58_outside-4.webp",
+   "stackables": [],
+   "text": "Ты всегда придумываешь самые лучшие свидания!",
+   "color": "#CBDCEF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 3,
+    "x": 10,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "outside-5",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68517035a2efbf51ac3bd793_outside-5.webp",
+   "stackables": [],
+   "text": "Так, а теперь убегаем от бегемотов",
+   "color": "#DDF8DD",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 24,
+    "x": -50,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 24,
+    "x": -40,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-6",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851703ec4dbd7b596a8fa36_outside-6.webp",
+   "stackables": [],
+   "text": "Вот ты шутник...",
+   "color": "#FDFFE2",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -40,
+    "y": 50,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 4,
+    "x": 20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-7",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851704893bcc63a41bb1999_outside-7.webp",
+   "stackables": [],
+   "text": "Спасибо что всегда прилетаешь на помощь!",
+   "color": "#DAF5FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 9,
+    "x": -30,
+    "y": 130,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 4,
+    "x": 70,
+    "y": 130,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-8",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170563203fefeb00a6e1d_outside-8.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a617bf44c034410b56be_Frame%20939%20(1).png"
+   ],
+   "text": "Ты умеешь удивлять!",
+   "color": "#F0FDC6",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -20,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 40,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-9",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170601ef1cf0237515f33_outside-9.webp",
+   "stackables": [],
+   "text": "Мы конечно умеем находить себе приключения на одно место...",
+   "color": "#FFEFE9",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 24,
+    "x": -40,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 9,
+    "x": 0,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-10",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851706ac98036acebe6546a_outside-10.webp",
+   "stackables": [],
+   "text": "С тобой и в пещере не заблудишься",
+   "color": "#FFEDD8",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 24,
+    "x": -50,
+    "y": 90,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 24,
+    "x": -30,
+    "y": 100,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-11",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170742092e9922a1c6bcc_outside-11.webp",
+   "stackables": [],
+   "text": "Прогулки с тобой по городу это мое любимое занятие!",
+   "color": "#564117",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 25,
+    "x": -20,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 25,
+    "x": 25,
+    "y": 47,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-12",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851707fc8fc0874203a1542_outside-12.webp",
+   "stackables": [],
+   "text": "Кормление уточек мне напоминает о тебе, мы так всегда делали в детстве",
+   "color": "#D0F7FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 35,
+    "y": -40,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 18,
+    "x": -15,
+    "y": -40,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-13",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170898675035cc80ada2b_outside-13.webp",
+   "stackables": [],
+   "text": "Мне кажется мы можем гулять и болтать часами",
+   "color": "#FFE1DE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 25,
+    "x": -10,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 25,
+    "x": 35,
+    "y": 65,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-14",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68517095c189abba354578fb_outside-14.webp",
+   "stackables": [],
+   "text": "С тобой в любой ситуации спокойно!",
+   "color": "#F5C6FD",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 16,
+    "x": -50,
+    "y": 100,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 16,
+    "x": 0,
+    "y": 120,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-15",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851709ee0900e813f5e2324_outside-15.webp",
+   "stackables": [],
+   "text": "Я всегда буду рядом, даже на краю Эльбруса",
+   "color": "#11385F",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 30,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "outside-16",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a74af0599c670922718a_Frame%20767.svg",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a7662e9b175c9be8e576_Frame%20429.svg"
+   ],
+   "text": "С тобой спокойно даже под водой с акулами",
+   "color": "#E0FBFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 5,
+    "x": -62,
+    "y": 73,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 5,
+    "x": 50,
+    "y": 77,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "outside-17",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170b39e227e272b4d3117_outside-17.webp",
+   "stackables": [],
+   "text": "Мне нравиться что ты всегда следишь за моей курткой!",
+   "color": "#F9F1F1",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": 50,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -35,
+    "y": 15,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "outside-18",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170bd8675035cc80aff40_outside-18.webp",
+   "stackables": [],
+   "text": "У тебя всегда такие необычные сны!",
+   "color": "#FFC490",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": -60,
+    "y": 90,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 60,
+    "y": 75,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-19",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170c644eed905cfee6db3_outside-19.webp",
+   "stackables": [],
+   "text": "С тобой хоть на край земли!",
+   "color": "#244655",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -30,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 4,
+    "x": 60,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-20",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a77ab1f47842d4552cb7_Frame%20800.svg",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a78df5c5b5e5284bdb11_Frame%20462.svg"
+   ],
+   "text": "А поплыли теперь туда?",
+   "color": "#1A535A",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 5,
+    "x": -25,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 1,
+    "x": 65,
+    "y": 155,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "outside-21",
+   "cat": "outside",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685170db87402ac2a35ff783_outside-21.webp",
+   "stackables": [],
+   "text": "Всегда жду Май что бы готовить шашлыки!",
+   "color": "#DBFCFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -50,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 0,
+    "y": 20,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "restaurants-1",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fa0bd180ab291b7dc8f_restaurant-1.webp",
+   "stackables": [],
+   "text": "Наши мини эксперименты всегда такие классные!",
+   "color": "#65501C",
+   "textX": 0,
+   "textY": 200,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "restaurants-2",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fa56ab3d79bad83fd93_restaurant-2.webp",
+   "stackables": [],
+   "text": "Не могу понять кого больше люблю, тебя или пиццу? (шучу, шучу - тебя конечно!)",
+   "color": "#EDDDDD",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 18,
+    "x": -70,
+    "y": 60,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-3",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510faafa4e6b63f92b6bc6_restaurant-3.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a190e020b5103a7ad3484c_Frame%20952.svg"
+   ],
+   "text": "Люблю тебе готовить завтрак по субботам!",
+   "color": "#417773",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 0,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-4",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510faf467ee7984bdf9c1c_restaurant-4.webp",
+   "stackables": [],
+   "text": "Наше первое свидание было что то с чем то!",
+   "color": "#FFE0E2",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": -45,
+    "y": 0,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 60,
+    "y": 0,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-5",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fb5597b924b96ac14ab_restaurant-5.webp",
+   "stackables": [],
+   "text": "Иногда мне кажется что кроме суши тебе больше ничего не надо для счастья",
+   "color": "#563315",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -60,
+    "y": 30,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-6",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fb9611898bb24f14f10_restaurant-6.webp",
+   "stackables": [],
+   "text": "Ну мы и сладкоешки...",
+   "color": "#604C1D",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -60,
+    "y": 100,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 30,
+    "y": 70,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-7",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fbe4baf52eea46f384d_restaurant-7.webp",
+   "stackables": [],
+   "text": "Не кофейная ты душа...",
+   "color": "#FFF7F4",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": -60,
+    "y": -15,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-8",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fc4fc29efab588312a2_restaurant-8.webp",
+   "stackables": [],
+   "text": "Прости, что заставляю тебя всегда ждать меня!",
+   "color": "#F9E5DE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -60,
+    "y": -15,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 65,
+    "y": -15,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-9",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fca8f1162f95225751c_restaurant-9.webp",
+   "stackables": [],
+   "text": "Поели и теперь поспать = твой слоган по жизни",
+   "color": "#EEEEEE",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 18,
+    "x": -70,
+    "y": 115,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 70,
+    "y": 115,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-10",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68510fce7818647a2593d0e1_restaurant-10.webp",
+   "stackables": [],
+   "text": "Спасибо что всегда организовываешь наши мужские вечера!",
+   "color": "#DCC0AF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": 10,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-11",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851100f348fce6ebb9bb435_restaurant-11.webp",
+   "stackables": [],
+   "text": "Прицелились и стреляем! Правда не всегда в точку...",
+   "color": "#FFF4ED",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 23,
+    "x": -50,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 50,
+    "y": 0,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-12",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685110156a59cb2d284c1ffd_restaurant-12.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a191ad42fe62359f3e75f6_Frame%20943.svg"
+   ],
+   "text": "Приходи, угощу!",
+   "color": "#FFBABD",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-13",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851101a38db7bf475f10179_restaurant-13.webp",
+   "stackables": [],
+   "text": "Люблю пробовать вина с тобой в разных странах!",
+   "color": "#FFD0D5",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": -60,
+    "y": -20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-14",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851101f4260101864c5460b_restaurant-14.webp",
+   "stackables": [],
+   "text": "Посидеть мужской компанией это всегда круто!",
+   "color": "#FFF4ED",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": -65,
+    "y": 50,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 50,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-15",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68511024a367ec3cd646be25_restaurant-15.webp",
+   "stackables": [],
+   "text": "Рад что у нас с тобой общие интересы и главное вкусы!",
+   "color": "#F5D6FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": -20,
+    "y": -20,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "restaurants-16",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851102a58740dd449d698c8_restaurant-16.webp",
+   "stackables": [],
+   "text": "Мы то точно знаем как “культурно”проводить вечера по пятницам",
+   "color": "#443210",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -50,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 80,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "restaurants-17",
+   "cat": "restaurants",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685110314ffee91485b52c30_restaurant-17.webp",
+   "stackables": [],
+   "text": "Ой, мы опять забыли всё!",
+   "color": "#FCD2DE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 20,
+    "y": -30,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "school-1",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e1299a12ac1b937e4f0_school-1.webp",
+   "stackables": [],
+   "text": "Спасибо что перед сном всегда мне читала",
+   "color": "#99DAF0",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 75,
+    "y": 85,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -70,
+    "y": 85,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "school-2",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e2c5937cf232d925719_school-2.webp",
+   "stackables": [],
+   "text": "Ты мне с первой пары понравилась, но я боялся подойти...",
+   "color": "#753C1E",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 40,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "school-3",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e5657b3463319ba264a_school-3.webp",
+   "stackables": [],
+   "text": "Спасибо тебе большое что помогала в школе с уроками!",
+   "color": "#ffffff",
+   "textX": 0,
+   "textY": 10,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "school-4",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e66382cf53ce17342df_school-4.webp",
+   "stackables": [],
+   "text": "Помню как гонялся за мной в школе!",
+   "color": "#E4D2FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -70,
+    "y": 0,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 20,
+    "x": 40,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "school-5",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e90e1b6610c4cc50570_school-5.webp",
+   "stackables": [],
+   "text": "Помнишь наш выпускной? Ты меня там впервые поцеловал",
+   "color": "#FEC9FE",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": -10,
+    "y": 0,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 35,
+    "y": 5,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "school-6",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513e9ab63d1c1db242c998_school-6.webp",
+   "stackables": [],
+   "text": "Ты такой умный!",
+   "color": "#FFDCCD",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": 20,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "school-7",
+   "cat": "school",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68513ebb73eef8328118700a_school-7.webp",
+   "stackables": [],
+   "text": "Ты всегда такой спонтанный и бесстрашный!",
+   "color": "#D7C9FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 25,
+    "x": -30,
+    "y": 110,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": 30,
+    "y": 120,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "shop-1",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851450ddfd82b75d7abc5c1_shop-1.webp",
+   "stackables": [],
+   "text": "С каждым годом все краше и краше!",
+   "color": "#EEFFFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 14,
+    "x": -40,
+    "y": -20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 50,
+    "y": 10,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "shop-2",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851451a7556939315a70dc0_shop-2.webp",
+   "stackables": [],
+   "text": "Поесть мы всегда любим!",
+   "color": "#FFF2FE",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": -5,
+    "y": 80,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "shop-3",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685145322794e79b23d3f58d_shop-3.webp",
+   "stackables": [],
+   "text": "Ты самая лучшая подружка - всегда подскажешь что лучше",
+   "color": "#E4D8FB",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": -65,
+    "y": -20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "shop-4",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851453a01218be52c615ece_shop-4.webp",
+   "stackables": [],
+   "text": "Это всегда так долго, но я рад помочь!",
+   "color": "#DEE5FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": -30,
+    "y": 20,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 6,
+    "x": -10,
+    "y": 15,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "shop-5",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685145436e0ea2ec8c56e96e_shop-5.webp",
+   "stackables": [],
+   "text": "Иногда мне кажется ВБ видит тебя чаще чем я...",
+   "color": "#2F134C",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 9,
+    "x": -10,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "shop-6",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851454b14d672549691a08e_shop-6.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a19585ccd947662b81331a_Frame%20956.svg"
+   ],
+   "text": "Красотка!",
+   "color": "#F0C8F1",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 22,
+    "x": 5,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "shop-7",
+   "cat": "shop",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68514559e9292808932a4cad_shop-7.webp",
+   "stackables": [],
+   "text": "Выбирай - куплю!",
+   "color": "#594020",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 0,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-2",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685145754f8272d706968b65_spa-2.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a24fcfb9e1572dfb49c5_Frame%20985.svg"
+   ],
+   "text": "Помнишь ночной джакузи?)",
+   "color": "#E3E3FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -60,
+    "y": 10,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": 30,
+    "y": 10,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "spa-3",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851457cec15b50f5d2cce78_spa-3.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a2a66e04cba3dd0853b4_Frame%20996.svg"
+   ],
+   "text": "Сюда бы, а не вот это всё...",
+   "color": "#124241",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": -55,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -10,
+    "y": 35,
+    "size": "original",
+    "flip": true
+   }
+  },
+  {
+   "id": "spa-4",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685145873203fefeb0ef0d35_spa-4.webp",
+   "stackables": [],
+   "text": "Отдыхать мы точно умеем!",
+   "color": "#FDC6E5",
+   "textX": 10,
+   "textY": 0,
+   "giver": {
+    "pose": 17,
+    "x": 70,
+    "y": 70,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-5",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851458ec8fc0874201e3a67_spa-5.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a19635d965e48cb2e8eee8_Frame%20941.svg"
+   ],
+   "text": "Релакс никто не отменял",
+   "color": "#DBFCFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 9,
+    "x": 20,
+    "y": 95,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-6",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68514595fcd79d03f5493ace_spa-6.webp",
+   "stackables": [],
+   "text": "Массажи никто лучше тебя не делает!",
+   "color": "#623423",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 13,
+    "x": -30,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-7",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851459c8f75c4c208947144_spa-7.webp",
+   "stackables": [],
+   "text": "Спасибо что помогаешь с детьми, я это очень ценю",
+   "color": "#EDFDFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 20,
+    "x": 0,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-8",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685145a4a2efbf51ac2073ed_spa-8.webp",
+   "stackables": [],
+   "text": "Ты у меня самая красивая",
+   "color": "#773D21",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 0,
+    "y": -10,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "spa-1-fcrj9",
+   "cat": "spa",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851456cfcd79d03f54926a2_spa-1.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a195b7f4c30e4201aa763a_Frame%20945.svg"
+   ],
+   "text": "Это всегда так романтично! Особенно с вином!",
+   "color": "#E5F7FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": -10,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": 60,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "sport-1",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162ba2e0bcd25dbb9a362_sport-1.webp",
+   "stackables": [],
+   "text": "Спасибо что научил меня кататься на коньках!",
+   "color": "#17474F",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 3,
+    "x": 20,
+    "y": 90,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 3,
+    "x": 70,
+    "y": 110,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "sport-2",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162c8bb585494440a6cf3_sport-2.webp",
+   "stackables": [],
+   "text": "Ещё немного, и мы будем готовы к лету, вот увидишь!",
+   "color": "#3C260F",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 25,
+    "x": 40,
+    "y": 5,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 16,
+    "x": 70,
+    "y": 80,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "sport-3",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162d18b96ef6cfd206f23_sport-3.webp",
+   "stackables": [],
+   "text": "Я рада что ты нашёл себя в этом, горжусь!",
+   "color": "#4D3C35",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 6,
+    "x": 0,
+    "y": 40,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-4",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162e3afcb33cd36d634ee_sport-4.webp",
+   "stackables": [],
+   "text": "Ты всегда так переживаешь, это так мило!",
+   "color": "#CFEBFC",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": -40,
+    "y": 150,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": 50,
+    "y": 150,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "sport-5",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162ecf00cf3554f6b802f_sport-5.webp",
+   "stackables": [],
+   "text": "Ты всегда такая шустрая, за тобой не угнаться!",
+   "color": "#315C53",
+   "textX": 0,
+   "textY": 10,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "sport-6",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162f476f9447c9cfb95ab_sport-6.webp",
+   "stackables": [],
+   "text": "Помнишь когда мы в раздевалке?)",
+   "color": "#26685F",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": -15,
+    "y": -30,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-7",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685162fea2efbf51ac33e231_sport-7.webp",
+   "stackables": [],
+   "text": "Скоро я тебя догоню!",
+   "color": "#154958",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 24,
+    "x": 50,
+    "y": 80,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 24,
+    "x": -60,
+    "y": 90,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "sport-8",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68516305dacae8a7e71f81a7_sport-8.webp",
+   "stackables": [],
+   "text": "Кто бы думал что нам понравится! Теперь надо попробовать падл",
+   "color": "#D6FFFD",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": 50,
+    "y": 0,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 20,
+    "x": -60,
+    "y": 0,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "sport-9",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851630e75b55252b363cfbf_sport-9.webp",
+   "stackables": [],
+   "text": "Олд Мани стайл прям для нас!",
+   "color": "#F5FFDA",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": -30,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-10",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685163158b96ef6cfd209508_sport-10.webp",
+   "stackables": [],
+   "text": "Помню как в юности играли с ребятами!",
+   "color": "#2E4466",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 0,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-11",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851631f3203fefeb0024987_sport-11.webp",
+   "stackables": [],
+   "text": "Спасибо что заставляешь ходить с тобой на спорт!",
+   "color": "#6D452F",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 20,
+    "x": 40,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-12",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851632a3203fefeb0024e8e_sport-12.webp",
+   "stackables": [],
+   "text": "Ты моя балеринка!",
+   "color": "#523616",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 3,
+    "x": -10,
+    "y": 35,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-13",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685163338f59c0ff36793887_sport-13.webp",
+   "stackables": [],
+   "text": "Ты так забавно танцуешь!",
+   "color": "#482B0C",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 7,
+    "x": 0,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-14",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851633ebb585494440ac658_sport-14.webp",
+   "stackables": [],
+   "text": "Ты мой молодец!",
+   "color": "#E7F3FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 12,
+    "x": -20,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-15",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685163474159f2fc34fad138_sport-15.webp",
+   "stackables": [],
+   "text": "Видишь, это не так уж и страшно!",
+   "color": "#45163B",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 16,
+    "x": 0,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "sport-16",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851634f9ecee091e258f930_sport-16.webp",
+   "stackables": [],
+   "text": "Спасибо что открыла для меня йогу - вроде получается!",
+   "color": "#410D4A",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 19,
+    "x": -30,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 19,
+    "x": 50,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "sport-17",
+   "cat": "sport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685163583fc4a8a926804c03_sport-17.webp",
+   "stackables": [],
+   "text": "Ты мой будущий спортсмен!",
+   "color": "#132A54",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -60,
+    "y": 40,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-1",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68514450efc48fa61a9a104d_stage-1.webp",
+   "stackables": [],
+   "text": "Ты королева танцпола!",
+   "color": "#99DAF0",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 7,
+    "x": 20,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-2",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851445940c1c26f67f0d436_stage-2.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a1f22b6bfd4b627b61aa_Frame%20990%20(1).svg"
+   ],
+   "text": "Ты будущий политик!",
+   "color": "#44391D",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 25,
+    "y": 10,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-3",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144c376f9447c9ce6d18d_stage-3.webp",
+   "stackables": [],
+   "text": "Будущий музыкант!",
+   "color": "#F5D2E5",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 70,
+    "y": 120,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-4",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144ce0ba653a118f9cb2f_stage-4.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68b5a22714582f420e28ee06_Frame%20988.svg"
+   ],
+   "text": "Будущий депутат!",
+   "color": "#175254",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 9,
+    "x": 5,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-5",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144d8d807bd9ca786d702_stage-5.webp",
+   "stackables": [],
+   "text": "Спасибо тебе за этот день! Люблю тебя!",
+   "color": "#FFF0F6",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": 0,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 40,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "stage-6",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144e384e1408acb6a3729_stage-6.webp",
+   "stackables": [],
+   "text": "Ты самый сильный среди роты!",
+   "color": "#DAEEFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": 20,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-7",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144ecfd95da8bb7fab07c_stage-7.webp",
+   "stackables": [],
+   "text": "Мне нравиться когда ты поешь, у тебя очень красивый голос!",
+   "color": "#FEE3E4",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 6,
+    "x": -60,
+    "y": 40,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "stage-8",
+   "cat": "stage",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685144f8fd95da8bb7fab6d6_stage-8.webp",
+   "stackables": [],
+   "text": "С тобой как будто всегда на СтендАп шоу!",
+   "color": "#FFCACD",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": 35,
+    "y": -20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-1",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851134b59ee824021ec3e73_transport-1.webp",
+   "stackables": [],
+   "text": "С тобой хоть в космос)",
+   "color": "#C7E7FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 1,
+    "x": 10,
+    "y": 100,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 5,
+    "x": -90,
+    "y": 30,
+    "size": "original",
+    "flip": false
+   }
+  },
+  {
+   "id": "transport-2",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851127ddf7937a3adaef4ef_transport-2.webp",
+   "stackables": [],
+   "text": "Всегда рад поговорить пока ты едешь в такси!",
+   "color": "#303346",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 18,
+    "x": 40,
+    "y": 30,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-3",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685113781d11ecda1f1a1d0e_transport-3.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a19357a7681f6518910f01_Frame%20950.svg"
+   ],
+   "text": "Быть пассажирской принцессой это твое призвание!",
+   "color": "#ECECEC",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 14,
+    "x": 30,
+    "y": 60,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-4",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685113875786d7478d3e71f7_transport-4.webp",
+   "stackables": [],
+   "text": "Все всегда так на нас смотрят в метро... но главное что нам хорошо!",
+   "color": "#00171F",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": -20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 30,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "transport-5",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851128e5a60cc8b388d5af2_transport-5.webp",
+   "stackables": [],
+   "text": "Всегда так грустно ехать одному назад после встречи с тобой",
+   "color": "#1C2B31",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 23,
+    "x": -20,
+    "y": -25,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-6",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851139cc8f9d12e93dde9b7_transport-6.webp",
+   "stackables": [],
+   "text": "Помнишь как в пандемию было тяжело встретится? Приходилось находить пути!",
+   "color": "#382414",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": 0,
+    "y": 20,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 56,
+    "y": 13,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "transport-7",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851129aa367ec3cd6485273_transport-7.webp",
+   "stackables": [],
+   "text": "Ты самый лучший бортпроводник, спасибо!",
+   "color": "#E7E6FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": 20,
+    "y": -20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-8",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685113abb91fe7531bfd5a12_transport-8.webp",
+   "stackables": [],
+   "text": "Вот это мы через 5 лет!",
+   "color": "#F2D8F5",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 20,
+    "y": 100,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-9",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685113b2f2e663f77edfe89e_transport-9.webp",
+   "stackables": [],
+   "text": "Каждый раз очень сильно жду полёта к тебе!",
+   "color": "#DDCAFF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 18,
+    "x": 35,
+    "y": 35,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "transport-10",
+   "cat": "transport",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685112af95a39a25921a83d4_transport-10.webp",
+   "stackables": [],
+   "text": "Смотреть фильмы в самолёте!",
+   "color": "#F2D8F5",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": -35,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 2,
+    "x": 40,
+    "y": 70,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "travel-1",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851783ad01589f6e38e593e_travel-1.webp",
+   "stackables": [],
+   "text": "Спасибо что изучаешь мир со мной",
+   "color": "#FFEDED",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": 45,
+    "y": 50,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 21,
+    "x": -35,
+    "y": 50,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-2",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178428bc27b52179ec485_travel-2.webp",
+   "stackables": [],
+   "text": "Путешествия с тобой никогда не бывают скучными!",
+   "color": "#FFC3D4",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": -30,
+    "y": 55,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 12,
+    "x": 40,
+    "y": 60,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-3",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851784ba3b863be973bc422_travel-3.webp",
+   "stackables": [],
+   "text": "Мир вроде и большой но тебя я всегда найду!",
+   "color": "#CDD0FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 60,
+    "y": 70,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -20,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-4",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178539ad7e983bbc5217d_travel-4.webp",
+   "stackables": [],
+   "text": "“Ой, только не плавать!”",
+   "color": "#FDF2F9",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 16,
+    "x": -5,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": -30,
+    "y": 0,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-5",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851785ae5fb62aabcba4012_travel-5.webp",
+   "stackables": [],
+   "text": "Спасибо за все те поездки!",
+   "color": "#243C6A",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": 50,
+    "y": 120,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 14,
+    "x": -40,
+    "y": 120,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-6",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68517861afcb33cd36e3df85_travel-6.webp",
+   "stackables": [],
+   "text": "Я счастлива быть рядом с тобой, особенно когда это в горах!!!",
+   "color": "#4C3119",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": 40,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 80,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-7",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851786ae565c6be19d309ea_travel-7.webp",
+   "stackables": [],
+   "text": "Найдёшь ты своего шейха, не переживай!",
+   "color": "#703636",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 6,
+    "x": -5,
+    "y": 130,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 100,
+    "y": 80,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-8",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68517872425c97f62c18f4de_travel-8.webp",
+   "stackables": [],
+   "text": "Мне нравится теряться в улочках новых городов с тобой",
+   "color": "#FFDDEC",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 22,
+    "x": 0,
+    "y": 115,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 40,
+    "y": 115,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-9",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851787af492325ee651858e_travel-9.webp",
+   "stackables": [],
+   "text": "А может ну его и в Дубаи?",
+   "color": "#784737",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -30,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 16,
+    "x": 60,
+    "y": 80,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-10",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178859ded1250d9f80728_travel-10.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a19785b3b83f956030f886_Frame%20957.svg"
+   ],
+   "text": "Предложение в Париже - Да!",
+   "color": "#E8D2FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": -30,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 45,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-11",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851788e6a47cf10039b31d6_travel-11.webp",
+   "stackables": [],
+   "text": "Я влюбилась в тебя в Риме!",
+   "color": "#401911",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -35,
+    "y": 135,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 22,
+    "x": 35,
+    "y": 135,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-12",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851789a2311faa52d2e8559_travel-12.webp",
+   "stackables": [],
+   "text": "Обожаю гулять по улицам Италии с тобой!",
+   "color": "#184B5E",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 24,
+    "x": -20,
+    "y": 140,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 24,
+    "x": 50,
+    "y": 130,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-13",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178ae0bc6de1ffc0c4a21_travel-13.webp",
+   "stackables": [],
+   "text": "Испания это то место, что сблизило нас!",
+   "color": "#4A2619",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 22,
+    "x": -30,
+    "y": 10,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 20,
+    "y": 10,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-14",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178b8553e4ee0341dea58_travel-14.webp",
+   "stackables": [],
+   "text": "Спасибо, что познаёшь мир со мной!",
+   "color": "#FFEAD5",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": 0,
+    "y": 60,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "travel-15",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178c1aff45b9a58197359_travel-15.webp",
+   "stackables": [],
+   "text": "Маленькие улочки и твоя рука в моей - всё что надо!",
+   "color": "#533C1E",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 9,
+    "x": 60,
+    "y": 90,
+    "size": "small",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "travel-16",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178ca44eed905cff35ae3_travel-16.webp",
+   "stackables": [],
+   "text": "Может в Турцию а потом в Европу?",
+   "color": "#5A3C1C",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 20,
+    "x": -10,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 35,
+    "y": 70,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-17",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178d4ef5d538edd7e0ac0_travel-17.webp",
+   "stackables": [],
+   "text": "Поездка в Японию мне очень запомнилась",
+   "color": "#613523",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 8,
+    "x": 20,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "travel-18",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178dd021ac0f6fc921965_travel-18.webp",
+   "stackables": [],
+   "text": "Вот это было необычно!",
+   "color": "#E8FAFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -30,
+    "y": 100,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 55,
+    "y": 105,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-19",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178e5d61c8758c82cd5fe_travel-19.webp",
+   "stackables": [],
+   "text": "Рад что тебе понравилось!",
+   "color": "#5D2217",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 19,
+    "x": 10,
+    "y": 35,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "travel-20",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178efe8671c59c2a482cc_travel-20.webp",
+   "stackables": [],
+   "text": "Разговоры с тобой такие уютные!",
+   "color": "#CDF3EF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": 40,
+    "y": 45,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 18,
+    "x": 0,
+    "y": 50,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "travel-21",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685178f7ce58d068a3ef4abb_travel-21.webp",
+   "stackables": [],
+   "text": "Приглашаю тебя на совместный отдых на лодке! Как тебе?",
+   "color": "#245366",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 16,
+    "x": 25,
+    "y": 100,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": -50,
+    "y": 90,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-22",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851790184a3f08f3135b529_travel-22.webp",
+   "stackables": [],
+   "text": "Ты красивей всего мира!",
+   "color": "#703B2B",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": -50,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 40,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "travel-23",
+   "cat": "travel",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/685179092509cf98d2eaa283_travel-23.webp",
+   "stackables": [],
+   "text": "Изучать мир вместе намного веселее!",
+   "color": "#DAF3FF",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 12,
+    "x": -5,
+    "y": 45,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 25,
+    "x": 50,
+    "y": 45,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "work-1",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d63ed2f9834d155f4b8_work-1.webp",
+   "stackables": [],
+   "text": "Папа, спасибо что охраняешь нас! Мы тебя любим!",
+   "color": "#27596C",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 8,
+    "x": 60,
+    "y": 60,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-2",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d80129ba2f099a88357_work-2.webp",
+   "stackables": [],
+   "text": "Служебный роман, который перерос в семью!",
+   "color": "#FFDEDC",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": -20,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-3",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d8a4871dd697123e572_work-3.webp",
+   "stackables": [],
+   "text": "Помню как прибегала к тебе в офис маленькая и всё время рисовала!",
+   "color": "#FFF1E2",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 22,
+    "x": 50,
+    "y": 70,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -22,
+    "y": 100,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "work-4",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518d92ae8027326cc1100e_work-4.webp",
+   "stackables": [],
+   "text": "Не переживай, скоро всё получится",
+   "color": "#FAE2FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 12,
+    "x": -30,
+    "y": 80,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-5",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518dc058ba91b522299919_work-5.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a1983dfe204e69d669f00b_Frame%20954.svg"
+   ],
+   "text": "Будущий юрист!",
+   "color": "#FFD5EA",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 4,
+    "x": 20,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 21,
+    "x": 70,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "work-6",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518e363b50c91ba3532c8b_work-6.webp",
+   "stackables": [
+    "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68a1996d8f8548f8565bdbf7_Frame%20953.svg"
+   ],
+   "text": "Хочу что бы ты развивалась и росла!",
+   "color": "#EBEBEB",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 21,
+    "x": 35,
+    "y": 40,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-7",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518e4ea438dba8f3d94f5c_work-7.webp",
+   "stackables": [],
+   "text": "Ну ты прям будущий олигарх!",
+   "color": "#0E3B46",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 8,
+    "x": -40,
+    "y": -15,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-8",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518e5ac9dcea5336021fa4_work-8.webp",
+   "stackables": [],
+   "text": "Удачи тебе, будущий доктор!",
+   "color": "#193C52",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 2,
+    "x": 0,
+    "y": -15,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-9",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518ee54b1dbcc731a4d60c_work-9.webp",
+   "stackables": [],
+   "text": "Всегда найдёшь, где уединиться!",
+   "color": "#FFCDCC",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": -40,
+    "y": 35,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 8,
+    "x": 55,
+    "y": 20,
+    "size": "large",
+    "flip": false
+   }
+  },
+  {
+   "id": "work-10",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f000e9bcb5c158790d7_work-10.webp",
+   "stackables": [],
+   "text": "Давай уже поменьше сиди на своей работе, я заждалась!",
+   "color": "#FAEFFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 4,
+    "x": -40,
+    "y": 40,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-11",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f0d80e50abb3c8a74e8_work-11.webp",
+   "stackables": [],
+   "text": "Ты самый организованный человек которого я знаю!",
+   "color": "#DBFCFF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 14,
+    "x": -20,
+    "y": 20,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-12",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f3d694e3e41108b34aa_work-12.webp",
+   "stackables": [],
+   "text": "Вечера с тобой это как целое ток шоу)",
+   "color": "#3A200C",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 17,
+    "x": -20,
+    "y": 30,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 70,
+    "y": 30,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "work-13",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f485d0daf9bb5c72d25_work-13.webp",
+   "stackables": [],
+   "text": "Будущий ведущий! Надеюсь ты пригласишь меня на шоу - я всегда готова!",
+   "color": "#FFE4FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 21,
+    "x": 45,
+    "y": 110,
+    "size": "medium",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 17,
+    "x": -50,
+    "y": 115,
+    "size": "medium",
+    "flip": true
+   }
+  },
+  {
+   "id": "work-14",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f621678c1f608413535_work-14.webp",
+   "stackables": [],
+   "text": "У тебе скоро все получиться!",
+   "color": "#EEF8FF",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 17,
+    "x": 0,
+    "y": 100,
+    "size": "medium",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-15",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f6fb5dc516303340c1b_work-15.webp",
+   "stackables": [],
+   "text": "Всегда жду от тебя СМС",
+   "color": "#533415",
+   "textX": 0,
+   "textY": 200,
+   "giver": null,
+   "receiver": null
+  },
+  {
+   "id": "work-16",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f79385499513e491c28_work-16.webp",
+   "stackables": [],
+   "text": "Волшебные руки!",
+   "color": "#2B4D69",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": -60,
+    "y": -20,
+    "size": "original",
+    "flip": true
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-17",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68518f820da4efca25941e7b_work-17.webp",
+   "stackables": [],
+   "text": "Самый лучший доктор!",
+   "color": "#444065",
+   "textX": 0,
+   "textY": 20,
+   "giver": {
+    "pose": 8,
+    "x": -50,
+    "y": 50,
+    "size": "original",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-18",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6851902b90473ea03e9209ef_work-18.webp",
+   "stackables": [],
+   "text": "Ты так вкусно готовишь - Я бы у тебя на кухне жила!",
+   "color": "#FFE7F6",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 2,
+    "x": 40,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 20,
+    "x": -60,
+    "y": 90,
+    "size": "large",
+    "flip": true
+   }
+  },
+  {
+   "id": "work-19",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6880c10e0f44014e2282c7ec_work-19.webp",
+   "stackables": [],
+   "text": "Спасибо тебе за твою работу!",
+   "color": "#1B2043",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 3,
+    "x": 10,
+    "y": 40,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": null
+  },
+  {
+   "id": "work-20",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/681fb570cc8107b53e6f891d_work-20.svg",
+   "stackables": [],
+   "text": "Ты самый аккураный стоматолог",
+   "color": "#1B2043",
+   "textX": 0,
+   "textY": 200,
+   "giver": {
+    "pose": 6,
+    "x": -50,
+    "y": 20,
+    "size": "large",
+    "flip": true
+   },
+   "receiver": {
+    "pose": 17,
+    "x": 55,
+    "y": 20,
+    "size": "medium",
+    "flip": false
+   }
+  },
+  {
+   "id": "work-21",
+   "cat": "work",
+   "image": "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/68519050716aed66e81e0bb7_work-21.webp",
+   "stackables": [],
+   "text": "Ты самый лучший но строгий учитель!",
+   "color": "#5C3C1D",
+   "textX": 0,
+   "textY": 10,
+   "giver": {
+    "pose": 8,
+    "x": -40,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   },
+   "receiver": {
+    "pose": 4,
+    "x": 50,
+    "y": 75,
+    "size": "large",
+    "flip": false
+   }
+  }
+ ]
 }

@@ -234,13 +234,16 @@ final class Books
         if (!is_array($p)) {
             throw new HttpError(422, 'Некорректные страницы');
         }
-        $ids = array_column(Catalog::pages()['templates'], 'id');
+        $ids = array_column(Catalog::pages()['scenes'], 'id');
         $items = [];
         foreach (array_values((array) ($p['items'] ?? [])) as $i => $it) {
             if (!is_array($it) || !in_array($it['t'] ?? '', $ids, true)) {
                 throw new HttpError(422, 'Неизвестная сцена на странице ' . ($i + 1));
             }
             $items[] = ['t' => $it['t'], 'text' => self::cleanText($it['text'] ?? '', 'Текст страницы ' . ($i + 1)), 'swap' => !empty($it['swap'])];
+            if (count($items) > self::MAX_PAGES) {
+                break;
+            }
         }
         if (count($items) > self::MAX_PAGES) {
             throw new HttpError(422, 'В книге может быть не больше ' . self::MAX_PAGES . ' страниц с героями');

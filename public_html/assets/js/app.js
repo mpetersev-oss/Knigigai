@@ -2,7 +2,7 @@ import { h, clear, toast, debounce, rub } from './dom.js';
 import { api, loadCatalog, myBooks } from './api.js';
 import { figure, cropFigure, newHero, setGender, randomize, hasOutfit, HAIR_COLORS } from './hero.js';
 import { renderCover } from './cover.js';
-import { renderPage, fillText, defaultPages, availableTemplates, templateById, defaultText, bookSpreads } from './pages.js';
+import { renderPage, fillText, defaultPages, availableTemplates, templateById, defaultText, bookSpreads, cleanPages } from './pages.js';
 
 const root = document.getElementById('app');
 const state = { catalog: null, book: null };
@@ -227,8 +227,9 @@ function pageHome() {
     h('div', { class: 'center' }, h('a', { href: '/create', 'data-link': true, class: 'btn btn-dark' }, 'Собрать свою обложку')),
   );
 
-  const tplA = c.book && availableTemplates(c).find((t) => t.id === 'skate') || (c.book && availableTemplates(c)[0]);
-  const tplB = c.book && availableTemplates(c).find((t) => t.id === 'hug');
+  const duo = c.book ? availableTemplates(c).filter((t) => t.receiver) : [];
+  const tplA = duo.find((t) => t.id === 'travel-8') || duo[0];
+  const tplB = duo.find((t) => t.id === 'home-24') || duo[1];
   const inside = tplA && tplB ? h('section', { class: 'section', id: 'inside' },
     h('div', { class: 'inside' },
       h('div', { class: 'inside-spread reveal' },
@@ -239,7 +240,7 @@ function pageHome() {
         h('p', { class: 'eyebrow' }, 'Внутри книги'),
         h('h2', { class: 'h2' }, 'Каждая страница — ', h('em', null, 'про\u00a0вас')),
         h('ul', { class: 'inside-list' },
-          h('li', null, `${availableTemplates(c).length} сцен: каток, объятия, танцы, море, ужин на двоих`),
+          h('li', null, `${availableTemplates(c).length} готовых сцен: дом, путешествия, кафе, спорт, праздники, музеи и СПА`),
           h('li', null, 'Свои слова на каждой странице — или наши готовые тексты'),
           h('li', null, `От ${c.pageLimits[0] + 2} до ${c.pageLimits[1] + 2} страниц, посвящение и финал`),
         ),
@@ -810,7 +811,9 @@ function pagePages(book) {
   if (book.status !== 'draft') return go(`/b/${book.token}`, true);
   const [MIN, MAX] = c.pageLimits;
   const TEXT_MAX = 220;
-  let pages = d.pages ? JSON.parse(JSON.stringify(d.pages)) : defaultPages(c, d);
+  let pages = d.pages ? cleanPages(c, JSON.parse(JSON.stringify(d.pages))) : null;
+  const fresh = !pages || pages.items.length < MIN;
+  if (fresh) pages = { ...defaultPages(c, d), ...(pages ? { dedication: pages.dedication, final: pages.final } : {}) };
   let cur = 0; // 0 — посвящение, 1..n — сцены, n+1 — финал
   const status = h('span', { class: 'small muted' }, 'Сохранено');
 
@@ -819,7 +822,7 @@ function pagePages(book) {
     try { await saveBook({ pages }); status.textContent = 'Сохранено'; } catch (e) { status.textContent = 'Не сохранено'; toast(e.message, 'error'); }
   }, 700);
   onLeave(() => save.flush());
-  if (!d.pages) save();
+  if (fresh || pages.items.length !== d.pages.items.length) save();
 
   const total = () => pages.items.length + 2;
   const pageAt = (i) => (i === 0 ? { kind: 'dedication', text: pages.dedication } : i === total() - 1 ? { kind: 'final', text: pages.final } : { kind: 'scene', item: pages.items[i - 1] });
@@ -881,12 +884,13 @@ function pagePages(book) {
       const [ta, cnt] = textArea(fillText(it.text, d.heroes), (v) => { it.text = v; changed(); });
       card = h('div', { class: 'pg-card' },
         h('p', { class: 'eyebrow' }, `Страница ${cur + 1}`),
-        h('h2', null, tpl ? tpl.title : 'Сцена'),
+        h('h2', null, tpl ? (c.book.categories[tpl.cat] || 'Сцена') : 'Сцена'),
+        tpl && !tpl.receiver ? h('p', { class: 'hint' }, 'На этой странице один герой. Кнопка «Герои местами» выбирает, кто именно.') : null,
         ta, cnt,
         h('div', { class: 'pg-tools' },
           h('button', { type: 'button', class: 'btn btn-dark btn-sm', onclick: () => pickScene(idx) }, 'Сменить сцену'),
           h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.swap = !it.swap; changed(true); } }, '⇄ Герои местами'),
-          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.text = defaultText(tpl, d.relation); drawSide(); changed(); } }, 'Текст по умолчанию'),
+          h('button', { type: 'button', class: 'btn btn-soft btn-sm', onclick: () => { it.text = defaultText(tpl); drawSide(); changed(); } }, 'Текст по умолчанию'),
         ),
         h('div', { class: 'pg-tools' },
           h('button', { type: 'button', class: 'btn btn-soft btn-sm', disabled: idx === 0, onclick: () => move(idx, -1) }, '← Раньше'),
@@ -928,37 +932,53 @@ function pagePages(book) {
   /** Выбор сцены: для страницы idx или новой (idx = null — добавить после текущей). */
   function pickScene(idx) {
     const it = idx === null ? null : pages.items[idx];
+    const all = availableTemplates(c);
+    const cats = Object.keys(c.book.categories).filter((k) => all.some((t) => t.cat === k));
+    let cat = (it && templateById(c, it.t) && templateById(c, it.t).cat) || cats[0];
+    let onlyDuo = false;
+    const chips = h('div', { class: 'chips chips-wrap' });
     const grid = h('div', { class: 'scene-grid' });
-    for (const tpl of availableTemplates(c)) {
-      grid.appendChild(h('button', { type: 'button', class: `scene-pick ${it && it.t === tpl.id ? 'is-on' : ''}`, onclick: () => {
-        if (it) {
-          const old = templateById(c, it.t);
-          const untouched = !old || it.text === old.text || it.text === old.alt || fillText(it.text, d.heroes) === fillText(defaultText(old, d.relation), d.heroes);
-          it.t = tpl.id;
-          if (untouched) it.text = defaultText(tpl, d.relation);
-        } else {
-          const at = Math.max(0, Math.min(pages.items.length, cur));
-          pages.items.splice(at, 0, { t: tpl.id, text: defaultText(tpl, d.relation), swap: false });
-          cur = at + 1;
-        }
-        close();
-        drawSide(); changed(true); select(cur);
-      } },
-      renderPage(c, { kind: 'scene', item: { t: tpl.id, text: defaultText(tpl, d.relation), swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
-      h('span', null, tpl.title)));
-    }
+    const choose = (tpl) => {
+      if (it) {
+        const old = templateById(c, it.t);
+        const untouched = !old || it.text === old.text;
+        it.t = tpl.id;
+        if (untouched) it.text = defaultText(tpl);
+      } else {
+        const at = Math.max(0, Math.min(pages.items.length, cur));
+        pages.items.splice(at, 0, { t: tpl.id, text: defaultText(tpl), swap: false });
+        cur = at + 1;
+      }
+      close();
+      drawSide(); changed(true); select(cur);
+    };
+    const drawChips = () => {
+      clear(chips);
+      for (const k of cats) chips.appendChild(h('button', { type: 'button', class: `chip ${k === cat ? 'is-on' : ''}`, onclick: () => { cat = k; drawChips(); drawGrid(); } }, `${c.book.categories[k]} · ${all.filter((t) => t.cat === k).length}`));
+      chips.appendChild(h('button', { type: 'button', class: `chip ${onlyDuo ? 'is-on' : ''}`, onclick: () => { onlyDuo = !onlyDuo; drawChips(); drawGrid(); } }, 'Только вдвоём'));
+    };
+    const drawGrid = () => {
+      clear(grid);
+      for (const tpl of all.filter((t) => t.cat === cat && (!onlyDuo || t.receiver))) {
+        grid.appendChild(h('button', { type: 'button', class: `scene-pick ${it && it.t === tpl.id ? 'is-on' : ''}`, onclick: () => choose(tpl) },
+          renderPage(c, { kind: 'scene', item: { t: tpl.id, text: tpl.text, swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
+          h('span', null, tpl.receiver ? 'Вдвоём' : 'Один герой')));
+      }
+      grid.scrollIntoView?.({ block: 'nearest' });
+    };
     const overlay = h('div', { class: 'modal-wrap', role: 'dialog', 'aria-modal': 'true', onclick: (e) => { if (e.target === overlay) close(); } },
       h('div', { class: 'modal modal-scenes' },
         h('button', { type: 'button', class: 'modal-x', 'aria-label': 'Закрыть', onclick: () => close() }, '×'),
         h('h2', { class: 'h3' }, it ? 'Выберите сцену' : 'Новая страница'),
-        h('p', { class: 'muted' }, 'Ваши герои уже в кадре. Текст можно будет поменять.'),
-        grid));
+        h('p', { class: 'muted' }, `${all.length} сцен с вашими героями. Текст на странице можно будет поменять.`),
+        chips, grid));
     const close = () => { overlay.remove(); document.body.classList.remove('no-scroll'); document.removeEventListener('keydown', onKey); };
     const onKey = (e) => { if (e.key === 'Escape') close(); };
     document.addEventListener('keydown', onKey);
     document.body.classList.add('no-scroll');
     document.body.appendChild(overlay);
     onLeave(close);
+    drawChips(); drawGrid();
   }
 
   const toOrder = h('a', { href: `/b/${book.token}/order`, 'data-link': true, class: 'btn btn-dark', onclick: () => save.flush() }, `Оформить заказ · ${rub(c.price)}`);

@@ -66,7 +66,7 @@ final class Admin
 
     /**
      * План синхронизации: список задач {key, src, cover}.
-     * $scope: editor | covers | poses ; $poseNums — какие позы (для poses).
+     * $scope: editor | covers | pages | poses ; $poseNums — какие позы (для poses).
      */
     public static function plan(string $scope, array $poseNums, bool $onlyMissing): array
     {
@@ -120,6 +120,13 @@ final class Admin
                 $add('c:' . $c['id'], $c['image'], true);
                 foreach ($c['stackables'] as $i => $s) {
                     $add('c:' . $c['id'] . ':s' . ($i + 1), $s, true);
+                }
+            }
+        } elseif ($scope === 'pages') {
+            foreach (Catalog::pages()['scenes'] as $sc) {
+                $add('c:pg-' . $sc['id'], $sc['image'], true);
+                foreach ($sc['stackables'] as $i => $u) {
+                    $add('c:pg-' . $sc['id'] . ':s' . ($i + 1), $u, true);
                 }
             }
         } elseif ($scope === 'poses') {

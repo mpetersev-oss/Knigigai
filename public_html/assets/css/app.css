@@ -389,7 +389,7 @@ button { font: inherit; color: inherit; }
 .bp-svg .dc-line { stroke: var(--deco); stroke-width: 1.6; stroke-linecap: round; }
 .bp-svg .dc-stroke { fill: none; stroke: var(--deco); stroke-width: .9; }
 .bp-hero { position: absolute; z-index: 2; pointer-events: none; }
-.bp-text { position: absolute; left: 9%; right: 9%; top: calc(186 / 174.8 * 100 * var(--cw)); bottom: 7%; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.bp-text { position: absolute; left: 9%; right: 9%; top: calc(180 / 174.8 * 100 * var(--cw)); bottom: 7%; display: flex; flex-direction: column; justify-content: center; text-align: center; }
 .bp-body { margin: 0; font: 400 calc(6 * var(--cw))/1.32 var(--serif); white-space: pre-line; overflow-wrap: anywhere; text-wrap: balance; }
 .bp-num { position: absolute; bottom: 3.2%; left: 0; right: 0; text-align: center; font: 500 calc(2.6 * var(--cw)) var(--sans); letter-spacing: .12em; color: #b3a79f; }
 .bpage.is-dedication .bp-scene { height: 100%; background: #fffdf9; }
@@ -584,3 +584,8 @@ body.is-print { background: #e9e5e2; }
 .inside-list li::before { content: '✦'; color: var(--ink); font-size: 12px; }
 @media (max-width: 860px) { .inside { grid-template-columns: 1fr; } }
 .co-book .small { display: block; margin-top: 4px; }
+
+/* сюжетная страница — та же сцена, что и обложка, но текст обычным регистром */
+.cover.is-page .cover-title { text-transform: none; font-size: calc(6.6 * var(--cw)); line-height: 1.12; letter-spacing: .01em; padding: 0 8%; }
+.cover.is-page .bp-num { position: absolute; z-index: 4; color: rgba(255, 255, 255, .85); text-shadow: 0 0 3px rgba(0, 0, 0, .25); }
+.modal-scenes .chips { margin-top: 14px; }

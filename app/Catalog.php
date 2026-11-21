@@ -130,6 +130,26 @@ final class Catalog
             ];
         }
 
+        // Страницы книги: те же фон + предметы + герои, что и у обложек
+        $book = self::pages();
+        $scenes = [];
+        foreach ($book['scenes'] as $sc) {
+            $bg = 'c:pg-' . $sc['id'];
+            $put($bg, $sc['image'], true);
+            $stack = [];
+            foreach ($sc['stackables'] as $i => $u) {
+                $k = $bg . ':s' . ($i + 1);
+                $put($k, $u, true);
+                $stack[] = $k;
+            }
+            $scenes[] = [
+                'id' => $sc['id'], 'cat' => $sc['cat'], 'text' => $sc['text'], 'color' => $sc['color'],
+                'textX' => $sc['textX'], 'textY' => $sc['textY'], 'bg' => $bg, 'stackables' => $stack,
+                'giver' => $sc['giver'], 'receiver' => $sc['receiver'], 'props' => [], 'heroProps' => (object) [],
+            ];
+        }
+        $book['scenes'] = $scenes;
+
         $editorTotal = count($src['tones']);
         foreach ($src['categories'] as $list) {
             $editorTotal += count($list);
@@ -137,7 +157,7 @@ final class Catalog
         $editorSynced = count(array_filter(array_keys($synced), fn ($k) => str_starts_with($k, 'e:')));
 
         $catalog = [
-            'v' => substr(sha1((string) json_encode([$assets, $covers, self::pages(), config('price_rub', 4900)])), 0, 10),
+            'v' => substr(sha1((string) json_encode([$assets, $covers, $book, config('price_rub', 4900)])), 0, 10),
             'frame' => $src['frame'],
             'tones' => array_map(fn ($t) => ['key' => $t['key'], 'label' => $t['label'], 'color' => $t['color']], $src['tones']),
             'items' => $items,
@@ -152,7 +172,7 @@ final class Catalog
             'builtinShoes' => $src['builtinShoes'] ?? [],
             'stackFix' => (object) ($src['stackFix'] ?? []),
             'price' => (int) config('price_rub', 4900),
-            'book' => self::pages(),
+            'book' => $book,
             'pageLimits' => [Books::MIN_PAGES, Books::MAX_PAGES],
             'payOnline' => Payments::enabled(),
             'contactEmail' => (string) config('contact_email', ''),

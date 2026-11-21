@@ -2,6 +2,7 @@
 // Координаты героев — в тех же единицах, что и на обложках (ширина страницы 174.8),
 // поэтому страница одинаково выглядит в миниатюре, в просмотре и в макете для печати.
 import { figure } from './hero.js';
+import { renderCover } from './cover.js';
 
 const W = 174.8;
 
@@ -14,36 +15,51 @@ export function fillText(text, heroes) {
     .replace(/\{r\}/g, r.name || '');
 }
 
-/** Шаблоны, для которых уже есть картинки поз. */
+/** Сцены, для которых картинки поз уже загружены полностью (~250 слоёв: вся одежда и причёски). */
 export function availableTemplates(catalog) {
-  // Сцена доступна, когда поза синхронизирована полностью (~250 слоёв: вся одежда и причёски)
   const full = (n) => ((catalog.sync && catalog.sync.poses && catalog.sync.poses[n]) || 0) >= 200;
-  return catalog.book.templates.filter((t) => [t.g, t.r].every((s) => !s || full(s.pose)));
+  return catalog.book.scenes.filter((t) => [t.giver, t.receiver].every((s) => !s || full(s.pose)));
 }
 
 export function templateById(catalog, id) {
-  return catalog.book.templates.find((t) => t.id === id) || null;
+  return catalog.book.scenes.find((t) => t.id === id) || null;
 }
 
 const romantic = (relation) => !relation || relation === 'partner' || relation === 'spouse';
 
-/** Текст шаблона по умолчанию с учётом того, кому дарят. */
-export function defaultText(tpl, relation) {
-  return romantic(relation) ? tpl.text : (tpl.alt || tpl.text);
+/** Текст сцены по умолчанию. */
+export function defaultText(tpl) {
+  return (tpl && tpl.text) || '';
 }
 
-/** Страницы по умолчанию: посвящение под повод, 10 сцен, финал. */
+/** Страницы по умолчанию: посвящение под повод, 12 сцен из разных разделов (сначала — где оба героя), финал. */
 export function defaultPages(catalog, data) {
   const b = catalog.book;
-  const ok = new Set(availableTemplates(catalog).map((t) => t.id));
-  const ids = [...b.defaultOrder.filter((id) => ok.has(id)), ...[...ok].filter((id) => !b.defaultOrder.includes(id))].slice(0, 10);
+  const list = availableTemplates(catalog).filter((t) => !/мам|пап/i.test(t.text));
+  const byCat = {};
+  for (const t of list) (byCat[t.cat] = byCat[t.cat] || []).push(t);
+  for (const k of Object.keys(byCat)) byCat[k].sort((x, y) => (y.receiver ? 1 : 0) - (x.receiver ? 1 : 0));
+  const order = ['outside', 'travel', 'home', 'restaurants', 'hobby', 'celebration', 'sport', 'museum', 'spa', 'transport', 'stage', 'shop', 'work', 'school'];
+  const picked = [];
+  for (let round = 0; picked.length < 12 && round < 4; round++) {
+    for (const cat of order) {
+      const t = (byCat[cat] || [])[round];
+      if (t && picked.length < 12) picked.push(t);
+    }
+  }
   const rom = romantic(data.relation);
   const ded = b.dedication[data.occasion] || b.dedication['наш праздник'];
   return {
     dedication: rom ? ded[0] : ded[1],
     final: rom ? b.final[0] : b.final[1],
-    items: ids.map((id) => ({ t: id, text: defaultText(templateById(catalog, id), data.relation), swap: false })),
+    items: picked.map((t) => ({ t: t.id, text: t.text, swap: false })),
   };
+}
+
+/** Убирает страницы со сценами, которых больше нет в каталоге. */
+export function cleanPages(catalog, pages) {
+  if (!pages) return pages;
+  return { ...pages, items: pages.items.filter((it) => templateById(catalog, it.t)) };
 }
 
 /** Все страницы блока по порядку: посвящение, сюжетные, финал. */
@@ -51,7 +67,7 @@ export function bookSpreads(catalog, data) {
   const p = data.pages;
   if (!p) return [];
   const out = [{ kind: 'dedication', text: p.dedication }];
-  p.items.forEach((it, i) => out.push({ kind: 'scene', item: it, index: i }));
+  p.items.forEach((it, i) => { if (templateById(catalog, it.t)) out.push({ kind: 'scene', item: it, index: i }); });
   out.push({ kind: 'final', text: p.final });
   return out;
 }
@@ -65,9 +81,17 @@ export function renderPage(catalog, page, heroes, opts = {}) {
   const ref = b.ref;
   let tpl, text, swap = false;
   if (page.kind === 'scene') {
-    tpl = templateById(catalog, page.item.t) || b.templates[0];
-    text = page.item.text;
-    swap = !!page.item.swap;
+    // Сюжетная страница: фон, предметы, герои в позах и текст — как у обложки
+    const sc = templateById(catalog, page.item.t) || b.scenes[0];
+    const el = renderCover(catalog, sc, heroes, { text: fillText(page.item.text, heroes) || sc.text, swap: !!page.item.swap, solo: page.item.swap ? 'receiver' : 'giver' }, { lazy: opts.lazy });
+    el.classList.add('is-page');
+    if (opts.number) {
+      const n = document.createElement('span');
+      n.className = 'bp-num';
+      n.textContent = String(opts.number);
+      el.appendChild(n);
+    }
+    return el;
   } else {
     tpl = b.special[page.kind];
     text = page.text;
