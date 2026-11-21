@@ -50,23 +50,28 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     wrap.appendChild(figure(catalog, hero, { pose: slot.pose, lazy: opts.lazy }));
     el.appendChild(wrap);
   }
-  // Декоративные слои лежат ПОВЕРХ героев: зонт, облака, стрелки часов, яблоки.
-  // Слои из stackSplit рисуются дважды: целиком позади героев и нижней частью (ручка зонта) — поверх.
-  const split = catalog.stackSplit || {};
-  const stackImg = (k, front) => {
+  // Декоративные слои лежат ПОВЕРХ героев: облака, стрелки часов, яблоки, лук.
+  // Для предметов «в руках» (зонт) задаётся stackFix: сдвиг {dx, dy} в % обложки и полосы front —
+  // какие части (в % высоты слоя) рисуются поверх героев; остальное — позади, под рукой и головами.
+  const fixes = catalog.stackFix || {};
+  const stackImg = (k, cls, clip) => {
     const a = catalog.assets[k];
     if (!a) return;
+    const f = fixes[k];
     const img = document.createElement('img');
-    img.className = front ? 'cover-stack' : 'cover-stack is-back';
+    img.className = cls;
     img.alt = '';
     img.src = a[0];
     if (opts.lazy) img.loading = 'lazy';
-    if (front && split[k]) img.style.clipPath = `inset(${split[k]}% 0 0 0)`;
+    if (f && (f.dx || f.dy)) img.style.transform = `translate(${f.dx || 0}%, ${f.dy || 0}%)`;
+    if (clip) img.style.clipPath = clip;
     el.appendChild(img);
   };
   for (const k of cover.stackables) {
-    if (split[k]) stackImg(k, false);
-    stackImg(k, true);
+    const f = fixes[k];
+    if (!f) { stackImg(k, 'cover-stack'); continue; }
+    stackImg(k, 'cover-stack is-back');
+    for (const [a, b] of f.front || []) stackImg(k, 'cover-stack', `inset(${a}% 0 ${100 - b}% 0)`);
   }
   const text = coverText(cover, heroes, choice);
   if (text) {

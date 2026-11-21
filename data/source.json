@@ -2177,8 +2177,26 @@
   3
  ],
  "editorMouthFromPose": 1,
- "stackSplit": {
-  "c:cover-19:s1": 53,
-  "c:cover-12:s1": 33
+ "stackFix": {
+  "c:cover-19:s1": {
+   "dx": 2.9,
+   "dy": 5.2,
+   "front": [
+    [
+     64,
+     100
+    ]
+   ]
+  },
+  "c:cover-12:s1": {
+   "dx": 0,
+   "dy": 0,
+   "front": [
+    [
+     43,
+     100
+    ]
+   ]
+  }
  }
 }

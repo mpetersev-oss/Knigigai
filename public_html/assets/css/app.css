@@ -227,6 +227,8 @@ button { font: inherit; color: inherit; }
 /* ---------- персонаж ---------- */
 .fig { position: relative; width: 100%; }
 .fig-mask { position: absolute; pointer-events: none; }
+.fig { transition: opacity .25s ease; }
+.fig.is-loading { opacity: 0; }
 .fig img { position: absolute; max-width: none; user-select: none; -webkit-user-select: none; pointer-events: none; }
 .crop { position: relative; width: 100%; overflow: hidden; }
 

@@ -129,8 +129,14 @@ export function figure(catalog, hero, opts = {}) {
   el.style.aspectRatio = `${FW} / ${FH}`;
   if (!hero) return el;
   const box = (x, y, w, h) => `left:${(x / FW) * 100}%;top:${(y / FH) * 100}%;width:${(w / FW) * 100}%;height:${(h / FH) * 100}%;`;
+  // Персонаж показывается целиком, когда загрузились все слои (а не по кусочкам)
+  let pending = 0;
+  const done = () => { if (--pending <= 0) el.classList.remove('is-loading'); };
   const mkImg = (url) => {
     const img = document.createElement('img');
+    pending++;
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', () => { img.style.display = 'none'; done(); }, { once: true });
     img.alt = '';
     img.decoding = 'async';
     if (opts.lazy) img.loading = 'lazy';
@@ -159,6 +165,11 @@ export function figure(catalog, hero, opts = {}) {
     const img = mkImg(url);
     img.style.cssText = box(x, y, w, h) + `z-index:${Math.round(z * 10)}`;
     el.appendChild(img);
+  }
+  // Если всё уже в кеше браузера (редактор при переключении вещей), показываем сразу, без мигания
+  if (pending && [...el.querySelectorAll('img')].some((i) => !i.complete)) {
+    el.classList.add('is-loading');
+    setTimeout(() => el.classList.remove('is-loading'), 6000); // на случай очень медленной сети
   }
   return el;
 }
