@@ -17,6 +17,13 @@ export function slotsFor(cover, heroes, choice = {}) {
   ];
 }
 
+// Кисть вытянутой руки в позе 6 (объятие за талию), координаты кадра 2855×3305 без отражения
+const HUG_HAND = [560, 1630, 220, 240];
+
+function slotRole(cover, slot) {
+  return slot === cover.giver ? 'giver' : 'receiver';
+}
+
 export function coverText(cover, heroes, choice = {}) {
   if (choice.text) return choice.text;
   return cover.text || '';
@@ -38,6 +45,7 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     if (opts.lazy) img.loading = 'lazy';
     el.appendChild(img);
   }
+  const heroWraps = [];
   for (const { slot, hero } of slotsFor(cover, heroes, choice)) {
     if (!slot || !hero) continue;
     const [sw] = ref.sizes[slot.size] || ref.sizes.original;
@@ -47,8 +55,29 @@ export function renderCover(catalog, cover, heroes, choice = {}, opts = {}) {
     wrap.style.top = `calc(${(slot.y / W) * 100} * var(--cw))`;
     wrap.style.width = `${(sw / W) * 100}%`;
     if (slot.flip) wrap.style.transform = 'scaleX(-1)';
-    wrap.appendChild(figure(catalog, hero, { pose: slot.pose, lazy: opts.lazy }));
+    const extra = (cover.heroProps || {})[slotRole(cover, slot)] || [];
+    wrap.appendChild(figure(catalog, hero, { pose: slot.pose, lazy: opts.lazy, extra }));
     el.appendChild(wrap);
+    heroWraps.push({ wrap, slot, hero });
+  }
+  // Объятия (поза 6 у обоих): рука героя, стоящего позади, лежит на талии второго — показываем её поверх
+  if (heroWraps.length === 2 && heroWraps.every((w) => w.slot.pose === 6)) {
+    const back = heroWraps[0];
+    const [hx, hy, hw, hh] = HUG_HAND;
+    const { w: FW, h: FH } = catalog.frame;
+    const hand = back.wrap.cloneNode(true);
+    hand.classList.add('cover-hand');
+    const left = hx / FW * 100; // отражение задано у обёртки, внутри фигура не отражена
+    hand.firstChild.classList.remove('is-loading');
+    hand.firstChild.style.clipPath = `inset(${hy / FH * 100}% ${100 - left - hw / FW * 100}% ${100 - (hy + hh) / FH * 100}% ${left}%)`;
+    el.appendChild(hand);
+  }
+  for (const pr of cover.props || []) {
+    const img = document.createElement('img');
+    img.className = pr.layer === 'back' ? 'cover-stack is-back' : 'cover-stack';
+    img.alt = '';
+    img.src = pr.src;
+    el.appendChild(img);
   }
   // Декоративные слои лежат ПОВЕРХ героев: облака, стрелки часов, яблоки, лук.
   // Для предметов «в руках» (зонт) задаётся stackFix: сдвиг {dx, dy} в % обложки и полосы front —

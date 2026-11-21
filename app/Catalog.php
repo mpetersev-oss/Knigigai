@@ -103,13 +103,17 @@ final class Catalog
             foreach ($c['stackables'] as $i => $s) {
                 $k = 'c:' . $c['id'] . ':s' . ($i + 1);
                 $put($k, $s, true);
-                $stack[] = $k;
+                if (!in_array($k, $c['hideStack'] ?? [], true)) {
+                    $stack[] = $k;
+                }
             }
             $covers[] = [
                 'id' => $c['id'], 'occasion' => $c['occasion'], 'text' => $c['text'], 'color' => $c['color'],
                 'textX' => $c['textX'], 'textY' => $c['textY'],
                 'bg' => 'c:' . $c['id'], 'stackables' => $stack,
                 'giver' => $c['giver'], 'receiver' => $c['receiver'],
+                // Нарисованные поверх обложки предметы (ручка зонта) и предметы в руках героя (лук)
+                'props' => $c['props'] ?? [], 'heroProps' => (object) ($c['heroProps'] ?? []),
             ];
         }
 

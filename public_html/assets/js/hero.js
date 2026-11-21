@@ -93,6 +93,8 @@ export function layersFor(hero, pose = null, catalog = null) {
   // В некоторых позах обувь уже нарисована на теле (коньки) — обычную обувь не надеваем
   const builtinShoes = pose && catalog && (catalog.builtinShoes || []).includes(Number(pose));
   if (!builtinShoes) add(hero.shoes, shoesOverPants(hero) ? Z.shoesOver : Z.shoes);
+  // Коньки вырезаны из фона обложки и прикреплены к ногам позы — поверх штанин
+  else { add('skate-raised', Z.shoesOver); add('skate-stand', Z.shoesOver); }
   add(hero.pants, Z.pants);
   add(hero.top, Z.top);
   add(hero.bodice, Z.bodice);
@@ -167,6 +169,13 @@ export function figure(catalog, hero, opts = {}) {
     el.appendChild(img);
   }
   // Если всё уже в кеше браузера (редактор при переключении вещей), показываем сразу, без мигания
+  // Предметы в руках (лук): картинка в координатах кадра со своим слоем
+  for (const pr of opts.extra || []) {
+    const [x, y, w, h] = pr.box;
+    const img = mkImg(pr.src);
+    img.style.cssText = box(x, y, w, h) + `z-index:${Math.round(pr.z * 10)}`;
+    el.appendChild(img);
+  }
   if (pending && [...el.querySelectorAll('img')].some((i) => !i.complete)) {
     el.classList.add('is-loading');
     setTimeout(() => el.classList.remove('is-loading'), 6000); // на случай очень медленной сети

@@ -1804,6 +1804,19 @@
    },
    "stackables": [
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877b9d13bacb77f2dea866b_Frame%201010.svg"
+   ],
+   "hideStack": [
+    "c:cover-12:s1"
+   ],
+   "props": [
+    {
+     "src": "/assets/img/props/umbrella-stick-12.svg",
+     "layer": "back"
+    },
+    {
+     "src": "/assets/img/props/umbrella-hook-12.svg",
+     "layer": "front"
+    }
    ]
   },
   {
@@ -1842,7 +1855,7 @@
    "textY": 40,
    "giver": {
     "pose": 3,
-    "x": 7.5,
+    "x": 5,
     "y": 85,
     "size": "small",
     "flip": false
@@ -1983,6 +1996,19 @@
    },
    "stackables": [
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877e1b9bca18e1d133f8fd2_Frame%201042.svg"
+   ],
+   "hideStack": [
+    "c:cover-19:s1"
+   ],
+   "props": [
+    {
+     "src": "/assets/img/props/umbrella-stick-19.svg",
+     "layer": "back"
+    },
+    {
+     "src": "/assets/img/props/umbrella-hook-19.svg",
+     "layer": "front"
+    }
    ]
   },
   {
@@ -2113,7 +2139,35 @@
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ee88b6b1b01405be7750_Frame%201013.svg",
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg",
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/6877ef43d8133934aca81a03_Frame%201014.svg"
-   ]
+   ],
+   "hideStack": [
+    "c:cover-24:s3",
+    "c:cover-24:s4"
+   ],
+   "heroProps": {
+    "giver": [
+     {
+      "src": "/assets/img/props/bow-p29.svg",
+      "box": [
+       600,
+       300,
+       800,
+       1400
+      ],
+      "z": -1
+     },
+     {
+      "src": "/assets/img/props/bowstring-p29.svg",
+      "box": [
+       600,
+       300,
+       800,
+       1400
+      ],
+      "z": 13
+     }
+    ]
+   }
   },
   {
    "id": "cover-25",
@@ -2142,7 +2196,34 @@
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f0fc01a0ac58300f73_Frame%201044.svg",
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99f79c41ace0952d7bae_Arrow%201.svg",
     "https://cdn.prod.website-files.com/6759d926f26bc8c2fa1429a5/687e99fbbbd1adf5e1d7c75b_Frame%201043.svg"
-   ]
+   ],
+   "hideStack": [
+    "c:cover-25:s1"
+   ],
+   "heroProps": {
+    "giver": [
+     {
+      "src": "/assets/img/props/bow-p29-grey.svg",
+      "box": [
+       600,
+       300,
+       800,
+       1400
+      ],
+      "z": -1
+     },
+     {
+      "src": "/assets/img/props/bowstring-p29-grey.svg",
+      "box": [
+       600,
+       300,
+       800,
+       1400
+      ],
+      "z": 13
+     }
+    ]
+   }
   }
  ],
  "coverRef": {
@@ -2177,22 +2258,5 @@
   3
  ],
  "editorMouthFromPose": 1,
- "stackFix": {
-  "c:cover-19:s1": {
-   "front": [
-    [
-     60,
-     100
-    ]
-   ]
-  },
-  "c:cover-12:s1": {
-   "front": [
-    [
-     40,
-     100
-    ]
-   ]
-  }
- }
+ "stackFix": {}
 }

@@ -72,6 +72,10 @@ final class Admin
     {
         $src = Catalog::source();
         $have = [];
+        // Картинки, доработанные вручную (например, фон катка без коньков), не перезаписываем никогда
+        foreach (Db::pdo()->query("SELECT akey FROM assets WHERE src LIKE 'derived:%'") as $r) {
+            $have[$r['akey']] = true;
+        }
         if ($onlyMissing) {
             foreach (Db::pdo()->query('SELECT akey, src FROM assets') as $r) {
                 // Губы редактора раньше брались из Webflow (неверный масштаб) — такие перезагружаем
