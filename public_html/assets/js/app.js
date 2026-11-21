@@ -964,7 +964,6 @@ function pagePages(book) {
           renderPage(c, { kind: 'scene', item: { t: tpl.id, text: tpl.text, swap: it ? it.swap : false } }, d.heroes, { lazy: true }),
           h('span', null, tpl.receiver ? 'Вдвоём' : 'Один герой')));
       }
-      grid.scrollIntoView?.({ block: 'nearest' });
     };
     const overlay = h('div', { class: 'modal-wrap', role: 'dialog', 'aria-modal': 'true', onclick: (e) => { if (e.target === overlay) close(); } },
       h('div', { class: 'modal modal-scenes' },
